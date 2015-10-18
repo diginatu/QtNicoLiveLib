@@ -1,0 +1,4 @@
+*.pro.user*
+*.swp
+*.autosave
+example/build-*

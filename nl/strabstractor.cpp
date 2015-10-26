@@ -34,12 +34,12 @@ QString StrAbstractor::midStr(QString start, QString end, bool foward)
   return doc.mid(st, ed-st);
 }
 
-// returns the pointer to new StrAbstractor which contains the substring found by midStr.
-StrAbstractor* StrAbstractor::mid(QString start, QString end, bool foward)
+// returns the pointer to new nicolive::StrAbstractor which contains the substring found by midStr.
+StrAbstractor* nicolive::StrAbstractor::mid(QString start, QString end, bool foward)
 {
   QString tmp = midStr(start, end, foward);
   if ( tmp.isNull() ) return nullptr;
-  else return new StrAbstractor(tmp, this);
+  else return new nicolive::StrAbstractor(tmp, this);
 }
 
 // forward position to the position that st found.

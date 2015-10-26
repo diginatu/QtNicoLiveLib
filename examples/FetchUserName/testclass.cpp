@@ -12,8 +12,7 @@ void TestClass::fetch()
   qDebug() << "input user ID : ";
   qtin >> userNum;
 
-  // create fetcher and tell it user number that you want to know the name
-
+  // create fetcher and give user number that you want to know the name
   nicolive::FetchUserName* nameFetcher = new nicolive::FetchUserName(this, userNum);
 
   // QtNicoLiveLib classes emit "got" signal.
@@ -21,6 +20,12 @@ void TestClass::fetch()
   connect(nameFetcher, &nicolive::FetchUserName::got, this, [](QString name){
     QTextStream out(stdout);
     out << name << endl;
+    QCoreApplication::quit();
+  });
+
+  // if error occurred
+  connect(nameFetcher, &nicolive::FetchUserName::error, this, [](){
+    qDebug() << "error";
     QCoreApplication::quit();
   });
 

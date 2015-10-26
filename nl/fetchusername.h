@@ -22,6 +22,7 @@ private slots:
   void gotReply(QNetworkReply* reply);
 
 signals:
+  void error();
   void got(QString username);
 
 };

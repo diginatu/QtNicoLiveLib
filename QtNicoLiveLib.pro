@@ -14,16 +14,16 @@ TEMPLATE = lib
 
 DEFINES += QTNICOLIVELIB_LIBRARY
 
-SOURCES += qtnicolivelib.cpp \
-    httpgetter.cpp \
-    fetchusername.cpp \
-    strabstractor.cpp
+SOURCES += nl/fetchusername.cpp \
+    nl/httpgetter.cpp \
+    nl/qtnicolivelib.cpp \
+    nl/strabstractor.cpp
 
-HEADERS += qtnicolivelib.h\
-        qtnicolivelib_global.h \
-    httpgetter.h \
-    fetchusername.h \
-    strabstractor.h
+HEADERS += nl/fetchusername.h \
+    nl/httpgetter.h \
+    nl/qtnicolivelib.h \
+    nl/qtnicolivelib_global.h \
+    nl/strabstractor.h
 
 unix {
     target.path = /usr/lib

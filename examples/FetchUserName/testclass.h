@@ -2,9 +2,9 @@
 #define TESTCLASS_H
 
 #include <QObject>
-#include <fetchusername.h>
 #include <QCoreApplication>
 #include <iostream>
+#include <nl/fetchusername.h>
 
 class TestClass : public QObject
 {

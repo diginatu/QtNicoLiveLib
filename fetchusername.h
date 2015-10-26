@@ -5,6 +5,8 @@
 #include "httpgetter.h"
 #include "strabstractor.h"
 
+namespace nicolive {
+
 class FetchUserName : public HttpGetter
 {
   Q_OBJECT
@@ -23,5 +25,7 @@ signals:
   void got(QString username);
 
 };
+
+}
 
 #endif // FETCHUSERNAME_H

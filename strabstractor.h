@@ -3,6 +3,8 @@
 
 #include <QObject>
 
+namespace nicolive {
+
 class StrAbstractor : public QObject
 {
 	Q_OBJECT
@@ -26,5 +28,7 @@ signals:
 public slots:
 
 };
+
+}
 
 #endif // STRABSTRACTOR_H

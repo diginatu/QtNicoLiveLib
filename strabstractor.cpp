@@ -1,5 +1,7 @@
 ﻿#include "strabstractor.h"
 
+namespace nicolive {
+
 StrAbstractor::StrAbstractor(const QString doc, QObject *parent) :
   QObject(parent)
 {
@@ -69,4 +71,6 @@ int StrAbstractor::getPosition()
 QString StrAbstractor::toString()
 {
   return doc;
+}
+
 }

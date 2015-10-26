@@ -1,5 +1,7 @@
 ﻿#include "httpgetter.h"
 
+namespace nicolive {
+
 HttpGetter::HttpGetter(QObject *parent) :
   QObject(parent),
   mManager(nullptr)
@@ -37,4 +39,6 @@ void HttpGetter::got(QNetworkReply* reply)
 {
   reply->deleteLater();
   this->deleteLater();
+}
+
 }

@@ -5,6 +5,8 @@
 #include <QNetworkAccessManager>
 #include <QNetworkReply>
 
+namespace nicolive {
+
 class HttpGetter : public QObject
 {
   Q_OBJECT
@@ -28,5 +30,7 @@ private slots:
 protected slots:
   void got(QNetworkReply* reply);
 };
+
+}
 
 #endif // HTTPGETTER_H

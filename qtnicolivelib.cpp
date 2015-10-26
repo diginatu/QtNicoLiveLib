@@ -1,6 +1,10 @@
-#include "qtnicolivelib.h"
+﻿#include "qtnicolivelib.h"
 
+
+namespace nicolive {
 
 QtNicoLiveLib::QtNicoLiveLib()
 {
+}
+
 }

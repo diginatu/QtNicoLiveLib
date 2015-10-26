@@ -1,5 +1,7 @@
 ﻿#include "fetchusername.h"
 
+namespace nicolive {
+
 FetchUserName::FetchUserName(QObject* parent, QString userID) :
   HttpGetter(parent)
 {
@@ -41,4 +43,6 @@ void FetchUserName::gotReply(QNetworkReply* reply)
 
   reply->deleteLater();
   this->deleteLater();
+}
+
 }

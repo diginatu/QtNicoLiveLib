@@ -11,7 +11,7 @@ class FetchUserName : public HttpGetter
 {
   Q_OBJECT
 public:
-  FetchUserName(QObject* parent, QString userID);
+  explicit FetchUserName(QString userID, QObject* parent = 0);
   ~FetchUserName();
 
   void get();

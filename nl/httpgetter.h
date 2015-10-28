@@ -4,6 +4,7 @@
 #include <QObject>
 #include <QNetworkAccessManager>
 #include <QNetworkReply>
+#include <QNetworkCookie>
 
 namespace nicolive {
 
@@ -17,15 +18,10 @@ protected:
   void requestGet(const QNetworkRequest& rq);
   void requestPost(const QNetworkRequest& rq, QIODevice* data);
   void get();
+
+  QVariant makePostData(QString session_id);
+
   QNetworkAccessManager* mManager;
-
-private:
-
-signals:
-
-public slots:
-
-private slots:
 
 protected slots:
   void got(QNetworkReply* reply);

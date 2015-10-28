@@ -17,13 +17,15 @@ DEFINES += QTNICOLIVELIB_LIBRARY
 SOURCES += nl/fetchusername.cpp \
     nl/httpgetter.cpp \
     nl/qtnicolivelib.cpp \
-    nl/strabstractor.cpp
+    nl/strabstractor.cpp \
+    nl/getcommpostkey.cpp
 
 HEADERS += nl/fetchusername.h \
     nl/httpgetter.h \
     nl/qtnicolivelib.h \
     nl/qtnicolivelib_global.h \
-    nl/strabstractor.h
+    nl/strabstractor.h \
+    nl/getcommpostkey.h
 
 unix {
     target.path = /usr/lib

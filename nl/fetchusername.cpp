@@ -2,7 +2,7 @@
 
 namespace nicolive {
 
-FetchUserName::FetchUserName(QObject* parent, QString userID) :
+FetchUserName::FetchUserName(QString userID, QObject* parent) :
   HttpGetter(parent)
 {
   this->userID = userID;
@@ -35,6 +35,8 @@ void FetchUserName::gotReply(QNetworkReply* reply)
 
   if (status == "fail") {
     emit error();
+    reply->deleteLater();
+    this->deleteLater();
     return;
   }
 

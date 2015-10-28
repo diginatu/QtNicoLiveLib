@@ -13,7 +13,7 @@ void TestClass::fetch()
   qtin >> userNum;
 
   // create fetcher and give user number that you want to know the name
-  nicolive::FetchUserName* nameFetcher = new nicolive::FetchUserName(this, userNum);
+  nicolive::FetchUserName* nameFetcher = new nicolive::FetchUserName(userNum, this);
 
   // QtNicoLiveLib classes emit "got" signal.
   // In this case, this lambda expression will receive.

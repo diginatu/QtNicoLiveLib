@@ -12,12 +12,6 @@ GetCommPostKey::GetCommPostKey(QString thread, int blockNo, QString userSession,
 
 void GetCommPostKey::get()
 {
-  if(mManager!=nullptr) delete mManager;
-  mManager = new QNetworkAccessManager(this);
-
-  connect(mManager, SIGNAL(finished(QNetworkReply*)), this,
-          SLOT(gotReply(QNetworkReply*)));
-
   // make request
   QNetworkRequest rq;
   QVariant postData = makePostData(userSession);
@@ -26,7 +20,7 @@ void GetCommPostKey::get()
              "thread=" + thread +
              "&block_no=" + QString::number(blockNo) ));
 
-  mManager->get(rq);
+  requestGet(rq);
 }
 
 void GetCommPostKey::gotReply(QNetworkReply* reply)

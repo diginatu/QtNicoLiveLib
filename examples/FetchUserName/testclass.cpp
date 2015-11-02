@@ -15,7 +15,7 @@ void TestClass::fetch()
   // create fetcher and give user number that you want to know the name
   nicolive::FetchUserName* nameFetcher = new nicolive::FetchUserName(userNum, this);
 
-  // QtNicoLiveLib classes emit "got" signal.
+  // API classes emit "got" signal.
   // In this case, this lambda expression will receive.
   connect(nameFetcher, &nicolive::FetchUserName::got, this, [](QString name){
     QTextStream out(stdout);
@@ -28,7 +28,10 @@ void TestClass::fetch()
     qDebug() << "error";
     QCoreApplication::quit();
   });
+  // An error signal may be emitted more than once.
 
   // Finally, need to call get method.
   nameFetcher->get();
+
+  // An instance of most API classes will be deleted automatically.
 }

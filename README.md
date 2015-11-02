@@ -3,7 +3,7 @@
 QtNicoLiveLib is a cross-platform "Nico Nama" library.
 
 QtNicoLiveLib はクロスプラットフォームなニコニコ生放送用ライブラリです。
-[Viqo](https://github.com/diginatu/viqo) のコアライブラリです。
+[Viqo](https://github.com/diginatu/Viqo) のコアライブラリです。
 （現在移行中）
 
 * クロスプラットフォーム

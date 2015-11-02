@@ -18,14 +18,18 @@ SOURCES += nl/fetchusername.cpp \
     nl/httpgetter.cpp \
     nl/qtnicolivelib.cpp \
     nl/strabstractor.cpp \
-    nl/getcommpostkey.cpp
+    nl/getcommpostkey.cpp \
+    nl/livewaku.cpp \
+    nl/getplayerstatus.cpp
 
 HEADERS += nl/fetchusername.h \
     nl/httpgetter.h \
     nl/qtnicolivelib.h \
     nl/qtnicolivelib_global.h \
     nl/strabstractor.h \
-    nl/getcommpostkey.h
+    nl/getcommpostkey.h \
+    nl/livewaku.h \
+    nl/getplayerstatus.h
 
 unix {
     target.path = /usr/lib

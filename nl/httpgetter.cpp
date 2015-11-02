@@ -14,7 +14,7 @@ void HttpGetter::requestGet(const QNetworkRequest& rq)
   mManager = new QNetworkAccessManager(this);
 
   connect(mManager, SIGNAL(finished(QNetworkReply*)), this,
-          SLOT(got(QNetworkReply*)));
+          SLOT(gotReply(QNetworkReply*)));
 
   mManager->get(rq);
 }
@@ -25,7 +25,7 @@ void HttpGetter::requestPost(const QNetworkRequest& rq, QIODevice* data)
   mManager = new QNetworkAccessManager(this);
 
   connect(mManager, SIGNAL(finished(QNetworkReply*)), this,
-          SLOT(got(QNetworkReply*)));
+          SLOT(gotReply(QNetworkReply*)));
 
   mManager->post(rq, data);
 }

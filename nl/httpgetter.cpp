@@ -61,4 +61,12 @@ QVariant HttpGetter::makePostData(QString session_id)
   return postData;
 }
 
+QString HttpGetter::htmlDecode(QString st)
+{
+  st.replace("&amp;", "&");
+  st.replace("&lt;", "<");
+  st.replace("&gt;", ">");
+  return st;
+}
+
 }

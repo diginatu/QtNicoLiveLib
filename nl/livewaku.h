@@ -4,6 +4,8 @@
 #include <QObject>
 #include <QDateTime>
 
+#include "getplayerstatus.h"
+
 namespace nicolive {
 
 class LiveWaku : public QObject
@@ -12,7 +14,6 @@ class LiveWaku : public QObject
 public:
   explicit LiveWaku(QObject *parent = 0);
   explicit LiveWaku(QString broadID, QObject *parent = 0);
-  explicit LiveWaku(QString broadID, QString communityID, QObject *parent = 0);
 
 
   // setter and getter
@@ -31,8 +32,8 @@ public:
   QDateTime getEdTime() const;
   void setEdTime(const QDateTime& value);
 
-  QString getUserId() const;
-  QString getOwnerId() const;
+  QString getUserID() const;
+  QString getOwnerID() const;
   bool getUserPremium() const;
 
   QString getPostKey() const;
@@ -45,7 +46,12 @@ public:
   void setOwnerBroad(bool value);
   QString getOwnerCommentToken() const;
 
+
+  void getInformation(QString userSession);
+
 signals:
+  gotInfornationError(QString code);
+  gotInfornation();
 
 private:
   QString title;
@@ -57,7 +63,7 @@ private:
   QDateTime stTime;
   QDateTime edTime;
 
-  QString userId, ownerId;
+  QString userID, ownerID;
   bool userPremium;
 
   QString postKey;

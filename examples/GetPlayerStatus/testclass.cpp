@@ -21,11 +21,13 @@ void TestClass::fetch()
   // In this case, this lambda expression will receive.
   connect(getter, &nicolive::GetPlayerStatus::got, this,
           [](QString broadID, QString title, QString communityID, QString ownerName,
-          uint stTime, uint edTime, QString broadcastToken)
+          uint stTime, uint edTime, QString broadcastToken, QString  userID,
+           QString isPremium, QString  addr, QString port, QString thread)
   {
     // unused variables
     (void)broadID, (void)communityID, (void)ownerName;
     (void)stTime, (void)edTime, (void)broadcastToken;
+    (void)userID, (void)isPremium, (void)addr, (void)port, (void)thread;
 
     QTextStream out(stdout);
     out << title << endl;

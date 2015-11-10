@@ -20,6 +20,7 @@ protected:
   void get();
 
   QVariant makePostData(QString session_id);
+  static QString htmlDecode(QString st);
 
   QNetworkAccessManager* mManager;
 

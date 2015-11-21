@@ -3,6 +3,7 @@
 
 #include <QObject>
 #include <QDateTime>
+#include <QDebug>
 
 #include "getplayerstatus.h"
 
@@ -13,7 +14,7 @@ class LiveWaku : public QObject
   Q_OBJECT
 public:
   explicit LiveWaku(QObject *parent = 0);
-  explicit LiveWaku(QString broadID, QObject *parent = 0);
+  explicit LiveWaku(const QString& broadID, QObject *parent = 0);
 
 
   // setter and getter
@@ -40,18 +41,18 @@ public:
 
   QString getAddr() const;
   QString getThread() const;
-  int getPort() const;
+  QString getPort() const;
 
   bool getOwnerBroad() const;
   void setOwnerBroad(bool value);
   QString getOwnerCommentToken() const;
 
 
-  void getInformation(QString userSession);
+  void getInformation(const QString& userSession);
 
 signals:
-  gotInfornationError(QString code);
-  gotInfornation();
+  void gotInfornationError(QString code);
+  void gotInfornation();
 
 private:
   QString title;
@@ -68,9 +69,7 @@ private:
 
   QString postKey;
 
-  QString addr;
-  QString thread;
-  int port;
+  QString addr, thread, port;
 
   bool ownerBroad;
   QString ownerCommentToken;

@@ -15,7 +15,7 @@ void GetPlayerStatus::get()
   QNetworkRequest rq;
   QVariant postData = makePostData(userSession);
   rq.setHeader(QNetworkRequest::CookieHeader, postData);
-  rq.setUrl(QUrl("http://live.nicovideo.jp/api/getplayerstatus?v=lv" + broadID));
+  rq.setUrl(QUrl("http://live.nicovideo.jp/api/getplayerstatus?v=" + broadID));
 
   requestGet(rq);
 }
@@ -43,13 +43,13 @@ void GetPlayerStatus::gotReply(QNetworkReply* reply)
   QString broadcastToken = commTcpi.midStr("<broadcast_token>","</broadcast_token>");
 
   QString userID = commTcpi.midStr("<user_id>", "</user_id>");
-  QString isPremium = commTcpi.midStr("<is_premium>", "</is_premium>");
+  bool isPremium = commTcpi.midStr("<is_premium>", "</is_premium>")!="0";
 
   QString addr = commTcpi.midStr("<addr>", "</addr>");
   QString port = commTcpi.midStr("<port>", "</port>");
   QString thread = commTcpi.midStr("<thread>", "</thread>");
 
-  got(broadID, title, communityID, ownerID, ownerName, stTime, edTime,
+  emit got(broadID, title, communityID, ownerID, ownerName, stTime, edTime,
       broadcastToken, userID, isPremium, addr, port, thread);
 
   reply->deleteLater();

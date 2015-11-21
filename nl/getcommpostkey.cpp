@@ -2,7 +2,7 @@
 
 namespace nicolive {
 
-GetCommPostKey::GetCommPostKey(QString thread, int blockNo, QString userSession, QObject *parent) :
+GetCommPostKey::GetCommPostKey(QString thread, int blockNo, const QString& userSession, QObject *parent) :
   HttpGetter(parent)
 {
   this->thread = thread;
@@ -18,7 +18,7 @@ void GetCommPostKey::get()
   rq.setHeader(QNetworkRequest::CookieHeader, postData);
   rq.setUrl(QUrl(QString("http://live.nicovideo.jp/api/getpostkey?") +
              "thread=" + thread +
-             "&block_no=" + QString::number(blockNo) ));
+             "&block_no=" + QString::number(blockNo)));
 
   requestGet(rq);
 }

@@ -9,10 +9,10 @@ class StrAbstractor : public QObject
 {
 	Q_OBJECT
 public:
-  explicit StrAbstractor(const QString doc, QObject *parent = 0);
-	QString midStr(QString start, QString end, bool foward = true);
-  StrAbstractor* mid(QString start, QString end, bool foward = true);
-  int forward(QString st);
+  explicit StrAbstractor(const QString& doc, QObject* parent = 0);
+  QString midStr(const QString& start, const QString& end, bool foward = true);
+  StrAbstractor* mid(const QString& start, const QString& end, bool foward = true);
+  int forward(const QString& st);
 
 	void setPosition(int po);
   void setRelativePosition(int pos);
@@ -22,10 +22,6 @@ public:
 private:
 	int pos;
   QString doc;
-
-signals:
-
-public slots:
 
 };
 

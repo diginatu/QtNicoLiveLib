@@ -25,7 +25,7 @@ signals:
   void error(QString error);
   void got(QString broadID, QString title, QString communityID, QString ownerID,
            QString ownerName, uint stTime, uint edTime, QString broadcastToken,
-           QString userID, QString isPremium, QString addr, QString port,
+           QString userID, bool isPremium, QString addr, QString port,
            QString thread);
 };
 

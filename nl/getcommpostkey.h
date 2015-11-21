@@ -11,7 +11,8 @@ class GetCommPostKey : public HttpGetter
 {
   Q_OBJECT
 public:
-  explicit GetCommPostKey(QString thread, int blockNo, QString userSession, QObject *parent = 0);
+  explicit GetCommPostKey(QString thread, int blockNo,
+                          const QString& userSession, QObject *parent = 0);
   void get();
 private:
   QString thread, userSession;

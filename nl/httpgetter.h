@@ -14,13 +14,14 @@ class HttpGetter : public QObject
 public:
   explicit HttpGetter(QObject *parent = 0);
   ~HttpGetter();
+
+  static QString htmlDecode(QString st);
 protected:
   void requestGet(const QNetworkRequest& rq);
   void requestPost(const QNetworkRequest& rq, QIODevice* data);
   void get();
 
   QVariant makePostData(QString session_id);
-  static QString htmlDecode(QString st);
 
   QNetworkAccessManager* mManager;
 

@@ -3,8 +3,7 @@
 namespace nicolive {
 
 LiveWaku::LiveWaku(QObject *parent) : QObject(parent) { }
-LiveWaku::LiveWaku(QString broadID, QObject* parent) :
-  LiveWaku(parent)
+LiveWaku::LiveWaku(const QString& broadID, QObject* parent) : LiveWaku(parent)
 {
   this->broadID = broadID;
 }
@@ -34,7 +33,7 @@ QString LiveWaku::getPostKey() const { return postKey; }
 
 QString LiveWaku::getAddr() const { return addr; }
 QString LiveWaku::getThread() const { return thread; }
-int LiveWaku::getPort() const { return port; }
+QString LiveWaku::getPort() const { return port; }
 
 bool LiveWaku::getOwnerBroad() const { return ownerBroad; }
 void LiveWaku::setOwnerBroad(bool value) { ownerBroad = value; }
@@ -42,21 +41,20 @@ QString LiveWaku::getOwnerCommentToken() const { return ownerCommentToken; }
 
 
 
-void LiveWaku::getInformation(QString userSession)
+void LiveWaku::getInformation(const QString& userSession)
 {
   if (broadID.isEmpty()) {
-    QDebug() << "LiveWaku::getInformation : broadID not set";
+    qDebug() << "LiveWaku::getInformation : broadID not set";
     return;
   }
 
   auto gt = new GetPlayerStatus(broadID, userSession, this);
-  connect(gt, &GetPlayerStatus::error, this, [](QString code){
+  connect(gt, &GetPlayerStatus::error, this, [&](QString code){
     emit gotInfornationError(code);
   });
-  connect(gt, &GetPlayerStatus::got, this, [=](QString broadID, QString title,
+  connect(gt, &GetPlayerStatus::got, this, [&](QString broadID, QString title,
           QString communityID, QString ownerID, QString ownerName, uint stTime,
-          uint edTime,
-          QString broadcastToken, QString userID, QString isPremium,
+          uint edTime, QString broadcastToken, QString userID, bool isPremium,
           QString  addr, QString port, QString thread)
   {
     this->broadID = broadID;

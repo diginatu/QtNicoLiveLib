@@ -20,12 +20,12 @@ void TestClass::fetch()
   // API classes emit "got" signal.
   // In this case, this lambda expression will receive.
   connect(getter, &nicolive::GetPlayerStatus::got, this,
-          [](QString broadID, QString title, QString communityID, QString ownerName,
-          uint stTime, uint edTime, QString broadcastToken, QString  userID,
-           QString isPremium, QString  addr, QString port, QString thread)
+          [](QString broadID, QString title, QString communityID, QString ownerID,
+          QString ownerName, uint stTime, uint edTime, QString broadcastToken,
+          QString  userID, bool isPremium, QString  addr, QString port, QString thread)
   {
     // unused variables
-    (void)broadID, (void)communityID, (void)ownerName;
+    (void)broadID, (void)communityID, (void)ownerID, (void)ownerName;
     (void)stTime, (void)edTime, (void)broadcastToken;
     (void)userID, (void)isPremium, (void)addr, (void)port, (void)thread;
 

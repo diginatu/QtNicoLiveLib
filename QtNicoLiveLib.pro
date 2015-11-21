@@ -20,7 +20,8 @@ SOURCES += nl/fetchusername.cpp \
     nl/strabstractor.cpp \
     nl/getcommpostkey.cpp \
     nl/livewaku.cpp \
-    nl/getplayerstatus.cpp
+    nl/getplayerstatus.cpp \
+    nl/commentconnection.cpp
 
 HEADERS += nl/fetchusername.h \
     nl/httpgetter.h \
@@ -29,7 +30,8 @@ HEADERS += nl/fetchusername.h \
     nl/strabstractor.h \
     nl/getcommpostkey.h \
     nl/livewaku.h \
-    nl/getplayerstatus.h
+    nl/getplayerstatus.h \
+    nl/commentconnection.h
 
 unix {
     target.path = /usr/lib

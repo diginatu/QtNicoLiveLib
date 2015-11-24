@@ -31,7 +31,7 @@ void CommentConnection::doConnect()
   socket->connectToHost(addr, port);
 
   if(!socket->waitForConnected(5000)) {
-    emit error("connect", socket->errorString());
+    emit error("doConnect", socket->errorString());
   }
 }
 
@@ -49,7 +49,7 @@ void CommentConnection::sendComment(QString text, bool iyayo)
 
   QString postkey = livewaku->getPostKey();
   if (postkey.isEmpty()) {
-    emit error("CommentConnection::sendComment", "no postKey");
+    emit error("sendComment", "no postKey");
     return;
   }
 
@@ -72,7 +72,7 @@ void CommentConnection::sendComment(QString text, bool iyayo)
   send.append('\0');
 
   if (socket->write(send) == -1) {
-    emit error("CommentConnection::sendComment", socket->errorString());
+    emit error("sendComment", socket->errorString());
   }
 }
 
@@ -145,7 +145,7 @@ void CommentConnection::readOneRawComment(const QString& rawcomm)
     const auto status = rawcommabs.midStr("status=\"", "\"", false);
 
     if (status != "0") {
-      emit error("CommentConnection::readOneRawComment", status);
+      emit error("readOneRawComment", status);
     } else {
       emit submittedComment();
     }

@@ -17,9 +17,7 @@ public:
 
 private:
   QString broadID, userSession;
-
-private slots:
-  void gotReply(QNetworkReply* reply);
+  void gotReply(QNetworkReply* reply) override;
 
 signals:
   void error(QString error);

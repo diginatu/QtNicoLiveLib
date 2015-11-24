@@ -17,14 +17,10 @@ public:
 private:
   QString thread, userSession;
   int blockNo;
-
-private slots:
-  void gotReply(QNetworkReply* reply);
+  void gotReply(QNetworkReply* reply) override;
 signals:
   void error();
   void got(QString postkey);
-
-public slots:
 };
 
 }

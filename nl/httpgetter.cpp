@@ -8,13 +8,18 @@ HttpGetter::HttpGetter(QObject *parent) :
 {
 }
 
+HttpGetter::~HttpGetter()
+{
+  if(mManager!=nullptr) delete mManager;
+}
+
 void HttpGetter::requestGet(const QNetworkRequest& rq)
 {
   if(mManager!=nullptr) delete mManager;
   mManager = new QNetworkAccessManager(this);
 
   connect(mManager, SIGNAL(finished(QNetworkReply*)), this,
-          SLOT(gotReply(QNetworkReply*)));
+          SLOT(preGot(QNetworkReply*)));
 
   mManager->get(rq);
 }
@@ -25,18 +30,14 @@ void HttpGetter::requestPost(const QNetworkRequest& rq, QIODevice* data)
   mManager = new QNetworkAccessManager(this);
 
   connect(mManager, SIGNAL(finished(QNetworkReply*)), this,
-          SLOT(gotReply(QNetworkReply*)));
+          SLOT(preGot(QNetworkReply*)));
 
   mManager->post(rq, data);
 }
 
-HttpGetter::~HttpGetter()
+void HttpGetter::preGot(QNetworkReply* reply)
 {
-  if(mManager!=nullptr) delete mManager;
-}
-
-void HttpGetter::got(QNetworkReply* reply)
-{
+  gotReply(reply);
   reply->deleteLater();
   this->deleteLater();
 }

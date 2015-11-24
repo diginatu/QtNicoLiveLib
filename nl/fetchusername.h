@@ -15,14 +15,11 @@ public:
   ~FetchUserName();
 
   void get();
-
 private:
   QString userID;
-private slots:
-  void gotReply(QNetworkReply* reply);
-
+  void gotReply(QNetworkReply* reply) override;
 signals:
-  void error();
+  void error(QString code, QString description);
   void got(QString username);
 
 };

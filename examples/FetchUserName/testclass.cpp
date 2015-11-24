@@ -24,8 +24,9 @@ void TestClass::fetch()
   });
 
   // if error occurred
-  connect(nameFetcher, &nicolive::FetchUserName::error, this, [](){
-    qDebug() << "error";
+  connect(nameFetcher, &nicolive::FetchUserName::error, this,
+          [](QString code, QString description){
+    qDebug() << "error " << code << " " << description;
     QCoreApplication::quit();
   });
   // An error signal may be emitted more than once.

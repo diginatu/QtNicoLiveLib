@@ -25,11 +25,9 @@ void GetPlayerStatus::gotReply(QNetworkReply* reply)
   nicolive::StrAbstractor commTcpi(QString(reply->readAll()));
 
   QString status = commTcpi.midStr("status=\"","\"");
-  if (status == "fail") {
+  if (status != "ok") {
     QString code = commTcpi.midStr("<code>","</code>");
     error(code);
-    reply->deleteLater();
-    this->deleteLater();
     return;
   }
 
@@ -51,9 +49,6 @@ void GetPlayerStatus::gotReply(QNetworkReply* reply)
 
   emit got(broadID, title, communityID, ownerID, ownerName, stTime, edTime,
       broadcastToken, userID, isPremium, addr, port, thread);
-
-  reply->deleteLater();
-  this->deleteLater();
 }
 
 }

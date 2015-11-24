@@ -2,8 +2,7 @@
 
 namespace nicolive {
 
-FetchUserName::FetchUserName(QString userID, QObject* parent) :
-  HttpGetter(parent)
+FetchUserName::FetchUserName(QString userID, QObject* parent) : HttpGetter(parent)
 {
   this->userID = userID;
 }
@@ -27,18 +26,15 @@ void FetchUserName::gotReply(QNetworkReply* reply)
 
   QString status = userinfo.midStr("status=\"", "\">");
 
-  if (status == "fail") {
-    emit error();
-    reply->deleteLater();
-    this->deleteLater();
+  if (status != "ok") {
+    QString code = userinfo.midStr("<code>", "</code>");
+    QString description = userinfo.midStr("<description>", "</description>");
+    emit error(code, description);
     return;
   }
 
   QString username = userinfo.midStr("<nickname>", "</nickname>");
   emit got(username);
-
-  reply->deleteLater();
-  this->deleteLater();
 }
 
 }

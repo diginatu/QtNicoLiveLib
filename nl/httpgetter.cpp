@@ -24,7 +24,7 @@ void HttpGetter::requestGet(const QNetworkRequest& rq)
   mManager->get(rq);
 }
 
-void HttpGetter::requestPost(const QNetworkRequest& rq, QIODevice* data)
+void HttpGetter::requestPost(const QNetworkRequest& rq, const QByteArray& data)
 {
   if(mManager!=nullptr) delete mManager;
   mManager = new QNetworkAccessManager(this);

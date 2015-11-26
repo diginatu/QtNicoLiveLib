@@ -11,7 +11,7 @@ class ExtendInfo : public HttpGetter
 {
   Q_OBJECT
 public:
-  ExtendInfo(QObject* parent);
+  explicit ExtendInfo(QObject* parent = 0);
 
   void get(const QString& broadID, const QString& userSession);
 private:

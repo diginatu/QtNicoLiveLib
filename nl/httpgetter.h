@@ -21,7 +21,7 @@ private slots:
   void preGot(QNetworkReply* reply);
 protected:
   void requestGet(const QNetworkRequest& rq);
-  void requestPost(const QNetworkRequest& rq, QIODevice* data);
+  void requestPost(const QNetworkRequest& rq, const QByteArray& data);
   virtual void gotReply(QNetworkReply* reply) = 0;
 
   QNetworkAccessManager* mManager;

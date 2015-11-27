@@ -3,6 +3,7 @@
 
 #include <QObject>
 #include <QUrlQuery>
+#include "extendinfo.h"
 #include "httpgetter.h"
 #include "strabstractor.h"
 

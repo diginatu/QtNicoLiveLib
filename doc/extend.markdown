@@ -14,7 +14,7 @@ Public Functions
 
 コンストラクタ
 
-### get(const [ExtendInfo](ExtendInfo)::[ExtendItem](ExtendInfo#ExtendItem)& extendItem, const QString& broadcastToken, const QString& userSession);
+### get(const [ExtendInfo](extend_info.markdown)::[ExtendItem](extend_info.markdown#ExtendItem)& extendItem, const QString& broadcastToken, const QString& userSession);
 
 リクエストを発行します。
 取得後、Signalのgotまたはerrorをemitします。

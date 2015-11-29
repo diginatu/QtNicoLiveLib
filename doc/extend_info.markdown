@@ -42,7 +42,7 @@ Signals
 
 参考: [get](#void-getconst-qstring-broadid-const-qstring-usersession)
 
-### `void got(QVector<`[ExtendItem](#ExtendItem)`> extendList);`
+### `void got(QVector<`[ExtendItem](#extenditem)`> extendList);`
 
 取得成功した場合にエミットされるシグナルです。
 

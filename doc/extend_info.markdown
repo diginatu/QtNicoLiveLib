@@ -24,11 +24,11 @@ QString broadID;
 Public Functions
 ----------------
 
-### `explicit ExtendInfo(QObject* parent = 0);`
+### explicit ExtendInfo(QObject* parent = 0);
 
 コンストラクタ
 
-### `void get(const QString& broadID, const QString& userSession);`
+### void get(const QString& broadID, const QString& userSession);
 
 リクエストを発行します。
 取得後、Signalのgotまたはerrorをemitします。
@@ -36,13 +36,13 @@ Public Functions
 Signals
 -------
 
-### `void error(QString code, QString description);`
+### void error(QString code, QString description);
 
 エラーになった場合にエミットされるシグナルです。
 
 参考: [get](#void-getconst-qstring-broadid-const-qstring-usersession)
 
-### `void got(QVector<`[ExtendItem](#extenditem)`> extendList);`
+### void got(QVector<[ExtendItem](#extenditem)> extendList);
 
 取得成功した場合にエミットされるシグナルです。
 

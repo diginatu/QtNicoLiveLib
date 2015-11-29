@@ -13,12 +13,15 @@ class ExtendInfo : public HttpGetter
 public:
   explicit ExtendInfo(QObject* parent = 0);
 
+  struct ExtendItem { QString label, price, num, code, item, broadID; };
+
   void get(const QString& broadID, const QString& userSession);
 private:
   void gotReply(QNetworkReply* reply) override;
+  QString broadID;
 signals:
   void error(QString code, QString description);
-  void got(QVector< QVector<QString> > extendList);
+  void got(QVector<ExtendItem> extendList);
 };
 
 }

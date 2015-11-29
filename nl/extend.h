@@ -15,8 +15,7 @@ class Extend : public HttpGetter
 public:
   explicit Extend(QObject *parent = 0);
 
-  void get(const QString& code, const QString& item, const QString& num,
-           const QString& broadID, const QString& broadcastToken,
+  void get(const ExtendInfo::ExtendItem& extendItem, const QString& broadcastToken,
            const QString& userSession);
 private:
   void gotReply(QNetworkReply* reply) override;

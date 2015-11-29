@@ -5,6 +5,22 @@ ExtendInfo はニコ生放送の延長情報を取得するクラスです。
 
 `Header: #include <nl/extendinfo.h>`
 
+Member Struct
+------
+
+### ExtendItem
+
+ニコ生APIで取得される延長情報に放送IDを追加した延長項目のクラスです。
+
+```
+QString label;
+QString price;
+QString num;
+QString code;
+QString item;
+QString broadID;
+```
+
 Public Functions
 ----------------
 
@@ -26,12 +42,8 @@ Signals
 
 参考: [get](#void-getconst-qstring-broadid-const-qstring-usersession)
 
-### `void got(QVector< QVector<QString> > extendList);`
+### `void got(QVector<`[ExtendItem](#ExtendItem)`> extendList);`
 
 取得成功した場合にエミットされるシグナルです。
-
-extendListはニコ生API名で順に
-`label, code, item, num, price`
-の入ったQVectorが入ったQVectorです。
 
 参考: [get](#void-getconst-qstring-broadid-const-qstring-usersession)

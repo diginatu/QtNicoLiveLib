@@ -31,7 +31,7 @@ Signals
 取得成功した場合にエミットされるシグナルです。
 
 extendListはニコ生API名で順に
-`label, price, num, code, item`
+`label, code, item, num, price`
 の入ったQVectorが入ったQVectorです。
 
 参考: [get](#void-getconst-qstring-broadid-const-qstring-usersession)

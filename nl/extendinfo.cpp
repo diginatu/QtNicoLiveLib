@@ -44,7 +44,7 @@ void ExtendInfo::gotReply(QNetworkReply* reply)
     QString code      = item->midStr("<code>",  "</code>");
     QString itemType  = item->midStr("<item>",  "");
 
-    extendList.append(ExtendItem{label, code, itemType, num, price, broadID});
+    extendList.append(ExtendItem{label, price, num, code, itemType, broadID});
   }
 
   emit got(extendList);

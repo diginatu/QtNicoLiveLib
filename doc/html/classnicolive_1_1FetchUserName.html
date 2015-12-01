@@ -93,6 +93,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">nicolive::FetchUserName Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>ユーザIDからユーザ名を取得するクラス。  
+ <a href="classnicolive_1_1FetchUserName.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="fetchusername_8h_source.html">nl/fetchusername.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for nicolive::FetchUserName:</div>
 <div class="dyncontent">
@@ -105,20 +110,21 @@ Inheritance diagram for nicolive::FetchUserName:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="signals"></a>
 Signals</h2></td></tr>
-<tr class="memitem:aa677f8c6b88fc537de6dab4ac4682a50"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa677f8c6b88fc537de6dab4ac4682a50"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>error</b> (QString code, QString description)</td></tr>
+<tr class="memitem:aa677f8c6b88fc537de6dab4ac4682a50"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnicolive_1_1FetchUserName.html#aa677f8c6b88fc537de6dab4ac4682a50">error</a> (QString code, QString description)</td></tr>
+<tr class="memdesc:aa677f8c6b88fc537de6dab4ac4682a50"><td class="mdescLeft">&#160;</td><td class="mdescRight">エラーになった場合にエミットされるシグナルです。  <a href="#aa677f8c6b88fc537de6dab4ac4682a50">More...</a><br/></td></tr>
 <tr class="separator:aa677f8c6b88fc537de6dab4ac4682a50"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a41b3ee24e608a163490a1a8082e714bc"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a41b3ee24e608a163490a1a8082e714bc"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>got</b> (QString username)</td></tr>
+<tr class="memitem:a41b3ee24e608a163490a1a8082e714bc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnicolive_1_1FetchUserName.html#a41b3ee24e608a163490a1a8082e714bc">got</a> (QString username)</td></tr>
+<tr class="memdesc:a41b3ee24e608a163490a1a8082e714bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">取得成功した場合にエミットされるシグナルです。  <a href="#a41b3ee24e608a163490a1a8082e714bc">More...</a><br/></td></tr>
 <tr class="separator:a41b3ee24e608a163490a1a8082e714bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:aa22982fe5c0da8c47deb18529821af0c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa22982fe5c0da8c47deb18529821af0c"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>FetchUserName</b> (QString userID, QObject *parent=0)</td></tr>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnicolive_1_1FetchUserName.html#aa22982fe5c0da8c47deb18529821af0c">FetchUserName</a> (QString userID, QObject *parent=0)</td></tr>
+<tr class="memdesc:aa22982fe5c0da8c47deb18529821af0c"><td class="mdescLeft">&#160;</td><td class="mdescRight">コンストラクタ <br/></td></tr>
 <tr class="separator:aa22982fe5c0da8c47deb18529821af0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a43555cfec68be9ec34a65eb5bf51e4ca"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a43555cfec68be9ec34a65eb5bf51e4ca"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>get</b> ()</td></tr>
+<tr class="memitem:a43555cfec68be9ec34a65eb5bf51e4ca"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnicolive_1_1FetchUserName.html#a43555cfec68be9ec34a65eb5bf51e4ca">get</a> ()</td></tr>
+<tr class="memdesc:a43555cfec68be9ec34a65eb5bf51e4ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">リクエストを発行します。  <a href="#a43555cfec68be9ec34a65eb5bf51e4ca">More...</a><br/></td></tr>
 <tr class="separator:a43555cfec68be9ec34a65eb5bf51e4ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classnicolive_1_1HttpGetter"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classnicolive_1_1HttpGetter')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classnicolive_1_1HttpGetter.html">nicolive::HttpGetter</a></td></tr>
 <tr class="memitem:a864845ebc811fdd3268fa7390ffe4f16 inherit pub_methods_classnicolive_1_1HttpGetter"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a864845ebc811fdd3268fa7390ffe4f16"></a>
@@ -146,6 +152,130 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>requestPost</b> (cons
 QNetworkAccessManager *&#160;</td><td class="memItemRight" valign="bottom"><b>mManager</b></td></tr>
 <tr class="separator:a6a0ffe3f773d31a8b5da82e6c072e8de inherit pro_attribs_classnicolive_1_1HttpGetter"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>ユーザIDからユーザ名を取得するクラス。 </p>
+<p>標準入力からユーザIDを受け取りユーザ名を表示する例。 </p>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &quot;testclass.h&quot;</span></div>
+<div class="line"></div>
+<div class="line">TestClass::TestClass(QObject *parent) : QObject(parent)</div>
+<div class="line">{</div>
+<div class="line">}</div>
+<div class="line"></div>
+<div class="line"><span class="keywordtype">void</span> TestClass::fetch()</div>
+<div class="line">{</div>
+<div class="line">  QTextStream qtin(stdin);</div>
+<div class="line">  QString userNum;</div>
+<div class="line"></div>
+<div class="line">  qDebug() &lt;&lt; <span class="stringliteral">&quot;input user ID : &quot;</span>;</div>
+<div class="line">  qtin &gt;&gt; userNum;</div>
+<div class="line"></div>
+<div class="line">  <span class="comment">// create fetcher and give user number that you want to know the name</span></div>
+<div class="line">  <a class="code" href="classnicolive_1_1FetchUserName.html">nicolive::FetchUserName</a>* nameFetcher = <span class="keyword">new</span> <a class="code" href="classnicolive_1_1FetchUserName.html">nicolive::FetchUserName</a>(userNum, <span class="keyword">this</span>);</div>
+<div class="line"></div>
+<div class="line">  <span class="comment">// API classes emit &quot;got&quot; signal.</span></div>
+<div class="line">  <span class="comment">// In this case, this lambda expression will receive.</span></div>
+<div class="line">  connect(nameFetcher, &amp;<a class="code" href="classnicolive_1_1FetchUserName.html#a41b3ee24e608a163490a1a8082e714bc">nicolive::FetchUserName::got</a>, <span class="keyword">this</span>, [](QString name){</div>
+<div class="line">    QTextStream out(stdout);</div>
+<div class="line">    out &lt;&lt; name &lt;&lt; endl;</div>
+<div class="line">    QCoreApplication::quit();</div>
+<div class="line">  });</div>
+<div class="line"></div>
+<div class="line">  <span class="comment">// if error occurred</span></div>
+<div class="line">  connect(nameFetcher, &amp;<a class="code" href="classnicolive_1_1FetchUserName.html#aa677f8c6b88fc537de6dab4ac4682a50">nicolive::FetchUserName::error</a>, <span class="keyword">this</span>,</div>
+<div class="line">          [](QString code, QString description){</div>
+<div class="line">    qDebug() &lt;&lt; <span class="stringliteral">&quot;error &quot;</span> &lt;&lt; code &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; description;</div>
+<div class="line">    QCoreApplication::quit();</div>
+<div class="line">  });</div>
+<div class="line">  <span class="comment">// An error signal may be emitted more than once.</span></div>
+<div class="line"></div>
+<div class="line">  <span class="comment">// Finally, need to call get method.</span></div>
+<div class="line">  nameFetcher-&gt;<a class="code" href="classnicolive_1_1FetchUserName.html#a43555cfec68be9ec34a65eb5bf51e4ca">get</a>();</div>
+<div class="line"></div>
+<div class="line">  <span class="comment">// An instance of most API classes will be deleted automatically.</span></div>
+<div class="line">}</div>
+</div><!-- fragment --> </div><h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="aa677f8c6b88fc537de6dab4ac4682a50"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void nicolive::FetchUserName::error </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>code</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>description</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>エラーになった場合にエミットされるシグナルです。 </p>
+<p>参考: <a class="el" href="classnicolive_1_1FetchUserName.html#a43555cfec68be9ec34a65eb5bf51e4ca" title="リクエストを発行します。 ">get()</a> </p>
+
+</div>
+</div>
+<a class="anchor" id="a43555cfec68be9ec34a65eb5bf51e4ca"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void nicolive::FetchUserName::get </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>リクエストを発行します。 </p>
+<p>取得後、Signalのgotまたはerrorをemitします。 </p>
+
+</div>
+</div>
+<a class="anchor" id="a41b3ee24e608a163490a1a8082e714bc"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void nicolive::FetchUserName::got </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>username</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>取得成功した場合にエミットされるシグナルです。 </p>
+<p>参考: <a class="el" href="classnicolive_1_1FetchUserName.html#a43555cfec68be9ec34a65eb5bf51e4ca" title="リクエストを発行します。 ">get()</a> </p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>nl/<a class="el" href="fetchusername_8h_source.html">fetchusername.h</a></li>
 <li>nl/fetchusername.cpp</li>
@@ -153,7 +283,7 @@ QNetworkAccessManager *&#160;</td><td class="memItemRight" valign="bottom"><b>mM
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Dec 2 2015 00:30:11 for QtNicoLiveLib by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Dec 2 2015 02:46:27 for QtNicoLiveLib by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

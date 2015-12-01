@@ -95,32 +95,39 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">namespace </span>nicolive {</div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div>
-<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="classnicolive_1_1FetchUserName.html">   10</a></span>&#160;<span class="keyword">class </span><a class="code" href="classnicolive_1_1FetchUserName.html">FetchUserName</a> : <span class="keyword">public</span> <a class="code" href="classnicolive_1_1HttpGetter.html">HttpGetter</a></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;{</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;  Q_OBJECT</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;  <span class="keyword">explicit</span> <a class="code" href="classnicolive_1_1FetchUserName.html">FetchUserName</a>(QString userID, QObject* parent = 0);</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;  ~<a class="code" href="classnicolive_1_1FetchUserName.html">FetchUserName</a>();</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;  <span class="keywordtype">void</span> <span class="keyword">get</span>();</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;  QString userID;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;  <span class="keywordtype">void</span> gotReply(QNetworkReply* reply) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;signals:</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  <span class="keywordtype">void</span> error(QString code, QString description);</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  <span class="keywordtype">void</span> got(QString username);</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="classnicolive_1_1FetchUserName.html">   16</a></span>&#160;<span class="keyword">class </span><a class="code" href="classnicolive_1_1FetchUserName.html">FetchUserName</a> : <span class="keyword">public</span> <a class="code" href="classnicolive_1_1HttpGetter.html">HttpGetter</a></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;{</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;  Q_OBJECT</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  <span class="keyword">explicit</span> <a class="code" href="classnicolive_1_1FetchUserName.html#aa22982fe5c0da8c47deb18529821af0c">FetchUserName</a>(QString userID, QObject* parent = 0);</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;};</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;}</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#endif // FETCHUSERNAME_H</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  <span class="keywordtype">void</span> <span class="keyword">get</span>();</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  QString userID;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  <span class="keywordtype">void</span> gotReply(QNetworkReply* reply) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;signals:</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classnicolive_1_1FetchUserName.html#aa677f8c6b88fc537de6dab4ac4682a50">error</a>(QString code, QString description);</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classnicolive_1_1FetchUserName.html#a41b3ee24e608a163490a1a8082e714bc">got</a>(QString username);</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;};</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;}</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor">#endif // FETCHUSERNAME_H</span></div>
+<div class="ttc" id="classnicolive_1_1FetchUserName_html_aa22982fe5c0da8c47deb18529821af0c"><div class="ttname"><a href="classnicolive_1_1FetchUserName.html#aa22982fe5c0da8c47deb18529821af0c">nicolive::FetchUserName::FetchUserName</a></div><div class="ttdeci">FetchUserName(QString userID, QObject *parent=0)</div><div class="ttdoc">コンストラクタ </div><div class="ttdef"><b>Definition:</b> fetchusername.cpp:5</div></div>
 <div class="ttc" id="classnicolive_1_1HttpGetter_html"><div class="ttname"><a href="classnicolive_1_1HttpGetter.html">nicolive::HttpGetter</a></div><div class="ttdef"><b>Definition:</b> httpgetter.h:11</div></div>
-<div class="ttc" id="classnicolive_1_1FetchUserName_html"><div class="ttname"><a href="classnicolive_1_1FetchUserName.html">nicolive::FetchUserName</a></div><div class="ttdef"><b>Definition:</b> fetchusername.h:10</div></div>
+<div class="ttc" id="classnicolive_1_1FetchUserName_html_a41b3ee24e608a163490a1a8082e714bc"><div class="ttname"><a href="classnicolive_1_1FetchUserName.html#a41b3ee24e608a163490a1a8082e714bc">nicolive::FetchUserName::got</a></div><div class="ttdeci">void got(QString username)</div><div class="ttdoc">取得成功した場合にエミットされるシグナルです。 </div></div>
+<div class="ttc" id="classnicolive_1_1FetchUserName_html_aa677f8c6b88fc537de6dab4ac4682a50"><div class="ttname"><a href="classnicolive_1_1FetchUserName.html#aa677f8c6b88fc537de6dab4ac4682a50">nicolive::FetchUserName::error</a></div><div class="ttdeci">void error(QString code, QString description)</div><div class="ttdoc">エラーになった場合にエミットされるシグナルです。 </div></div>
+<div class="ttc" id="classnicolive_1_1FetchUserName_html"><div class="ttname"><a href="classnicolive_1_1FetchUserName.html">nicolive::FetchUserName</a></div><div class="ttdoc">ユーザIDからユーザ名を取得するクラス。 </div><div class="ttdef"><b>Definition:</b> fetchusername.h:16</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Dec 2 2015 00:30:11 for QtNicoLiveLib by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Dec 2 2015 02:46:27 for QtNicoLiveLib by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

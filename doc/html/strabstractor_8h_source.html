@@ -98,29 +98,42 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    Q_OBJECT</div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">public</span>:</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;  <span class="keyword">explicit</span> <a class="code" href="classnicolive_1_1StrAbstractor.html">StrAbstractor</a>(<span class="keyword">const</span> QString&amp; doc, QObject* parent = 0);</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;  QString midStr(<span class="keyword">const</span> QString&amp; start, <span class="keyword">const</span> QString&amp; end, <span class="keywordtype">bool</span> foward = <span class="keyword">true</span>);</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;  <a class="code" href="classnicolive_1_1StrAbstractor.html">StrAbstractor</a>* mid(<span class="keyword">const</span> QString&amp; start, <span class="keyword">const</span> QString&amp; end, <span class="keywordtype">bool</span> foward = <span class="keyword">true</span>);</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;  <span class="keywordtype">int</span> forward(<span class="keyword">const</span> QString&amp; st);</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keywordtype">void</span> setPosition(<span class="keywordtype">int</span> po);</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;  <span class="keywordtype">void</span> setRelativePosition(<span class="keywordtype">int</span> pos);</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;  <span class="keywordtype">int</span> getPosition();</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;  QString toString();</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keywordtype">int</span> pos;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;  QString doc;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;};</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;}</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#endif // STRABSTRACTOR_H</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  QString <a class="code" href="classnicolive_1_1StrAbstractor.html#a4fa91e1225c3a095ef0964946adefdf5">midStr</a>(<span class="keyword">const</span> QString&amp; start, <span class="keyword">const</span> QString&amp; end, <span class="keywordtype">bool</span> foward = <span class="keyword">true</span>);</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  <a class="code" href="classnicolive_1_1StrAbstractor.html">StrAbstractor</a>* <a class="code" href="classnicolive_1_1StrAbstractor.html#ae39bd2cc1fa6e68c68c1c8707c471c00">mid</a>(<span class="keyword">const</span> QString&amp; start, <span class="keyword">const</span> QString&amp; end, <span class="keywordtype">bool</span> foward = <span class="keyword">true</span>);</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  <span class="keywordtype">int</span> <a class="code" href="classnicolive_1_1StrAbstractor.html#a390b6155d319d42ce3cfb19a60369e05">forward</a>(<span class="keyword">const</span> QString&amp; st);</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classnicolive_1_1StrAbstractor.html#a722a9c2b4b5de3ee368c1aaf83d577e5">setPosition</a>(<span class="keywordtype">int</span> po);</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classnicolive_1_1StrAbstractor.html#a53042b4a9372e6439aa6d038b4be12be">setRelativePosition</a>(<span class="keywordtype">int</span> pos);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  <span class="keywordtype">int</span> <a class="code" href="classnicolive_1_1StrAbstractor.html#a51250247eeaf10e58d8c07ae8583bbf0">getPosition</a>();</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  QString <a class="code" href="classnicolive_1_1StrAbstractor.html#a2f760cdc5e7673f7a2b51de730630fb8">toString</a>();</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordtype">int</span> pos;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  QString doc;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;};</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;}</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="preprocessor">#endif // STRABSTRACTOR_H</span></div>
+<div class="ttc" id="classnicolive_1_1StrAbstractor_html_a51250247eeaf10e58d8c07ae8583bbf0"><div class="ttname"><a href="classnicolive_1_1StrAbstractor.html#a51250247eeaf10e58d8c07ae8583bbf0">nicolive::StrAbstractor::getPosition</a></div><div class="ttdeci">int getPosition()</div><div class="ttdoc">Return position searches starts from. </div><div class="ttdef"><b>Definition:</b> strabstractor.cpp:57</div></div>
+<div class="ttc" id="classnicolive_1_1StrAbstractor_html_a2f760cdc5e7673f7a2b51de730630fb8"><div class="ttname"><a href="classnicolive_1_1StrAbstractor.html#a2f760cdc5e7673f7a2b51de730630fb8">nicolive::StrAbstractor::toString</a></div><div class="ttdeci">QString toString()</div><div class="ttdoc">Return whole document. </div><div class="ttdef"><b>Definition:</b> strabstractor.cpp:62</div></div>
+<div class="ttc" id="classnicolive_1_1StrAbstractor_html_ae39bd2cc1fa6e68c68c1c8707c471c00"><div class="ttname"><a href="classnicolive_1_1StrAbstractor.html#ae39bd2cc1fa6e68c68c1c8707c471c00">nicolive::StrAbstractor::mid</a></div><div class="ttdeci">StrAbstractor * mid(const QString &amp;start, const QString &amp;end, bool foward=true)</div><div class="ttdoc">Return the pointer to new nicolive::StrAbstractor which contains the substring found by midStr...</div><div class="ttdef"><b>Definition:</b> strabstractor.cpp:32</div></div>
 <div class="ttc" id="classnicolive_1_1StrAbstractor_html"><div class="ttname"><a href="classnicolive_1_1StrAbstractor.html">nicolive::StrAbstractor</a></div><div class="ttdef"><b>Definition:</b> strabstractor.h:8</div></div>
+<div class="ttc" id="classnicolive_1_1StrAbstractor_html_a53042b4a9372e6439aa6d038b4be12be"><div class="ttname"><a href="classnicolive_1_1StrAbstractor.html#a53042b4a9372e6439aa6d038b4be12be">nicolive::StrAbstractor::setRelativePosition</a></div><div class="ttdeci">void setRelativePosition(int pos)</div><div class="ttdoc">Relative version of setPosition() </div><div class="ttdef"><b>Definition:</b> strabstractor.cpp:52</div></div>
+<div class="ttc" id="classnicolive_1_1StrAbstractor_html_a722a9c2b4b5de3ee368c1aaf83d577e5"><div class="ttname"><a href="classnicolive_1_1StrAbstractor.html#a722a9c2b4b5de3ee368c1aaf83d577e5">nicolive::StrAbstractor::setPosition</a></div><div class="ttdeci">void setPosition(int po)</div><div class="ttdoc">Set current position, midStr searches from here, to &quot;pos&quot;. </div><div class="ttdef"><b>Definition:</b> strabstractor.cpp:48</div></div>
+<div class="ttc" id="classnicolive_1_1StrAbstractor_html_a4fa91e1225c3a095ef0964946adefdf5"><div class="ttname"><a href="classnicolive_1_1StrAbstractor.html#a4fa91e1225c3a095ef0964946adefdf5">nicolive::StrAbstractor::midStr</a></div><div class="ttdeci">QString midStr(const QString &amp;start, const QString &amp;end, bool foward=true)</div><div class="ttdoc">Return the QString between &quot;start&quot; and &quot;end&quot;. </div><div class="ttdef"><b>Definition:</b> strabstractor.cpp:12</div></div>
+<div class="ttc" id="classnicolive_1_1StrAbstractor_html_a390b6155d319d42ce3cfb19a60369e05"><div class="ttname"><a href="classnicolive_1_1StrAbstractor.html#a390b6155d319d42ce3cfb19a60369e05">nicolive::StrAbstractor::forward</a></div><div class="ttdeci">int forward(const QString &amp;st)</div><div class="ttdoc">forward position to the position that st found. </div><div class="ttdef"><b>Definition:</b> strabstractor.cpp:39</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Dec 1 2015 23:32:08 for QtNicoLiveLib by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Dec 2 2015 00:30:11 for QtNicoLiveLib by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

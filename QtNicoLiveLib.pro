@@ -23,7 +23,8 @@ SOURCES += nl/fetchusername.cpp \
     nl/getplayerstatus.cpp \
     nl/commentconnection.cpp \
     nl/extendinfo.cpp \
-    nl/extend.cpp
+    nl/extend.cpp \
+    nl/livetag.cpp
 
 HEADERS += nl/fetchusername.h \
     nl/httpgetter.h \
@@ -35,7 +36,8 @@ HEADERS += nl/fetchusername.h \
     nl/getplayerstatus.h \
     nl/commentconnection.h \
     nl/extendinfo.h \
-    nl/extend.h
+    nl/extend.h \
+    nl/livetag.h
 
 unix {
     target.path = /usr/lib

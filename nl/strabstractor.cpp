@@ -9,11 +9,6 @@ StrAbstractor::StrAbstractor(const QString& doc, QObject* parent) :
   this->doc = doc;
 }
 
-// Returns the QString between "start" and "end".
-// Returns null QString if any matched substring are not found.
-// Set current position to the next one of "end" found if foward is true (default).
-// if start is empty string, the returned value starts from begining of doc.
-// if end do so, it ends the end of the doc.
 QString StrAbstractor::midStr(const QString& start, const QString& end, bool foward)
 {
   int st;
@@ -34,7 +29,6 @@ QString StrAbstractor::midStr(const QString& start, const QString& end, bool fow
   return doc.mid(st, ed-st);
 }
 
-// returns the pointer to new nicolive::StrAbstractor which contains the substring found by midStr.
 StrAbstractor* nicolive::StrAbstractor::mid(const QString& start, const QString& end, bool foward)
 {
   QString tmp = midStr(start, end, foward);
@@ -42,8 +36,6 @@ StrAbstractor* nicolive::StrAbstractor::mid(const QString& start, const QString&
   else return new nicolive::StrAbstractor(tmp, this);
 }
 
-// forward position to the position that st found.
-// return -1 if no st found, otherwise return the position that st found.
 int StrAbstractor::forward(const QString& st)
 {
   int po = doc.indexOf(st,pos);
@@ -53,7 +45,6 @@ int StrAbstractor::forward(const QString& st)
   return po;
 }
 
-// Set current position, midStr searches from here, to "pos".
 void StrAbstractor::setPosition(int pos)
 {
   this->pos = pos;

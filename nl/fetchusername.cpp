@@ -7,10 +7,6 @@ FetchUserName::FetchUserName(QString userID, QObject* parent) : HttpGetter(paren
   this->userID = userID;
 }
 
-FetchUserName::~FetchUserName()
-{
-}
-
 void FetchUserName::get()
 {
   // make request

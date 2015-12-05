@@ -27,7 +27,10 @@ CommentConnection::~CommentConnection()
 void CommentConnection::doConnect()
 {
   const QString& addr = livewaku->getAddr();
-  const uint port = livewaku->getPort().toUInt();
+  const qint16& port = livewaku->getPort();
+  if (addr.isEmpty()) {
+    emit error("doConnect", "livewaku don't have information to connect");
+  }
   socket->connectToHost(addr, port);
 
   if(!socket->waitForConnected(5000)) {
@@ -106,15 +109,18 @@ void CommentConnection::disconnected()
 
 void CommentConnection::readyRead()
 {
-  QList<QByteArray> rawcomms( socket->readAll().split('\0') );
-  rawcomms[0].insert(0, lastRawComm);
+  const QList<QByteArray>& rawcomms( socket->readAll().split('\0') );
+  if (lastRawComm.isEmpty()) return;
 
-  for ( int i = 0; i < rawcomms.size()-1; ++i) {
-    const QString tst(rawcomms[i]);
-    readOneRawComment(tst);
+  if (rawcomms.size() > 1) {
+    emit readOneRawComment(lastRawComm + rawcomms[0]);
+    for ( int i = 1; i < rawcomms.size()-1; ++i) {
+      const QString tst(rawcomms[i]);
+      emit readOneRawComment(tst);
+    }
   }
 
-  lastRawComm = rawcomms.takeLast();
+  lastRawComm = rawcomms.last();
 }
 
 void CommentConnection::readOneRawComment(const QString& rawcomm)

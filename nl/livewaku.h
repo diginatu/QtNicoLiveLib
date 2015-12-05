@@ -41,7 +41,7 @@ public:
 
   QString getAddr() const;
   QString getThread() const;
-  QString getPort() const;
+  qint16 getPort() const;
 
   bool getOwnerBroad() const;
   void setOwnerBroad(bool value);
@@ -69,7 +69,8 @@ private:
 
   QString postKey;
 
-  QString addr, thread, port;
+  QString addr, thread;
+  qint16 port;
 
   bool ownerBroad;
   QString ownerCommentToken;

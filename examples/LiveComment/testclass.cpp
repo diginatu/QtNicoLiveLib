@@ -34,10 +34,12 @@ void TestClass::fetch()
     QCoreApplication::quit();
   });
 
+  // connection that recieving a comment
   connect(connection, &nicolive::CommentConnection::newComment,
           this, [](int num, bool premium, QString userID, QString comment,
                   QDateTime commentTime, bool iyayo, bool broadcaster){
     (void)premium, (void)userID, (void)commentTime, (void)iyayo, (void)broadcaster;
+
     QTextStream out(stdout);
     out << num << " " << comment << endl;
   });

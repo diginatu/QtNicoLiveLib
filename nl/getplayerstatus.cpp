@@ -44,7 +44,7 @@ void GetPlayerStatus::gotReply(QNetworkReply* reply)
   bool isPremium = commTcpi.midStr("<is_premium>", "</is_premium>")!="0";
 
   QString addr = commTcpi.midStr("<addr>", "</addr>");
-  QString port = commTcpi.midStr("<port>", "</port>");
+  qint16 port = commTcpi.midStr("<port>", "</port>").toInt();
   QString thread = commTcpi.midStr("<thread>", "</thread>");
 
   emit got(broadID, title, communityID, ownerID, ownerName, stTime, edTime,

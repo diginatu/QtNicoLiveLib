@@ -8,6 +8,13 @@
 
 namespace nicolive {
 
+//! APIを取得するのに使用されている抽象クラス。
+/*!
+ * requestGetまたはrequestPostが呼ばれた後、
+ * gotReplyがemitされその後本クラスはdeleteされる。
+ * そのため、本クラスの抽象クラスはnewして作成されるべきである。
+ */
+
 class HttpGetter : public QObject
 {
   Q_OBJECT

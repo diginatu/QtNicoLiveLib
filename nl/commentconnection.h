@@ -10,19 +10,31 @@
 
 namespace nicolive {
 
+//! ニコ生のコメント受信を行うクラス。
+
 class CommentConnection : public QObject
 {
   Q_OBJECT
 public:
+  //! コンストラクタ
   explicit CommentConnection(LiveWaku* livewaku,
                              const QString& userSession, QObject *parent = 0);
   ~CommentConnection();
 
+  //! 接続した後はconnectionStarted(), connectionClosed(), newComment()がemitされます。
   void doConnect();
+  //! 接続を切断します。
   void close();
-  void sendComment(QString text, bool iyayo);
+  //! 通常のコメントを送信します。
+  /*!
+   * \arg iyayo 184コメント
+   */
+  void sendComment(QString text, bool iyayo = false);
 
+  //! 接続開始した時刻を返します。
   QDateTime getOpenTime() const;
+  //! 接続されているかどうかをboolで返します。
+  bool isConnected();
 
 private:
   QTcpSocket* socket;
@@ -48,7 +60,6 @@ public slots:
   void disconnected();
   void readyRead();
   void readOneRawComment(const QString& rawcomm);
-  bool isConnected();
 
 private slots:
   void sendNull();

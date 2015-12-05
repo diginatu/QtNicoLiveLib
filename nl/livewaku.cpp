@@ -33,7 +33,7 @@ QString LiveWaku::getPostKey() const { return postKey; }
 
 QString LiveWaku::getAddr() const { return addr; }
 QString LiveWaku::getThread() const { return thread; }
-QString LiveWaku::getPort() const { return port; }
+qint16 LiveWaku::getPort() const { return port; }
 
 bool LiveWaku::getOwnerBroad() const { return ownerBroad; }
 void LiveWaku::setOwnerBroad(bool value) { ownerBroad = value; }
@@ -55,7 +55,7 @@ void LiveWaku::getInformation(const QString& userSession)
   connect(gt, &GetPlayerStatus::got, this, [&](QString broadID, QString title,
           QString communityID, QString ownerID, QString ownerName, uint stTime,
           uint edTime, QString broadcastToken, QString userID, bool isPremium,
-          QString  addr, QString port, QString thread)
+          QString  addr, qint16 port, QString thread)
   {
     this->broadID = broadID;
     this->title = title;

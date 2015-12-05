@@ -24,7 +24,7 @@ public:
    * 取得後、Signalのgotまたはerrorをemitします。
    * ExtendInfo でリストが取得できます。
    */
-  void get(const ExtendInfo::ExtendItem& extendItem, const QString& broadcastToken,
+  void get(const ExtendItem& extendItem, const QString& broadcastToken,
            const QString& userSession);
 private:
   void gotReply(QNetworkReply* reply) override;

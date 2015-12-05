@@ -5,6 +5,7 @@
 
 namespace nicolive {
 
+//! Class for abstract keywords from a string (Internal Class)
 class StrAbstractor : public QObject
 {
 	Q_OBJECT

@@ -6,7 +6,7 @@ Extend::Extend(QObject *parent) : HttpGetter(parent)
 {
 }
 
-void Extend::get(const ExtendInfo::ExtendItem& extendItem, const QString& broadcastToken,
+void Extend::get(const ExtendItem& extendItem, const QString& broadcastToken,
                  const QString& userSession)
 {
   QNetworkRequest rq;

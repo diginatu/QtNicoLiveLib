@@ -7,6 +7,9 @@
 
 namespace nicolive {
 
+//! ニコ生APIで取得される延長情報に放送IDを追加した延長項目を保持するクラス。
+struct ExtendItem { QString label, price, num, code, item, broadID; };
+
 //! ニコ生放送の延長情報を取得するクラス。
 
 class ExtendInfo : public HttpGetter
@@ -15,9 +18,6 @@ class ExtendInfo : public HttpGetter
 public:
   //! コンストラクタ
   explicit ExtendInfo(QObject* parent = 0);
-
-  //! ニコ生APIで取得される延長情報に放送IDを追加した延長項目のクラス。
-  struct ExtendItem { QString label, price, num, code, item, broadID; };
 
   //! リクエストを発行します。
   /*! 取得後、Signalのgotまたはerrorをemitします。 */

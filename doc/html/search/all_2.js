@@ -5,5 +5,5 @@ var searchData=
   ['extend',['Extend',['../classnicolive_1_1Extend.html#af42e9d17f24576950d61b8cc44fc6045',1,'nicolive::Extend']]],
   ['extendinfo',['ExtendInfo',['../classnicolive_1_1ExtendInfo.html',1,'nicolive']]],
   ['extendinfo',['ExtendInfo',['../classnicolive_1_1ExtendInfo.html#a16d9dc2b59522f7f5e8f260dc842b32a',1,'nicolive::ExtendInfo']]],
-  ['extenditem',['ExtendItem',['../structnicolive_1_1ExtendInfo_1_1ExtendItem.html',1,'nicolive::ExtendInfo']]]
+  ['extenditem',['ExtendItem',['../structnicolive_1_1ExtendItem.html',1,'nicolive']]]
 ];

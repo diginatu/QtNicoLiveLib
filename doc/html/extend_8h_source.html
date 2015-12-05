@@ -105,7 +105,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;  <span class="keyword">explicit</span> <a class="code" href="classnicolive_1_1Extend.html#af42e9d17f24576950d61b8cc44fc6045">Extend</a>(QObject *parent = 0);</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  <span class="keywordtype">void</span> <span class="keyword">get</span>(<span class="keyword">const</span> <a class="code" href="structnicolive_1_1ExtendInfo_1_1ExtendItem.html">ExtendInfo::ExtendItem</a>&amp; extendItem, <span class="keyword">const</span> QString&amp; broadcastToken,</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  <span class="keywordtype">void</span> <span class="keyword">get</span>(<span class="keyword">const</span> <a class="code" href="structnicolive_1_1ExtendItem.html">ExtendItem</a>&amp; extendItem, <span class="keyword">const</span> QString&amp; broadcastToken,</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;           <span class="keyword">const</span> QString&amp; userSession);</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keyword">private</span>:</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  <span class="keywordtype">void</span> gotReply(QNetworkReply* reply) <span class="keyword">override</span>;</div>
@@ -122,14 +122,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">#endif // EXTEND_H</span></div>
 <div class="ttc" id="classnicolive_1_1HttpGetter_html"><div class="ttname"><a href="classnicolive_1_1HttpGetter.html">nicolive::HttpGetter</a></div><div class="ttdef"><b>Definition:</b> httpgetter.h:11</div></div>
 <div class="ttc" id="classnicolive_1_1Extend_html"><div class="ttname"><a href="classnicolive_1_1Extend.html">nicolive::Extend</a></div><div class="ttdoc">ニコ生放送の延長を実行するクラス。 </div><div class="ttdef"><b>Definition:</b> extend.h:15</div></div>
+<div class="ttc" id="structnicolive_1_1ExtendItem_html"><div class="ttname"><a href="structnicolive_1_1ExtendItem.html">nicolive::ExtendItem</a></div><div class="ttdoc">ニコ生APIで取得される延長情報に放送IDを追加した延長項目を保持するクラス。 </div><div class="ttdef"><b>Definition:</b> extendinfo.h:11</div></div>
 <div class="ttc" id="classnicolive_1_1Extend_html_a81ea52b9c062ebb3e72797fbd9853010"><div class="ttname"><a href="classnicolive_1_1Extend.html#a81ea52b9c062ebb3e72797fbd9853010">nicolive::Extend::got</a></div><div class="ttdeci">void got()</div><div class="ttdoc">取得成功した場合にエミットされるシグナルです。 </div></div>
 <div class="ttc" id="classnicolive_1_1Extend_html_a47e9f9fb957b00482db73f2a255bec3e"><div class="ttname"><a href="classnicolive_1_1Extend.html#a47e9f9fb957b00482db73f2a255bec3e">nicolive::Extend::error</a></div><div class="ttdeci">void error(QString code, QString description)</div><div class="ttdoc">エラーになった場合にエミットされるシグナルです。 </div></div>
 <div class="ttc" id="classnicolive_1_1Extend_html_af42e9d17f24576950d61b8cc44fc6045"><div class="ttname"><a href="classnicolive_1_1Extend.html#af42e9d17f24576950d61b8cc44fc6045">nicolive::Extend::Extend</a></div><div class="ttdeci">Extend(QObject *parent=0)</div><div class="ttdoc">コンストラクタ </div><div class="ttdef"><b>Definition:</b> extend.cpp:5</div></div>
-<div class="ttc" id="structnicolive_1_1ExtendInfo_1_1ExtendItem_html"><div class="ttname"><a href="structnicolive_1_1ExtendInfo_1_1ExtendItem.html">nicolive::ExtendInfo::ExtendItem</a></div><div class="ttdoc">ニコ生APIで取得される延長情報に放送IDを追加した延長項目のクラス。 </div><div class="ttdef"><b>Definition:</b> extendinfo.h:20</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Dec 5 2015 17:58:57 for QtNicoLiveLib by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Dec 5 2015 19:11:37 for QtNicoLiveLib by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

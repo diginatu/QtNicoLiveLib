@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['tostring',['toString',['../classnicolive_1_1StrAbstractor.html#a2f760cdc5e7673f7a2b51de730630fb8',1,'nicolive::StrAbstractor']]]
+  ['setposition',['setPosition',['../classnicolive_1_1StrAbstractor.html#a722a9c2b4b5de3ee368c1aaf83d577e5',1,'nicolive::StrAbstractor']]],
+  ['setrelativeposition',['setRelativePosition',['../classnicolive_1_1StrAbstractor.html#a53042b4a9372e6439aa6d038b4be12be',1,'nicolive::StrAbstractor']]],
+  ['strabstractor',['StrAbstractor',['../classnicolive_1_1StrAbstractor.html',1,'nicolive']]]
 ];

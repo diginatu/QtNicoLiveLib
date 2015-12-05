@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['setposition',['setPosition',['../classnicolive_1_1StrAbstractor.html#a722a9c2b4b5de3ee368c1aaf83d577e5',1,'nicolive::StrAbstractor']]],
-  ['setrelativeposition',['setRelativePosition',['../classnicolive_1_1StrAbstractor.html#a53042b4a9372e6439aa6d038b4be12be',1,'nicolive::StrAbstractor']]]
+  ['mid',['mid',['../classnicolive_1_1StrAbstractor.html#ae39bd2cc1fa6e68c68c1c8707c471c00',1,'nicolive::StrAbstractor']]],
+  ['midstr',['midStr',['../classnicolive_1_1StrAbstractor.html#a4fa91e1225c3a095ef0964946adefdf5',1,'nicolive::StrAbstractor']]]
 ];

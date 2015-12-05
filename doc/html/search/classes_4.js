@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['httpgetter',['HttpGetter',['../classnicolive_1_1HttpGetter.html',1,'nicolive']]]
+  ['getcommpostkey',['GetCommPostKey',['../classnicolive_1_1GetCommPostKey.html',1,'nicolive']]],
+  ['getplayerstatus',['GetPlayerStatus',['../classnicolive_1_1GetPlayerStatus.html',1,'nicolive']]]
 ];

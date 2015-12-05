@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['commentconnection',['CommentConnection',['../classnicolive_1_1CommentConnection.html',1,'nicolive']]]
+  ['alertadmin',['AlertAdmin',['../classnicolive_1_1AlertAdmin.html',1,'nicolive']]],
+  ['alertlogin',['AlertLogin',['../classnicolive_1_1AlertLogin.html',1,'nicolive']]]
 ];

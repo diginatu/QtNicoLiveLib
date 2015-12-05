@@ -1,0 +1,39 @@
+﻿#ifndef ALERTLOGIN_H
+#define ALERTLOGIN_H
+
+#include <QObject>
+#include <QUrlQuery>
+#include "httpgetter.h"
+#include "strabstractor.h"
+
+namespace nicolive {
+
+//! ニコ生アラートのログインをしてチケットを取得します
+
+class AlertLogin : public HttpGetter
+{
+  Q_OBJECT
+public:
+  //! コンストラクタ
+  explicit AlertLogin(QObject *parent = 0);
+
+  //! リクエストを発行します。
+  /*!
+   * 取得後、Signalのgotまたはerrorをemitします。
+   */
+  void get(const QString& mailAddress, const QString& password);
+private:
+  void gotReply(QNetworkReply* reply) override;
+signals:
+  //! エラーになった場合にエミットされるシグナルです。
+  /*! 参考: get() */
+  void error(QString code, QString description);
+
+  //! 取得成功した場合にエミットされるシグナルです。
+  /*! 参考: get() */
+  void got(QString ticket);
+};
+
+}
+
+#endif // ALERTLOGIN_H

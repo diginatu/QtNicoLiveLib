@@ -41,7 +41,7 @@ QString LiveWaku::getOwnerCommentToken() const { return ownerCommentToken; }
 
 
 
-void LiveWaku::getInformation(const QString& userSession)
+void LiveWaku::fetchInformation(const QString& userSession)
 {
   if (broadID.isEmpty()) {
     qDebug() << "LiveWaku::getInformation : broadID not set";
@@ -74,6 +74,19 @@ void LiveWaku::getInformation(const QString& userSession)
     emit gotInfornation();
   });
   gt->get();
+}
+
+void LiveWaku::fetchPostKey(int lastBlockNum, const QString& userSession)
+{
+    auto gt = new nicolive::GetCommPostKey(thread, lastBlockNum, userSession, this);
+    connect(gt, &nicolive::GetCommPostKey::error, this, [=](){
+      emit gotPostKeyError();
+    });
+    connect(gt, &nicolive::GetCommPostKey::got, this, [=](QString postKey){
+      this->postKey = postKey;
+      emit gotPostKey();
+    });
+    gt->get();
 }
 
 }

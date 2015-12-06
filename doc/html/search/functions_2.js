@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['fetchusername',['FetchUserName',['../classnicolive_1_1FetchUserName.html#aa22982fe5c0da8c47deb18529821af0c',1,'nicolive::FetchUserName']]],
-  ['forward',['forward',['../classnicolive_1_1StrAbstractor.html#a390b6155d319d42ce3cfb19a60369e05',1,'nicolive::StrAbstractor']]]
+  ['doconnect',['doConnect',['../classnicolive_1_1CommentConnection.html#a4562e16f7f915dc70d8b392c75ab500f',1,'nicolive::CommentConnection']]]
 ];

@@ -6,6 +6,7 @@
 #include <QDebug>
 
 #include "getplayerstatus.h"
+#include "getcommpostkey.h"
 
 namespace nicolive {
 
@@ -48,11 +49,15 @@ public:
   QString getOwnerCommentToken() const;
 
 
-  void getInformation(const QString& userSession);
+  void fetchInformation(const QString& userSession);
+  void fetchPostKey(int lastBlockNum, const QString& userSession);
 
 signals:
   void gotInfornationError(QString code);
   void gotInfornation();
+
+  void gotPostKeyError();
+  void gotPostKey();
 
 private:
   QString title;

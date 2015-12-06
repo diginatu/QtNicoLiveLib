@@ -11,6 +11,13 @@
 namespace nicolive {
 
 //! ニコ生のコメント受信を行うクラス。
+/*!
+ * コネクションの保持のためのNULL送信や、
+ * コメント送信のためのポストキー取得が自動で行われます。
+ *
+ * LiveWaku を作成しコメント受信を行う例
+ * \include LiveComment/testclass.cpp
+ */
 
 class CommentConnection : public QObject
 {
@@ -21,13 +28,14 @@ public:
                              const QString& userSession, QObject *parent = 0);
   ~CommentConnection();
 
-  //! 接続した後はconnectionStarted(), connectionClosed(), newComment()がemitされます。
+  //! 接続した後は connectionStarted(), connectionClosed(), newComment()
+  //! がemitされます。
   void doConnect();
   //! 接続を切断します。
   void close();
   //! 通常のコメントを送信します。
   /*!
-   * \arg iyayo 184コメント
+   * \param iyayo 184コメント
    */
   void sendComment(QString text, bool iyayo = false);
 
@@ -41,29 +49,34 @@ private:
   nicolive::LiveWaku* livewaku;
   QTimer nullDataTimer, postkeyTimer;
   int lastBlockNum;
-  QString postKey;
   QByteArray lastRawComm;
   QString userSession;
   QString ticket;
   QDateTime openTime, serverTime;
 
 signals:
+  //! エラーになった場合にエミットされるシグナル。
+  /*!
+   * \param errorPosition エラー箇所、関数名
+   * \param code エラーメッセージ
+   */
   void error(QString errorPosition, QString code);
+  //! 接続が開始した時にエミットされるシグナル。
   void connectionStarted();
+  //! 接続が切断した時にエミットされるシグナル。
   void connectionClosed();
+  //! コメントの送信が完了した時にエミットされるシグナル。
   void submittedComment();
+  //! コメントを一つ受信した時にエミットされるシグナル。
   void newComment(int num, bool premium, QString userID, QString comment,
                   QDateTime commentTime, bool iyayo, bool broadcaster);
 
-public slots:
+private slots:
+  void sendNull();
   void connected();
   void disconnected();
   void readyRead();
   void readOneRawComment(const QString& rawcomm);
-
-private slots:
-  void sendNull();
-  void getPostKey(QString userSession);
 };
 
 }

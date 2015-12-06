@@ -16,7 +16,9 @@ CommentConnection::CommentConnection(LiveWaku* livewaku,
   connect(socket, SIGNAL(readyRead()),this, SLOT(readyRead()));
 
   connect(&nullDataTimer, SIGNAL(timeout()), this, SLOT(sendNull()));
-  connect(&postkeyTimer, SIGNAL(timeout()), this, SLOT(getPostKey()));
+  connect(&postkeyTimer, &QTimer::timeout, this, [=](){
+    livewaku->fetchPostKey(lastBlockNum, userSession);
+  });
 }
 
 CommentConnection::~CommentConnection()
@@ -50,9 +52,9 @@ void CommentConnection::sendComment(QString text, bool iyayo)
   const auto startTime = livewaku->getStTime().toTime_t();
   const auto nowTime = QDateTime::currentDateTime();
 
-  QString postkey = livewaku->getPostKey();
+  const QString& postkey = livewaku->getPostKey();
   if (postkey.isEmpty()) {
-    emit error("sendComment", "no postKey");
+    emit error("sendComment", "no postKey in livewaku");
     return;
   }
 
@@ -135,11 +137,7 @@ void CommentConnection::readOneRawComment(const QString& rawcomm)
     ticket = rawcommabs.midStr("ticket=\"", "\"", false);
     serverTime.setTime_t(rawcommabs.midStr("server_time=\"", "\"", false).toUInt());
 
-    auto ag = new nicolive::GetCommPostKey(livewaku->getThread(), lastBlockNum, userSession, this);
-    connect(ag, &nicolive::GetCommPostKey::got, this, [&](QString postKey){
-      this->postKey = postKey;
-    });
-    ag->get();
+    livewaku->fetchPostKey(lastBlockNum, userSession);
 
     // set timer to get post_key
     postkeyTimer.start(10000);
@@ -170,11 +168,7 @@ void CommentConnection::readOneRawComment(const QString& rawcomm)
   if (block > lastBlockNum) {
     lastBlockNum = block;
 
-    auto ag = new nicolive::GetCommPostKey(livewaku->getThread(), block, userSession, this);
-    connect(ag, &nicolive::GetCommPostKey::got, this, [&](QString postKey){
-      this->postKey = postKey;
-    });
-    ag->get();
+    livewaku->fetchPostKey(lastBlockNum, userSession);
   }
 
   QDateTime commentTime;
@@ -215,16 +209,6 @@ void CommentConnection::sendNull()
     socket->close();
     doConnect();
   }
-}
-
-void CommentConnection::getPostKey(QString userSession)
-{
-  auto ag = new nicolive::GetCommPostKey(livewaku->getThread(), lastBlockNum,
-                                     userSession, this);
-  connect(ag, &nicolive::GetCommPostKey::got, this, [&](QString postKey){
-    this->postKey = postKey;
-  });
-  ag->get();
 }
 
 }

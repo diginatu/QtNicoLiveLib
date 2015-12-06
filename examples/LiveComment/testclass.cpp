@@ -50,5 +50,5 @@ void TestClass::fetch()
   });
 
   // Finally, call PlayerStatus internally and get information in it
-  livewaku->getInformation(userSession);
+  livewaku->fetchInformation(userSession);
 }

@@ -110,6 +110,12 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>gotInfornationError</
 <tr class="memitem:a6e80912cb46939f5e779c1d364e8ff01"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6e80912cb46939f5e779c1d364e8ff01"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>gotInfornation</b> ()</td></tr>
 <tr class="separator:a6e80912cb46939f5e779c1d364e8ff01"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a296bd80d0765f77a74961b4aec4acee5"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a296bd80d0765f77a74961b4aec4acee5"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>gotPostKeyError</b> ()</td></tr>
+<tr class="separator:a296bd80d0765f77a74961b4aec4acee5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab461603032fda5bc9eb57a2c34262bee"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab461603032fda5bc9eb57a2c34262bee"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>gotPostKey</b> ()</td></tr>
+<tr class="separator:ab461603032fda5bc9eb57a2c34262bee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -176,9 +182,9 @@ QString&#160;</td><td class="memItemRight" valign="bottom"><b>getAddr</b> () con
 <tr class="memitem:a8277048ee948dadc6174351c52251ba4"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8277048ee948dadc6174351c52251ba4"></a>
 QString&#160;</td><td class="memItemRight" valign="bottom"><b>getThread</b> () const </td></tr>
 <tr class="separator:a8277048ee948dadc6174351c52251ba4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a481a092b8ba6dbbbac9d582644aa4ad4"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a481a092b8ba6dbbbac9d582644aa4ad4"></a>
-QString&#160;</td><td class="memItemRight" valign="bottom"><b>getPort</b> () const </td></tr>
-<tr class="separator:a481a092b8ba6dbbbac9d582644aa4ad4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a12c7d0201a6078c661ef4b9b5f1597a1"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a12c7d0201a6078c661ef4b9b5f1597a1"></a>
+qint16&#160;</td><td class="memItemRight" valign="bottom"><b>getPort</b> () const </td></tr>
+<tr class="separator:a12c7d0201a6078c661ef4b9b5f1597a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7008df311a380ef5770d668709e3f0fc"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7008df311a380ef5770d668709e3f0fc"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>getOwnerBroad</b> () const </td></tr>
 <tr class="separator:a7008df311a380ef5770d668709e3f0fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -188,9 +194,12 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>setOwnerBroad</b> (bo
 <tr class="memitem:ae1e928bc70b03fd642a3584773fa3481"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae1e928bc70b03fd642a3584773fa3481"></a>
 QString&#160;</td><td class="memItemRight" valign="bottom"><b>getOwnerCommentToken</b> () const </td></tr>
 <tr class="separator:ae1e928bc70b03fd642a3584773fa3481"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a84d198b681b01c3ae4f6eb1d4bed8869"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a84d198b681b01c3ae4f6eb1d4bed8869"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>getInformation</b> (const QString &amp;userSession)</td></tr>
-<tr class="separator:a84d198b681b01c3ae4f6eb1d4bed8869"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a35b3ecc67ca23800f0300fe93ec41672"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a35b3ecc67ca23800f0300fe93ec41672"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>fetchInformation</b> (const QString &amp;userSession)</td></tr>
+<tr class="separator:a35b3ecc67ca23800f0300fe93ec41672"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a872cdbcd69bd17a43d706ab061a2f3ef"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a872cdbcd69bd17a43d706ab061a2f3ef"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>fetchPostKey</b> (int lastBlockNum, const QString &amp;userSession)</td></tr>
+<tr class="separator:a872cdbcd69bd17a43d706ab061a2f3ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>nl/<a class="el" href="livewaku_8h_source.html">livewaku.h</a></li>
@@ -199,7 +208,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>getInformation</b> (c
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Dec 5 2015 19:11:37 for QtNicoLiveLib by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Dec 6 2015 18:13:04 for QtNicoLiveLib by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

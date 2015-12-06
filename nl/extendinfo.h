@@ -20,7 +20,9 @@ public:
   explicit ExtendInfo(QObject* parent = 0);
 
   //! リクエストを発行します。
-  /*! 取得後、Signalのgotまたはerrorをemitします。 */
+  /*!
+   * 取得後、Signalの got() または error() をemitします。
+   */
   void get(const QString& broadID, const QString& userSession);
 private:
   void gotReply(QNetworkReply* reply) override;

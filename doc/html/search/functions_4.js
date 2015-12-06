@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['livetag',['LiveTag',['../classnicolive_1_1LiveTag.html#a208115ff57f8206d70dc76f85cdd66dc',1,'nicolive::LiveTag']]]
+  ['fetchusername',['FetchUserName',['../classnicolive_1_1FetchUserName.html#aa22982fe5c0da8c47deb18529821af0c',1,'nicolive::FetchUserName']]],
+  ['forward',['forward',['../classnicolive_1_1StrAbstractor.html#a390b6155d319d42ce3cfb19a60369e05',1,'nicolive::StrAbstractor']]]
 ];

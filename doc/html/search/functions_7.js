@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['tostring',['toString',['../classnicolive_1_1StrAbstractor.html#a2f760cdc5e7673f7a2b51de730630fb8',1,'nicolive::StrAbstractor']]]
+  ['livetag',['LiveTag',['../classnicolive_1_1LiveTag.html#a208115ff57f8206d70dc76f85cdd66dc',1,'nicolive::LiveTag']]]
 ];

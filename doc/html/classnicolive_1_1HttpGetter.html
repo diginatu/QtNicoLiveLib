@@ -95,6 +95,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">nicolive::HttpGetter Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>APIを取得するのに使用されている抽象クラス。  
+ <a href="classnicolive_1_1HttpGetter.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="httpgetter_8h_source.html">nl/httpgetter.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for nicolive::HttpGetter:</div>
 <div class="dyncontent">
@@ -106,8 +111,8 @@ Inheritance diagram for nicolive::HttpGetter:</div>
 <area href="classnicolive_1_1Extend.html" title="ニコ生放送の延長を実行するクラス。 " alt="nicolive::Extend" shape="rect" coords="173,224,336,248"/>
 <area href="classnicolive_1_1ExtendInfo.html" title="ニコ生放送の延長情報を取得するクラス。 " alt="nicolive::ExtendInfo" shape="rect" coords="173,280,336,304"/>
 <area href="classnicolive_1_1FetchUserName.html" title="ユーザIDからユーザ名を取得するクラス。 " alt="nicolive::FetchUserName" shape="rect" coords="173,336,336,360"/>
-<area href="classnicolive_1_1GetCommPostKey.html" alt="nicolive::GetCommPostKey" shape="rect" coords="173,392,336,416"/>
-<area href="classnicolive_1_1GetPlayerStatus.html" alt="nicolive::GetPlayerStatus" shape="rect" coords="173,448,336,472"/>
+<area href="classnicolive_1_1GetCommPostKey.html" title="コメント受信に必要なポストキーを取得するクラス。 " alt="nicolive::GetCommPostKey" shape="rect" coords="173,392,336,416"/>
+<area href="classnicolive_1_1GetPlayerStatus.html" title="PlayerStatus API から生放送の情報を取得するクラス。 " alt="nicolive::GetPlayerStatus" shape="rect" coords="173,448,336,472"/>
 <area href="classnicolive_1_1LiveTag.html" title="生放送のタグを取得するクラス。 " alt="nicolive::LiveTag" shape="rect" coords="173,504,336,528"/>
 <area href="classnicolive_1_1UserSessionLogin.html" title="ニコ動にログインしてユーザセッションを取得します " alt="nicolive::UserSessionLogin" shape="rect" coords="173,560,336,584"/>
 </map>
@@ -146,14 +151,17 @@ Protected Attributes</h2></td></tr>
 QNetworkAccessManager *&#160;</td><td class="memItemRight" valign="bottom"><b>mManager</b></td></tr>
 <tr class="separator:a6a0ffe3f773d31a8b5da82e6c072e8de"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<hr/>The documentation for this class was generated from the following files:<ul>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>APIを取得するのに使用されている抽象クラス。 </p>
+<p>requestGetまたはrequestPostが呼ばれた後、 gotReplyがemitされその後本クラスはdeleteされる。 そのため、本クラスの抽象クラスはnewして作成されるべきである。 </p>
+</div><hr/>The documentation for this class was generated from the following files:<ul>
 <li>nl/<a class="el" href="httpgetter_8h_source.html">httpgetter.h</a></li>
 <li>nl/httpgetter.cpp</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Dec 5 2015 19:11:37 for QtNicoLiveLib by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Dec 6 2015 18:13:04 for QtNicoLiveLib by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

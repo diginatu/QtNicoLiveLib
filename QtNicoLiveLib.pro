@@ -27,7 +27,8 @@ SOURCES += nl/fetchusername.cpp \
     nl/livetag.cpp \
     nl/usersessionlogin.cpp \
     nl/alertlogin.cpp \
-    nl/alertadmin.cpp
+    nl/alertadmin.cpp \
+    nl/alertconnection.cpp
 
 HEADERS += nl/fetchusername.h \
     nl/httpgetter.h \
@@ -43,7 +44,8 @@ HEADERS += nl/fetchusername.h \
     nl/livetag.h \
     nl/usersessionlogin.h \
     nl/alertlogin.h \
-    nl/alertadmin.h
+    nl/alertadmin.h \
+    nl/alertconnection.h
 
 unix {
     target.path = /usr/lib

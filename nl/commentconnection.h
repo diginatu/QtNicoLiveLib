@@ -10,7 +10,7 @@
 
 namespace nicolive {
 
-//! ニコ生のコメント受信を行うクラス。
+//! ニコ生のコメントの接続を管理するクラス。
 /*!
  * コネクションの保持のためのNULL送信や、
  * コメント送信のためのポストキー取得が自動で行われます。
@@ -44,16 +44,32 @@ public:
   //! 接続されているかどうかをboolで返します。
   bool isConnected();
 
+  //! 再接続する試行回数を設定します。
+  /*!
+   * コメント送信が失敗した場合は再送信はされません。
+   * デフォルト値 3
+   * \param time 待ち時間(msec)
+   */
+  void setReconnectTimes(int time);
+  //! 再接続する際の待ち時間を設定します。
+  /*!
+   * デフォルト値 1000
+   * \param time 待ち時間(msec)
+   */
+  void setReconnectWaitMsec(int time);
 private:
   QTcpSocket* socket;
   nicolive::LiveWaku* livewaku;
-  QTimer nullDataTimer, postkeyTimer;
+  QTimer* nullDataTimer;
+  QTimer* postkeyTimer;
   int lastBlockNum;
   QByteArray lastRawComm;
   QString userSession;
   QString ticket;
   QDateTime openTime, serverTime;
 
+  int reconnectTimes, reconnectN;
+  int reconnectWaitMsec;
 signals:
   //! エラーになった場合にエミットされるシグナル。
   /*!
@@ -77,6 +93,7 @@ private slots:
   void disconnected();
   void readyRead();
   void readOneRawComment(const QString& rawcomm);
+  void connectionErrorOccured();
 };
 
 }

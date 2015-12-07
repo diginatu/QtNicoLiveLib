@@ -11,12 +11,21 @@ CommentConnection::CommentConnection(LiveWaku* livewaku,
   socket = new QTcpSocket(this);
   this->livewaku = livewaku;
 
-  connect(socket, SIGNAL(connected()),this, SLOT(connected()));
-  connect(socket, SIGNAL(disconnected()),this, SLOT(disconnected()));
-  connect(socket, SIGNAL(readyRead()),this, SLOT(readyRead()));
+  nullDataTimer = new QTimer(this);
+  postkeyTimer = new QTimer(this);
 
-  connect(&nullDataTimer, SIGNAL(timeout()), this, SLOT(sendNull()));
-  connect(&postkeyTimer, &QTimer::timeout, this, [=](){
+  reconnectTimes = 3;
+  reconnectN = 0;
+  reconnectWaitMsec = 1000;
+
+  connect(socket, SIGNAL(connected()), this, SLOT(connected()));
+  connect(socket, SIGNAL(disconnected()), this, SLOT(disconnected()));
+  connect(socket, SIGNAL(readyRead()), this, SLOT(readyRead()));
+  connect(socket, SIGNAL(error(QAbstractSocket::SocketError)),
+          this, SLOT(connectionErrorOccured()));
+
+  connect(nullDataTimer, SIGNAL(timeout()), this, SLOT(sendNull()));
+  connect(postkeyTimer, &QTimer::timeout, this, [=](){
     livewaku->fetchPostKey(lastBlockNum, userSession);
   });
 }
@@ -34,16 +43,12 @@ void CommentConnection::doConnect()
     emit error("doConnect", "livewaku don't have information to connect");
   }
   socket->connectToHost(addr, port);
-
-  if(!socket->waitForConnected(5000)) {
-    emit error("doConnect", socket->errorString());
-  }
 }
 
 void CommentConnection::close()
 {
-  nullDataTimer.stop();
-  postkeyTimer.stop();
+  nullDataTimer->stop();
+  postkeyTimer->stop();
   socket->close();
 }
 
@@ -78,6 +83,7 @@ void CommentConnection::sendComment(QString text, bool iyayo)
 
   if (socket->write(send) == -1) {
     emit error("sendComment", socket->errorString());
+    return;
   }
 }
 
@@ -96,12 +102,19 @@ void CommentConnection::connected()
   send.append('\0');
 
   if (socket->write(send) == -1) {
-    emit error("connected", socket->errorString());
-    doConnect();
+    close();
+    ++ reconnectN;
+    if (reconnectN < reconnectTimes) {
+      QTimer::singleShot(reconnectWaitMsec, Qt::VeryCoarseTimer, [=](){ doConnect(); });
+    } else {
+      emit error("connected", socket->errorString());
+    }
+    return;
   }
+  reconnectN = 0;
 
   // set timer to send NULL data.
-  nullDataTimer.start(60000);
+  nullDataTimer->start(60000);
 }
 
 void CommentConnection::disconnected()
@@ -117,8 +130,7 @@ void CommentConnection::readyRead()
   if (rawcomms.size() > 1) {
     emit readOneRawComment(lastRawComm + rawcomms[0]);
     for ( int i = 1; i < rawcomms.size()-1; ++i) {
-      const QString tst(rawcomms[i]);
-      emit readOneRawComment(tst);
+      emit readOneRawComment(rawcomms[i]);
     }
   }
 
@@ -140,20 +152,18 @@ void CommentConnection::readOneRawComment(const QString& rawcomm)
     livewaku->fetchPostKey(lastBlockNum, userSession);
 
     // set timer to get post_key
-    postkeyTimer.start(10000);
+    postkeyTimer->start(10000);
 
     return;
   }
 
   if (rawcomm.startsWith("<chat_result")) {
     const auto status = rawcommabs.midStr("status=\"", "\"", false);
-
     if (status != "0") {
       emit error("readOneRawComment", status);
     } else {
       emit submittedComment();
     }
-
     return;
   }
 
@@ -191,6 +201,17 @@ void CommentConnection::readOneRawComment(const QString& rawcomm)
 
   if (comment == "/disconnect" && broadcaster) {
     close();
+  }
+}
+
+void CommentConnection::connectionErrorOccured()
+{
+  close();
+  ++ reconnectN;
+  if (reconnectN < reconnectTimes) {
+    QTimer::singleShot(reconnectWaitMsec, Qt::VeryCoarseTimer, [=](){ doConnect(); });
+  } else {
+    emit error("QAbstractSocket::SocketError", socket->errorString());
   }
 }
 

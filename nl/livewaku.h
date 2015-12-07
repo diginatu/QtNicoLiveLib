@@ -10,11 +10,21 @@
 
 namespace nicolive {
 
+//! １つの生放送の情報を保持するクラス。
+/*!
+ * CommentConnection
+ */
+
 class LiveWaku : public QObject
 {
   Q_OBJECT
 public:
+  //! コンストラクタ
   explicit LiveWaku(QObject *parent = 0);
+  //! コンストラクタ
+  /*!
+   * broadID をだけ指定すれば残りの情報は fetchInformation() で得られます。
+   */
   explicit LiveWaku(const QString& broadID, QObject *parent = 0);
 
 
@@ -48,15 +58,28 @@ public:
   void setOwnerBroad(bool value);
   QString getOwnerCommentToken() const;
 
-
+  //! PlayerStatus を使って放送枠に関する情報を取得します。
+  /*!
+   * CommentConnection で doConnect する前に実行する必要があります。
+   *
+   * 取得完了すると gotInfornationError() または gotInfornation() を emit します。
+   */
   void fetchInformation(const QString& userSession);
+  //! コメント送信に必要な PostKey の取得・更新をします。
+  /*!
+   * 取得完了すると gotInPostKeyError() または gotPostKey() を emit します。
+   */
   void fetchPostKey(int lastBlockNum, const QString& userSession);
 
 signals:
+  //! fetchInformation() でエラーになった場合にエミットされるシグナルです。
   void gotInfornationError(QString code);
+  //! fetchInformation() で取得成功した場合にエミットされるシグナルです。
   void gotInfornation();
 
+  //! fetchPostKey() でエラーになった場合にエミットされるシグナルです。
   void gotPostKeyError();
+  //! fetchPostKey() で取得成功した場合にエミットされるシグナルです。
   void gotPostKey();
 
 private:

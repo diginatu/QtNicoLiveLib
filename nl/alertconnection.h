@@ -50,9 +50,17 @@ private slots:
   void connectionErrorOccured();
 
 signals:
+  //! エラーになった場合にエミットされるシグナル。
+  /*!
+   * \param errorPosition エラー箇所、関数名
+   * \param code エラーメッセージ
+   */
   void error(QString errorPosition, QString code);
+  //! 新しい放送を受信した時にエミットされるシグナル。
   void gotNewWaku(QString broadID, QString CommunityID, QString nushiID);
+  //! 接続が開始した時にエミットされるシグナル。
   void socketConnected();
+  //! 接続が切断した時にエミットされるシグナル。
   void socketDisconnected();
 
 private:

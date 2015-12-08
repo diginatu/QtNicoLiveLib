@@ -28,8 +28,10 @@ public:
                              const QString& userSession, QObject *parent = 0);
   ~CommentConnection();
 
-  //! 接続した後は connectionStarted(), connectionClosed(), newComment()
-  //! がemitされます。
+  //! コメントサーバに接続します。
+  /*!
+   * 接続した後は connectionStarted(), connectionClosed(), newComment() がemitされます。
+   */
   void doConnect();
   //! 接続を切断します。
   void close();
@@ -78,9 +80,9 @@ signals:
    */
   void error(QString errorPosition, QString code);
   //! 接続が開始した時にエミットされるシグナル。
-  void connectionStarted();
+  void socketConnected();
   //! 接続が切断した時にエミットされるシグナル。
-  void connectionClosed();
+  void socketDisconnected();
   //! コメントの送信が完了した時にエミットされるシグナル。
   void submittedComment();
   //! コメントを一つ受信した時にエミットされるシグナル。

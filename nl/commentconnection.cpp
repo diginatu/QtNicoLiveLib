@@ -113,19 +113,22 @@ void CommentConnection::connected()
   }
   reconnectN = 0;
 
+  openTime = QDateTime::currentDateTime();
+  emit socketConnected();
+
   // set timer to send NULL data.
   nullDataTimer->start(60000);
 }
 
 void CommentConnection::disconnected()
 {
-  emit connectionClosed();
+  emit socketDisconnected();
 }
 
 void CommentConnection::readyRead()
 {
   const QList<QByteArray>& rawcomms( socket->readAll().split('\0') );
-  if (lastRawComm.isEmpty()) return;
+  if (rawcomms.isEmpty()) return;
 
   if (rawcomms.size() > 1) {
     emit readOneRawComment(lastRawComm + rawcomms[0]);
@@ -142,9 +145,6 @@ void CommentConnection::readOneRawComment(const QString& rawcomm)
   nicolive::StrAbstractor rawcommabs(rawcomm);
 
   if (rawcomm.startsWith("<thread")) {
-    openTime = QDateTime::currentDateTime();
-    emit connectionStarted();
-
     lastBlockNum = rawcommabs.midStr("last_res=\"", "\"", false).toInt() / 10;
     ticket = rawcommabs.midStr("ticket=\"", "\"", false);
     serverTime.setTime_t(rawcommabs.midStr("server_time=\"", "\"", false).toUInt());

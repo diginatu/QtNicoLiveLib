@@ -8,6 +8,13 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
 <script type="text/javascript">
@@ -61,10 +68,25 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="annotated.html"><span>Class&#160;List</span></a></li>
       <li><a href="classes.html"><span>Class&#160;Index</span></a></li>
-      <li><a href="hierarchy.html"><span>Class&#160;Hierarchy</span></a></li>
+      <li><a href="inherits.html"><span>Class&#160;Hierarchy</span></a></li>
       <li><a href="functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('classnicolive_1_1LiveWaku.html','');});
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -79,11 +101,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><b>nicolive</b></li><li class="navelem"><a class="el" href="classnicolive_1_1LiveWaku.html">LiveWaku</a></li>  </ul>
-</div>
-</div><!-- top -->
 <div class="header">
   <div class="headertitle">
 <div class="title">nicolive::LiveWaku Member List</div>  </div>
@@ -92,8 +109,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <p>This is the complete list of members for <a class="el" href="classnicolive_1_1LiveWaku.html">nicolive::LiveWaku</a>, including all inherited members.</p>
 <table class="directory">
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>fetchInformation</b>(const QString &amp;userSession) (defined in <a class="el" href="classnicolive_1_1LiveWaku.html">nicolive::LiveWaku</a>)</td><td class="entry"><a class="el" href="classnicolive_1_1LiveWaku.html">nicolive::LiveWaku</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0"><td class="entry"><b>fetchPostKey</b>(int lastBlockNum, const QString &amp;userSession) (defined in <a class="el" href="classnicolive_1_1LiveWaku.html">nicolive::LiveWaku</a>)</td><td class="entry"><a class="el" href="classnicolive_1_1LiveWaku.html">nicolive::LiveWaku</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classnicolive_1_1LiveWaku.html#a35b3ecc67ca23800f0300fe93ec41672">fetchInformation</a>(const QString &amp;userSession)</td><td class="entry"><a class="el" href="classnicolive_1_1LiveWaku.html">nicolive::LiveWaku</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classnicolive_1_1LiveWaku.html#a872cdbcd69bd17a43d706ab061a2f3ef">fetchPostKey</a>(int lastBlockNum, const QString &amp;userSession)</td><td class="entry"><a class="el" href="classnicolive_1_1LiveWaku.html">nicolive::LiveWaku</a></td><td class="entry"></td></tr>
   <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>getAddr</b>() const  (defined in <a class="el" href="classnicolive_1_1LiveWaku.html">nicolive::LiveWaku</a>)</td><td class="entry"><a class="el" href="classnicolive_1_1LiveWaku.html">nicolive::LiveWaku</a></td><td class="entry"></td></tr>
   <tr bgcolor="#f0f0f0"><td class="entry"><b>getBroadcastToken</b>() const  (defined in <a class="el" href="classnicolive_1_1LiveWaku.html">nicolive::LiveWaku</a>)</td><td class="entry"><a class="el" href="classnicolive_1_1LiveWaku.html">nicolive::LiveWaku</a></td><td class="entry"></td></tr>
   <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>getBroadID</b>() const  (defined in <a class="el" href="classnicolive_1_1LiveWaku.html">nicolive::LiveWaku</a>)</td><td class="entry"><a class="el" href="classnicolive_1_1LiveWaku.html">nicolive::LiveWaku</a></td><td class="entry"></td></tr>
@@ -110,12 +127,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <tr bgcolor="#f0f0f0"><td class="entry"><b>getTitle</b>() const  (defined in <a class="el" href="classnicolive_1_1LiveWaku.html">nicolive::LiveWaku</a>)</td><td class="entry"><a class="el" href="classnicolive_1_1LiveWaku.html">nicolive::LiveWaku</a></td><td class="entry"></td></tr>
   <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>getUserID</b>() const  (defined in <a class="el" href="classnicolive_1_1LiveWaku.html">nicolive::LiveWaku</a>)</td><td class="entry"><a class="el" href="classnicolive_1_1LiveWaku.html">nicolive::LiveWaku</a></td><td class="entry"></td></tr>
   <tr bgcolor="#f0f0f0"><td class="entry"><b>getUserPremium</b>() const  (defined in <a class="el" href="classnicolive_1_1LiveWaku.html">nicolive::LiveWaku</a>)</td><td class="entry"><a class="el" href="classnicolive_1_1LiveWaku.html">nicolive::LiveWaku</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>gotInfornation</b>() (defined in <a class="el" href="classnicolive_1_1LiveWaku.html">nicolive::LiveWaku</a>)</td><td class="entry"><a class="el" href="classnicolive_1_1LiveWaku.html">nicolive::LiveWaku</a></td><td class="entry"><span class="mlabel">signal</span></td></tr>
-  <tr bgcolor="#f0f0f0"><td class="entry"><b>gotInfornationError</b>(QString code) (defined in <a class="el" href="classnicolive_1_1LiveWaku.html">nicolive::LiveWaku</a>)</td><td class="entry"><a class="el" href="classnicolive_1_1LiveWaku.html">nicolive::LiveWaku</a></td><td class="entry"><span class="mlabel">signal</span></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>gotPostKey</b>() (defined in <a class="el" href="classnicolive_1_1LiveWaku.html">nicolive::LiveWaku</a>)</td><td class="entry"><a class="el" href="classnicolive_1_1LiveWaku.html">nicolive::LiveWaku</a></td><td class="entry"><span class="mlabel">signal</span></td></tr>
-  <tr bgcolor="#f0f0f0"><td class="entry"><b>gotPostKeyError</b>() (defined in <a class="el" href="classnicolive_1_1LiveWaku.html">nicolive::LiveWaku</a>)</td><td class="entry"><a class="el" href="classnicolive_1_1LiveWaku.html">nicolive::LiveWaku</a></td><td class="entry"><span class="mlabel">signal</span></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>LiveWaku</b>(QObject *parent=0) (defined in <a class="el" href="classnicolive_1_1LiveWaku.html">nicolive::LiveWaku</a>)</td><td class="entry"><a class="el" href="classnicolive_1_1LiveWaku.html">nicolive::LiveWaku</a></td><td class="entry"><span class="mlabel">explicit</span></td></tr>
-  <tr bgcolor="#f0f0f0"><td class="entry"><b>LiveWaku</b>(const QString &amp;broadID, QObject *parent=0) (defined in <a class="el" href="classnicolive_1_1LiveWaku.html">nicolive::LiveWaku</a>)</td><td class="entry"><a class="el" href="classnicolive_1_1LiveWaku.html">nicolive::LiveWaku</a></td><td class="entry"><span class="mlabel">explicit</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classnicolive_1_1LiveWaku.html#a6e80912cb46939f5e779c1d364e8ff01">gotInfornation</a>()</td><td class="entry"><a class="el" href="classnicolive_1_1LiveWaku.html">nicolive::LiveWaku</a></td><td class="entry"><span class="mlabel">signal</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classnicolive_1_1LiveWaku.html#a2726735ad485286cd7b1010e7bd04b92">gotInfornationError</a>(QString code)</td><td class="entry"><a class="el" href="classnicolive_1_1LiveWaku.html">nicolive::LiveWaku</a></td><td class="entry"><span class="mlabel">signal</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classnicolive_1_1LiveWaku.html#ab461603032fda5bc9eb57a2c34262bee">gotPostKey</a>()</td><td class="entry"><a class="el" href="classnicolive_1_1LiveWaku.html">nicolive::LiveWaku</a></td><td class="entry"><span class="mlabel">signal</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classnicolive_1_1LiveWaku.html#a296bd80d0765f77a74961b4aec4acee5">gotPostKeyError</a>()</td><td class="entry"><a class="el" href="classnicolive_1_1LiveWaku.html">nicolive::LiveWaku</a></td><td class="entry"><span class="mlabel">signal</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classnicolive_1_1LiveWaku.html#acfb085daa52cf6629db669cb913847b3">LiveWaku</a>(QObject *parent=0)</td><td class="entry"><a class="el" href="classnicolive_1_1LiveWaku.html">nicolive::LiveWaku</a></td><td class="entry"><span class="mlabel">explicit</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classnicolive_1_1LiveWaku.html#aab2f25df54a367c375b0eb9f249bbecc">LiveWaku</a>(const QString &amp;broadID, QObject *parent=0)</td><td class="entry"><a class="el" href="classnicolive_1_1LiveWaku.html">nicolive::LiveWaku</a></td><td class="entry"><span class="mlabel">explicit</span></td></tr>
   <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>setBroadID</b>(const QString &amp;value) (defined in <a class="el" href="classnicolive_1_1LiveWaku.html">nicolive::LiveWaku</a>)</td><td class="entry"><a class="el" href="classnicolive_1_1LiveWaku.html">nicolive::LiveWaku</a></td><td class="entry"></td></tr>
   <tr bgcolor="#f0f0f0"><td class="entry"><b>setCommunityID</b>(const QString &amp;value) (defined in <a class="el" href="classnicolive_1_1LiveWaku.html">nicolive::LiveWaku</a>)</td><td class="entry"><a class="el" href="classnicolive_1_1LiveWaku.html">nicolive::LiveWaku</a></td><td class="entry"></td></tr>
   <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>setEdTime</b>(const QDateTime &amp;value) (defined in <a class="el" href="classnicolive_1_1LiveWaku.html">nicolive::LiveWaku</a>)</td><td class="entry"><a class="el" href="classnicolive_1_1LiveWaku.html">nicolive::LiveWaku</a></td><td class="entry"></td></tr>
@@ -124,11 +141,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <tr bgcolor="#f0f0f0"><td class="entry"><b>setStTime</b>(const QDateTime &amp;value) (defined in <a class="el" href="classnicolive_1_1LiveWaku.html">nicolive::LiveWaku</a>)</td><td class="entry"><a class="el" href="classnicolive_1_1LiveWaku.html">nicolive::LiveWaku</a></td><td class="entry"></td></tr>
   <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>setTitle</b>(const QString &amp;value) (defined in <a class="el" href="classnicolive_1_1LiveWaku.html">nicolive::LiveWaku</a>)</td><td class="entry"><a class="el" href="classnicolive_1_1LiveWaku.html">nicolive::LiveWaku</a></td><td class="entry"></td></tr>
 </table></div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated on Sun Dec 6 2015 18:13:04 for QtNicoLiveLib by &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.6
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Generated on Wed Dec 9 2015 01:04:38 for QtNicoLiveLib by
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
+  </ul>
+</div>
 </body>
 </html>

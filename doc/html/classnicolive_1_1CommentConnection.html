@@ -8,6 +8,13 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
 <script type="text/javascript">
@@ -61,10 +68,25 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="annotated.html"><span>Class&#160;List</span></a></li>
       <li><a href="classes.html"><span>Class&#160;Index</span></a></li>
-      <li><a href="hierarchy.html"><span>Class&#160;Hierarchy</span></a></li>
+      <li><a href="inherits.html"><span>Class&#160;Hierarchy</span></a></li>
       <li><a href="functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('classnicolive_1_1CommentConnection.html','');});
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -79,11 +101,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><b>nicolive</b></li><li class="navelem"><a class="el" href="classnicolive_1_1CommentConnection.html">CommentConnection</a></li>  </ul>
-</div>
-</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#signals">Signals</a> &#124;
@@ -94,32 +111,34 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 
-<p>ニコ生のコメント受信を行うクラス。  
+<p>ニコ生のコメントの接続を管理するクラス。  
  <a href="classnicolive_1_1CommentConnection.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="commentconnection_8h_source.html">nl/commentconnection.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for nicolive::CommentConnection:</div>
 <div class="dyncontent">
- <div class="center">
-  <img src="classnicolive_1_1CommentConnection.png" usemap="#nicolive::CommentConnection_map" alt=""/>
-  <map id="nicolive::CommentConnection_map" name="nicolive::CommentConnection_map">
-</map>
- </div></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classnicolive_1_1CommentConnection__inherit__graph.svg" width="208" height="112"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div class="dynheader">
+Collaboration diagram for nicolive::CommentConnection:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classnicolive_1_1CommentConnection__coll__graph.svg" width="208" height="112"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="signals"></a>
 Signals</h2></td></tr>
 <tr class="memitem:ae07053390386a3bcd43c2d602bcefe1b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnicolive_1_1CommentConnection.html#ae07053390386a3bcd43c2d602bcefe1b">error</a> (QString errorPosition, QString code)</td></tr>
 <tr class="memdesc:ae07053390386a3bcd43c2d602bcefe1b"><td class="mdescLeft">&#160;</td><td class="mdescRight">エラーになった場合にエミットされるシグナル。  <a href="#ae07053390386a3bcd43c2d602bcefe1b">More...</a><br/></td></tr>
 <tr class="separator:ae07053390386a3bcd43c2d602bcefe1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a17cb155bb3ae0b972bdf0951ae6720c9"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a17cb155bb3ae0b972bdf0951ae6720c9"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnicolive_1_1CommentConnection.html#a17cb155bb3ae0b972bdf0951ae6720c9">connectionStarted</a> ()</td></tr>
-<tr class="memdesc:a17cb155bb3ae0b972bdf0951ae6720c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">接続が開始した時にエミットされるシグナル。 <br/></td></tr>
-<tr class="separator:a17cb155bb3ae0b972bdf0951ae6720c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af11e33b9aed4aa75bb316a412d18c7a6"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af11e33b9aed4aa75bb316a412d18c7a6"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnicolive_1_1CommentConnection.html#af11e33b9aed4aa75bb316a412d18c7a6">connectionClosed</a> ()</td></tr>
-<tr class="memdesc:af11e33b9aed4aa75bb316a412d18c7a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">接続が切断した時にエミットされるシグナル。 <br/></td></tr>
-<tr class="separator:af11e33b9aed4aa75bb316a412d18c7a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5b57105f59084b2c5be6addacf89d6fe"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5b57105f59084b2c5be6addacf89d6fe"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnicolive_1_1CommentConnection.html#a5b57105f59084b2c5be6addacf89d6fe">socketConnected</a> ()</td></tr>
+<tr class="memdesc:a5b57105f59084b2c5be6addacf89d6fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">接続が開始した時にエミットされるシグナル。 <br/></td></tr>
+<tr class="separator:a5b57105f59084b2c5be6addacf89d6fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac2509f2f50a8714024e9c7ed533fb0ca"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac2509f2f50a8714024e9c7ed533fb0ca"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnicolive_1_1CommentConnection.html#ac2509f2f50a8714024e9c7ed533fb0ca">socketDisconnected</a> ()</td></tr>
+<tr class="memdesc:ac2509f2f50a8714024e9c7ed533fb0ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">接続が切断した時にエミットされるシグナル。 <br/></td></tr>
+<tr class="separator:ac2509f2f50a8714024e9c7ed533fb0ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a752ddbe915b5596b2ccef2483a875608"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a752ddbe915b5596b2ccef2483a875608"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnicolive_1_1CommentConnection.html#a752ddbe915b5596b2ccef2483a875608">submittedComment</a> ()</td></tr>
 <tr class="memdesc:a752ddbe915b5596b2ccef2483a875608"><td class="mdescLeft">&#160;</td><td class="mdescRight">コメントの送信が完了した時にエミットされるシグナル。 <br/></td></tr>
@@ -136,6 +155,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a9eb93f44b510ee11616a4e19ec26f7a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">コンストラクタ <br/></td></tr>
 <tr class="separator:a9eb93f44b510ee11616a4e19ec26f7a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4562e16f7f915dc70d8b392c75ab500f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnicolive_1_1CommentConnection.html#a4562e16f7f915dc70d8b392c75ab500f">doConnect</a> ()</td></tr>
+<tr class="memdesc:a4562e16f7f915dc70d8b392c75ab500f"><td class="mdescLeft">&#160;</td><td class="mdescRight">コメントサーバに接続します。  <a href="#a4562e16f7f915dc70d8b392c75ab500f">More...</a><br/></td></tr>
 <tr class="separator:a4562e16f7f915dc70d8b392c75ab500f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5d4f0038987b462f298b146f95e4ede1"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5d4f0038987b462f298b146f95e4ede1"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnicolive_1_1CommentConnection.html#a5d4f0038987b462f298b146f95e4ede1">close</a> ()</td></tr>
@@ -152,11 +172,17 @@ QDateTime&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href=
 bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnicolive_1_1CommentConnection.html#a618d27cb672e1fd43f91da92f74733cd">isConnected</a> ()</td></tr>
 <tr class="memdesc:a618d27cb672e1fd43f91da92f74733cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">接続されているかどうかをboolで返します。 <br/></td></tr>
 <tr class="separator:a618d27cb672e1fd43f91da92f74733cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a84bfa8f5c8aa9a05204da6631612bd5e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnicolive_1_1CommentConnection.html#a84bfa8f5c8aa9a05204da6631612bd5e">setReconnectTimes</a> (int time)</td></tr>
+<tr class="memdesc:a84bfa8f5c8aa9a05204da6631612bd5e"><td class="mdescLeft">&#160;</td><td class="mdescRight">再接続する試行回数を設定します。  <a href="#a84bfa8f5c8aa9a05204da6631612bd5e">More...</a><br/></td></tr>
+<tr class="separator:a84bfa8f5c8aa9a05204da6631612bd5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae1c25151e3e4f1b42d3a7a387b4caf96"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnicolive_1_1CommentConnection.html#ae1c25151e3e4f1b42d3a7a387b4caf96">setReconnectWaitMsec</a> (int time)</td></tr>
+<tr class="memdesc:ae1c25151e3e4f1b42d3a7a387b4caf96"><td class="mdescLeft">&#160;</td><td class="mdescRight">再接続する際の待ち時間を設定します。  <a href="#ae1c25151e3e4f1b42d3a7a387b4caf96">More...</a><br/></td></tr>
+<tr class="separator:ae1c25151e3e4f1b42d3a7a387b4caf96"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>ニコ生のコメント受信を行うクラス。 </p>
+<div class="textblock"><p>ニコ生のコメントの接続を管理するクラス。 </p>
 <p>コネクションの保持のためのNULL送信や、 コメント送信のためのポストキー取得が自動で行われます。</p>
-<p><a class="el" href="classnicolive_1_1LiveWaku.html">LiveWaku</a> を作成しコメント受信を行う例 </p>
+<p><a class="el" href="classnicolive_1_1LiveWaku.html" title="１つの生放送の情報を保持するクラス。 ">LiveWaku</a> を作成しコメント受信を行う例 </p>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &quot;testclass.h&quot;</span></div>
 <div class="line"></div>
 <div class="line">TestClass::TestClass(QObject *parent) : QObject(parent)</div>
@@ -179,7 +205,7 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <div class="line">  <span class="comment">// comment connection</span></div>
 <div class="line">  <span class="keyword">auto</span> connection = <span class="keyword">new</span> <a class="code" href="classnicolive_1_1CommentConnection.html">nicolive::CommentConnection</a>(livewaku, userSession, livewaku);</div>
 <div class="line"></div>
-<div class="line">  connect(livewaku, &amp;nicolive::LiveWaku::gotInfornation, <span class="keyword">this</span>, [=](){</div>
+<div class="line">  connect(livewaku, &amp;<a class="code" href="classnicolive_1_1LiveWaku.html#a6e80912cb46939f5e779c1d364e8ff01">nicolive::LiveWaku::gotInfornation</a>, <span class="keyword">this</span>, [=](){</div>
 <div class="line">    <span class="comment">// livewaku has information about the broadcast when it gets</span></div>
 <div class="line">    QTextStream out(stdout);</div>
 <div class="line">    out &lt;&lt; <span class="stringliteral">&quot;title : &quot;</span> &lt;&lt; livewaku-&gt;getTitle() &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span> &lt;&lt; endl;</div>
@@ -187,7 +213,7 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <div class="line">    <span class="comment">// connect comment server after getting information</span></div>
 <div class="line">    connection-&gt;doConnect();</div>
 <div class="line">  });</div>
-<div class="line">  connect(livewaku, &amp;nicolive::LiveWaku::gotInfornationError,</div>
+<div class="line">  connect(livewaku, &amp;<a class="code" href="classnicolive_1_1LiveWaku.html#a2726735ad485286cd7b1010e7bd04b92">nicolive::LiveWaku::gotInfornationError</a>,</div>
 <div class="line">          <span class="keyword">this</span>, [](QString error){</div>
 <div class="line">    qDebug() &lt;&lt; <span class="stringliteral">&quot;getInformation error : &quot;</span> &lt;&lt; error;</div>
 <div class="line">    QCoreApplication::quit();</div>
@@ -209,7 +235,7 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <div class="line">  });</div>
 <div class="line"></div>
 <div class="line">  <span class="comment">// Finally, call PlayerStatus internally and get information in it</span></div>
-<div class="line">  livewaku-&gt;fetchInformation(userSession);</div>
+<div class="line">  livewaku-&gt;<a class="code" href="classnicolive_1_1LiveWaku.html#a35b3ecc67ca23800f0300fe93ec41672">fetchInformation</a>(userSession);</div>
 <div class="line">}</div>
 </div><!-- fragment --> </div><h2 class="groupheader">Member Function Documentation</h2>
 <a class="anchor" id="a4562e16f7f915dc70d8b392c75ab500f"></a>
@@ -224,7 +250,9 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
         </tr>
       </table>
 </div><div class="memdoc">
-<p>接続した後は <a class="el" href="classnicolive_1_1CommentConnection.html#a17cb155bb3ae0b972bdf0951ae6720c9" title="接続が開始した時にエミットされるシグナル。 ">connectionStarted()</a>, <a class="el" href="classnicolive_1_1CommentConnection.html#af11e33b9aed4aa75bb316a412d18c7a6" title="接続が切断した時にエミットされるシグナル。 ">connectionClosed()</a>, <a class="el" href="classnicolive_1_1CommentConnection.html#a141567f25b9de58f9ac1edc38840d07a" title="コメントを一つ受信した時にエミットされるシグナル。 ">newComment()</a> がemitされます。 </p>
+
+<p>コメントサーバに接続します。 </p>
+<p>接続した後は connectionStarted(), connectionClosed(), <a class="el" href="classnicolive_1_1CommentConnection.html#a141567f25b9de58f9ac1edc38840d07a" title="コメントを一つ受信した時にエミットされるシグナル。 ">newComment()</a> がemitされます。 </p>
 
 </div>
 </div>
@@ -269,6 +297,13 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
   </dd>
 </dl>
 
+<p><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classnicolive_1_1CommentConnection_ae07053390386a3bcd43c2d602bcefe1b_icgraph.svg" width="454" height="182"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
 </div>
 </div>
 <a class="anchor" id="af47baac98c2486108bef89e983df5228"></a>
@@ -305,16 +340,70 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 
 </div>
 </div>
+<a class="anchor" id="a84bfa8f5c8aa9a05204da6631612bd5e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void nicolive::CommentConnection::setReconnectTimes </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>time</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>再接続する試行回数を設定します。 </p>
+<p>コメント送信が失敗した場合は再送信はされません。 デフォルト値 3 </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">time</td><td>待ち時間(msec) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ae1c25151e3e4f1b42d3a7a387b4caf96"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void nicolive::CommentConnection::setReconnectWaitMsec </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>time</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>再接続する際の待ち時間を設定します。 </p>
+<p>デフォルト値 1000 </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">time</td><td>待ち時間(msec) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>nl/<a class="el" href="commentconnection_8h_source.html">commentconnection.h</a></li>
 <li>nl/commentconnection.cpp</li>
 </ul>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated on Sun Dec 6 2015 18:13:04 for QtNicoLiveLib by &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.6
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><b>nicolive</b></li><li class="navelem"><a class="el" href="classnicolive_1_1CommentConnection.html">CommentConnection</a></li>
+    <li class="footer">Generated on Wed Dec 9 2015 01:04:38 for QtNicoLiveLib by
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
+  </ul>
+</div>
 </body>
 </html>

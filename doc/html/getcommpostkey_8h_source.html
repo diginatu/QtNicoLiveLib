@@ -8,6 +8,13 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
 <script type="text/javascript">
@@ -62,6 +69,21 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="files.html"><span>File&#160;List</span></a></li>
     </ul>
   </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('getcommpostkey_8h_source.html','');});
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -76,11 +98,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="dir_96ad490beec81d4b3835d9aeae6fa9cf.html">nl</a></li>  </ul>
-</div>
-</div><!-- top -->
 <div class="header">
   <div class="headertitle">
 <div class="title">getcommpostkey.h</div>  </div>
@@ -126,11 +143,15 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="ttc" id="classnicolive_1_1GetCommPostKey_html_ae976e9542b41e67847d8c6ddf6134c85"><div class="ttname"><a href="classnicolive_1_1GetCommPostKey.html#ae976e9542b41e67847d8c6ddf6134c85">nicolive::GetCommPostKey::got</a></div><div class="ttdeci">void got(QString postkey)</div><div class="ttdoc">取得成功した場合にエミットされるシグナルです。 </div></div>
 <div class="ttc" id="classnicolive_1_1GetCommPostKey_html"><div class="ttname"><a href="classnicolive_1_1GetCommPostKey.html">nicolive::GetCommPostKey</a></div><div class="ttdoc">コメント受信に必要なポストキーを取得するクラス。 </div><div class="ttdef"><b>Definition:</b> getcommpostkey.h:12</div></div>
 </div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated on Sun Dec 6 2015 18:13:04 for QtNicoLiveLib by &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.6
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_96ad490beec81d4b3835d9aeae6fa9cf.html">nl</a></li><li class="navelem"><b>getcommpostkey.h</b></li>
+    <li class="footer">Generated on Wed Dec 9 2015 01:04:38 for QtNicoLiveLib by
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
+  </ul>
+</div>
 </body>
 </html>

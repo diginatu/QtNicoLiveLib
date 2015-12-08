@@ -8,6 +8,13 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
 <script type="text/javascript">
@@ -62,6 +69,21 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="files.html"><span>File&#160;List</span></a></li>
     </ul>
   </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('commentconnection_8h_source.html','');});
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -76,11 +98,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="dir_96ad490beec81d4b3835d9aeae6fa9cf.html">nl</a></li>  </ul>
-</div>
-</div><!-- top -->
 <div class="header">
   <div class="headertitle">
 <div class="title">commentconnection.h</div>  </div>
@@ -107,63 +124,78 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;                             <span class="keyword">const</span> QString&amp; userSession, QObject *parent = 0);</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  ~<a class="code" href="classnicolive_1_1CommentConnection.html">CommentConnection</a>();</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classnicolive_1_1CommentConnection.html#a4562e16f7f915dc70d8b392c75ab500f">doConnect</a>();</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classnicolive_1_1CommentConnection.html#a5d4f0038987b462f298b146f95e4ede1">close</a>();</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classnicolive_1_1CommentConnection.html#af47baac98c2486108bef89e983df5228">sendComment</a>(QString text, <span class="keywordtype">bool</span> iyayo = <span class="keyword">false</span>);</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  QDateTime <a class="code" href="classnicolive_1_1CommentConnection.html#a895e79f27572fcd9769806f961a5254c">getOpenTime</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  <span class="keywordtype">bool</span> <a class="code" href="classnicolive_1_1CommentConnection.html#a618d27cb672e1fd43f91da92f74733cd">isConnected</a>();</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  QTcpSocket* socket;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  <a class="code" href="classnicolive_1_1LiveWaku.html">nicolive::LiveWaku</a>* livewaku;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  QTimer nullDataTimer, postkeyTimer;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  <span class="keywordtype">int</span> lastBlockNum;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  QByteArray lastRawComm;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  QString userSession;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  QString ticket;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  QDateTime openTime, serverTime;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;signals:</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classnicolive_1_1CommentConnection.html#ae07053390386a3bcd43c2d602bcefe1b">error</a>(QString errorPosition, QString code);</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classnicolive_1_1CommentConnection.html#a17cb155bb3ae0b972bdf0951ae6720c9">connectionStarted</a>();</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classnicolive_1_1CommentConnection.html#af11e33b9aed4aa75bb316a412d18c7a6">connectionClosed</a>();</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classnicolive_1_1CommentConnection.html#a752ddbe915b5596b2ccef2483a875608">submittedComment</a>();</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classnicolive_1_1CommentConnection.html#a141567f25b9de58f9ac1edc38840d07a">newComment</a>(<span class="keywordtype">int</span> num, <span class="keywordtype">bool</span> premium, QString userID, QString comment,</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                  QDateTime commentTime, <span class="keywordtype">bool</span> iyayo, <span class="keywordtype">bool</span> broadcaster);</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="keyword">private</span> slots:</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  <span class="keywordtype">void</span> sendNull();</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  <span class="keywordtype">void</span> connected();</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  <span class="keywordtype">void</span> disconnected();</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;  <span class="keywordtype">void</span> readyRead();</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;  <span class="keywordtype">void</span> readOneRawComment(<span class="keyword">const</span> QString&amp; rawcomm);</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;};</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;}</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="preprocessor">#endif // COMMENTCONNECTION_H</span></div>
-<div class="ttc" id="classnicolive_1_1LiveWaku_html"><div class="ttname"><a href="classnicolive_1_1LiveWaku.html">nicolive::LiveWaku</a></div><div class="ttdef"><b>Definition:</b> livewaku.h:13</div></div>
-<div class="ttc" id="classnicolive_1_1CommentConnection_html_af11e33b9aed4aa75bb316a412d18c7a6"><div class="ttname"><a href="classnicolive_1_1CommentConnection.html#af11e33b9aed4aa75bb316a412d18c7a6">nicolive::CommentConnection::connectionClosed</a></div><div class="ttdeci">void connectionClosed()</div><div class="ttdoc">接続が切断した時にエミットされるシグナル。 </div></div>
-<div class="ttc" id="classnicolive_1_1CommentConnection_html"><div class="ttname"><a href="classnicolive_1_1CommentConnection.html">nicolive::CommentConnection</a></div><div class="ttdoc">ニコ生のコメント受信を行うクラス。 </div><div class="ttdef"><b>Definition:</b> commentconnection.h:22</div></div>
-<div class="ttc" id="classnicolive_1_1CommentConnection_html_a5d4f0038987b462f298b146f95e4ede1"><div class="ttname"><a href="classnicolive_1_1CommentConnection.html#a5d4f0038987b462f298b146f95e4ede1">nicolive::CommentConnection::close</a></div><div class="ttdeci">void close()</div><div class="ttdoc">接続を切断します。 </div><div class="ttdef"><b>Definition:</b> commentconnection.cpp:43</div></div>
-<div class="ttc" id="classnicolive_1_1CommentConnection_html_af47baac98c2486108bef89e983df5228"><div class="ttname"><a href="classnicolive_1_1CommentConnection.html#af47baac98c2486108bef89e983df5228">nicolive::CommentConnection::sendComment</a></div><div class="ttdeci">void sendComment(QString text, bool iyayo=false)</div><div class="ttdoc">通常のコメントを送信します。 </div><div class="ttdef"><b>Definition:</b> commentconnection.cpp:50</div></div>
-<div class="ttc" id="classnicolive_1_1CommentConnection_html_a17cb155bb3ae0b972bdf0951ae6720c9"><div class="ttname"><a href="classnicolive_1_1CommentConnection.html#a17cb155bb3ae0b972bdf0951ae6720c9">nicolive::CommentConnection::connectionStarted</a></div><div class="ttdeci">void connectionStarted()</div><div class="ttdoc">接続が開始した時にエミットされるシグナル。 </div></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classnicolive_1_1CommentConnection.html#a4562e16f7f915dc70d8b392c75ab500f">doConnect</a>();</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classnicolive_1_1CommentConnection.html#a5d4f0038987b462f298b146f95e4ede1">close</a>();</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classnicolive_1_1CommentConnection.html#af47baac98c2486108bef89e983df5228">sendComment</a>(QString text, <span class="keywordtype">bool</span> iyayo = <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  QDateTime <a class="code" href="classnicolive_1_1CommentConnection.html#a895e79f27572fcd9769806f961a5254c">getOpenTime</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  <span class="keywordtype">bool</span> <a class="code" href="classnicolive_1_1CommentConnection.html#a618d27cb672e1fd43f91da92f74733cd">isConnected</a>();</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classnicolive_1_1CommentConnection.html#a84bfa8f5c8aa9a05204da6631612bd5e">setReconnectTimes</a>(<span class="keywordtype">int</span> time);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classnicolive_1_1CommentConnection.html#ae1c25151e3e4f1b42d3a7a387b4caf96">setReconnectWaitMsec</a>(<span class="keywordtype">int</span> time);</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  QTcpSocket* socket;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  <a class="code" href="classnicolive_1_1LiveWaku.html">nicolive::LiveWaku</a>* livewaku;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  QTimer* nullDataTimer;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  QTimer* postkeyTimer;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  <span class="keywordtype">int</span> lastBlockNum;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  QByteArray lastRawComm;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  QString userSession;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  QString ticket;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  QDateTime openTime, serverTime;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  <span class="keywordtype">int</span> reconnectTimes, reconnectN;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  <span class="keywordtype">int</span> reconnectWaitMsec;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;signals:</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classnicolive_1_1CommentConnection.html#ae07053390386a3bcd43c2d602bcefe1b">error</a>(QString errorPosition, QString code);</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classnicolive_1_1CommentConnection.html#a5b57105f59084b2c5be6addacf89d6fe">socketConnected</a>();</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classnicolive_1_1CommentConnection.html#ac2509f2f50a8714024e9c7ed533fb0ca">socketDisconnected</a>();</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classnicolive_1_1CommentConnection.html#a752ddbe915b5596b2ccef2483a875608">submittedComment</a>();</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classnicolive_1_1CommentConnection.html#a141567f25b9de58f9ac1edc38840d07a">newComment</a>(<span class="keywordtype">int</span> num, <span class="keywordtype">bool</span> premium, QString userID, QString comment,</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;                  QDateTime commentTime, <span class="keywordtype">bool</span> iyayo, <span class="keywordtype">bool</span> broadcaster);</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="keyword">private</span> slots:</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;  <span class="keywordtype">void</span> sendNull();</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;  <span class="keywordtype">void</span> connected();</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;  <span class="keywordtype">void</span> disconnected();</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;  <span class="keywordtype">void</span> readyRead();</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;  <span class="keywordtype">void</span> readOneRawComment(<span class="keyword">const</span> QString&amp; rawcomm);</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;  <span class="keywordtype">void</span> connectionErrorOccured();</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;};</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;}</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="preprocessor">#endif // COMMENTCONNECTION_H</span></div>
+<div class="ttc" id="classnicolive_1_1CommentConnection_html_a84bfa8f5c8aa9a05204da6631612bd5e"><div class="ttname"><a href="classnicolive_1_1CommentConnection.html#a84bfa8f5c8aa9a05204da6631612bd5e">nicolive::CommentConnection::setReconnectTimes</a></div><div class="ttdeci">void setReconnectTimes(int time)</div><div class="ttdoc">再接続する試行回数を設定します。 </div></div>
+<div class="ttc" id="classnicolive_1_1LiveWaku_html"><div class="ttname"><a href="classnicolive_1_1LiveWaku.html">nicolive::LiveWaku</a></div><div class="ttdoc">１つの生放送の情報を保持するクラス。 </div><div class="ttdef"><b>Definition:</b> livewaku.h:18</div></div>
+<div class="ttc" id="classnicolive_1_1CommentConnection_html"><div class="ttname"><a href="classnicolive_1_1CommentConnection.html">nicolive::CommentConnection</a></div><div class="ttdoc">ニコ生のコメントの接続を管理するクラス。 </div><div class="ttdef"><b>Definition:</b> commentconnection.h:22</div></div>
+<div class="ttc" id="classnicolive_1_1CommentConnection_html_a5d4f0038987b462f298b146f95e4ede1"><div class="ttname"><a href="classnicolive_1_1CommentConnection.html#a5d4f0038987b462f298b146f95e4ede1">nicolive::CommentConnection::close</a></div><div class="ttdeci">void close()</div><div class="ttdoc">接続を切断します。 </div><div class="ttdef"><b>Definition:</b> commentconnection.cpp:48</div></div>
+<div class="ttc" id="classnicolive_1_1CommentConnection_html_af47baac98c2486108bef89e983df5228"><div class="ttname"><a href="classnicolive_1_1CommentConnection.html#af47baac98c2486108bef89e983df5228">nicolive::CommentConnection::sendComment</a></div><div class="ttdeci">void sendComment(QString text, bool iyayo=false)</div><div class="ttdoc">通常のコメントを送信します。 </div><div class="ttdef"><b>Definition:</b> commentconnection.cpp:55</div></div>
 <div class="ttc" id="classnicolive_1_1CommentConnection_html_a752ddbe915b5596b2ccef2483a875608"><div class="ttname"><a href="classnicolive_1_1CommentConnection.html#a752ddbe915b5596b2ccef2483a875608">nicolive::CommentConnection::submittedComment</a></div><div class="ttdeci">void submittedComment()</div><div class="ttdoc">コメントの送信が完了した時にエミットされるシグナル。 </div></div>
 <div class="ttc" id="classnicolive_1_1CommentConnection_html_ae07053390386a3bcd43c2d602bcefe1b"><div class="ttname"><a href="classnicolive_1_1CommentConnection.html#ae07053390386a3bcd43c2d602bcefe1b">nicolive::CommentConnection::error</a></div><div class="ttdeci">void error(QString errorPosition, QString code)</div><div class="ttdoc">エラーになった場合にエミットされるシグナル。 </div></div>
 <div class="ttc" id="classnicolive_1_1CommentConnection_html_a141567f25b9de58f9ac1edc38840d07a"><div class="ttname"><a href="classnicolive_1_1CommentConnection.html#a141567f25b9de58f9ac1edc38840d07a">nicolive::CommentConnection::newComment</a></div><div class="ttdeci">void newComment(int num, bool premium, QString userID, QString comment, QDateTime commentTime, bool iyayo, bool broadcaster)</div><div class="ttdoc">コメントを一つ受信した時にエミットされるシグナル。 </div></div>
-<div class="ttc" id="classnicolive_1_1CommentConnection_html_a895e79f27572fcd9769806f961a5254c"><div class="ttname"><a href="classnicolive_1_1CommentConnection.html#a895e79f27572fcd9769806f961a5254c">nicolive::CommentConnection::getOpenTime</a></div><div class="ttdeci">QDateTime getOpenTime() const </div><div class="ttdoc">接続開始した時刻を返します。 </div><div class="ttdef"><b>Definition:</b> commentconnection.cpp:84</div></div>
+<div class="ttc" id="classnicolive_1_1CommentConnection_html_ac2509f2f50a8714024e9c7ed533fb0ca"><div class="ttname"><a href="classnicolive_1_1CommentConnection.html#ac2509f2f50a8714024e9c7ed533fb0ca">nicolive::CommentConnection::socketDisconnected</a></div><div class="ttdeci">void socketDisconnected()</div><div class="ttdoc">接続が切断した時にエミットされるシグナル。 </div></div>
+<div class="ttc" id="classnicolive_1_1CommentConnection_html_a5b57105f59084b2c5be6addacf89d6fe"><div class="ttname"><a href="classnicolive_1_1CommentConnection.html#a5b57105f59084b2c5be6addacf89d6fe">nicolive::CommentConnection::socketConnected</a></div><div class="ttdeci">void socketConnected()</div><div class="ttdoc">接続が開始した時にエミットされるシグナル。 </div></div>
+<div class="ttc" id="classnicolive_1_1CommentConnection_html_a895e79f27572fcd9769806f961a5254c"><div class="ttname"><a href="classnicolive_1_1CommentConnection.html#a895e79f27572fcd9769806f961a5254c">nicolive::CommentConnection::getOpenTime</a></div><div class="ttdeci">QDateTime getOpenTime() const </div><div class="ttdoc">接続開始した時刻を返します。 </div><div class="ttdef"><b>Definition:</b> commentconnection.cpp:90</div></div>
 <div class="ttc" id="classnicolive_1_1CommentConnection_html_a9eb93f44b510ee11616a4e19ec26f7a3"><div class="ttname"><a href="classnicolive_1_1CommentConnection.html#a9eb93f44b510ee11616a4e19ec26f7a3">nicolive::CommentConnection::CommentConnection</a></div><div class="ttdeci">CommentConnection(LiveWaku *livewaku, const QString &amp;userSession, QObject *parent=0)</div><div class="ttdoc">コンストラクタ </div><div class="ttdef"><b>Definition:</b> commentconnection.cpp:5</div></div>
-<div class="ttc" id="classnicolive_1_1CommentConnection_html_a4562e16f7f915dc70d8b392c75ab500f"><div class="ttname"><a href="classnicolive_1_1CommentConnection.html#a4562e16f7f915dc70d8b392c75ab500f">nicolive::CommentConnection::doConnect</a></div><div class="ttdeci">void doConnect()</div><div class="ttdef"><b>Definition:</b> commentconnection.cpp:29</div></div>
-<div class="ttc" id="classnicolive_1_1CommentConnection_html_a618d27cb672e1fd43f91da92f74733cd"><div class="ttname"><a href="classnicolive_1_1CommentConnection.html#a618d27cb672e1fd43f91da92f74733cd">nicolive::CommentConnection::isConnected</a></div><div class="ttdeci">bool isConnected()</div><div class="ttdoc">接続されているかどうかをboolで返します。 </div><div class="ttdef"><b>Definition:</b> commentconnection.cpp:197</div></div>
+<div class="ttc" id="classnicolive_1_1CommentConnection_html_a4562e16f7f915dc70d8b392c75ab500f"><div class="ttname"><a href="classnicolive_1_1CommentConnection.html#a4562e16f7f915dc70d8b392c75ab500f">nicolive::CommentConnection::doConnect</a></div><div class="ttdeci">void doConnect()</div><div class="ttdoc">コメントサーバに接続します。 </div><div class="ttdef"><b>Definition:</b> commentconnection.cpp:38</div></div>
+<div class="ttc" id="classnicolive_1_1CommentConnection_html_ae1c25151e3e4f1b42d3a7a387b4caf96"><div class="ttname"><a href="classnicolive_1_1CommentConnection.html#ae1c25151e3e4f1b42d3a7a387b4caf96">nicolive::CommentConnection::setReconnectWaitMsec</a></div><div class="ttdeci">void setReconnectWaitMsec(int time)</div><div class="ttdoc">再接続する際の待ち時間を設定します。 </div></div>
+<div class="ttc" id="classnicolive_1_1CommentConnection_html_a618d27cb672e1fd43f91da92f74733cd"><div class="ttname"><a href="classnicolive_1_1CommentConnection.html#a618d27cb672e1fd43f91da92f74733cd">nicolive::CommentConnection::isConnected</a></div><div class="ttdeci">bool isConnected()</div><div class="ttdoc">接続されているかどうかをboolで返します。 </div><div class="ttdef"><b>Definition:</b> commentconnection.cpp:218</div></div>
 </div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated on Sun Dec 6 2015 18:13:04 for QtNicoLiveLib by &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.6
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_96ad490beec81d4b3835d9aeae6fa9cf.html">nl</a></li><li class="navelem"><b>commentconnection.h</b></li>
+    <li class="footer">Generated on Wed Dec 9 2015 01:04:38 for QtNicoLiveLib by
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
+  </ul>
+</div>
 </body>
 </html>

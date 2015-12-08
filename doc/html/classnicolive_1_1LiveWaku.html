@@ -8,6 +8,13 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
 <script type="text/javascript">
@@ -61,10 +68,25 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="annotated.html"><span>Class&#160;List</span></a></li>
       <li><a href="classes.html"><span>Class&#160;Index</span></a></li>
-      <li><a href="hierarchy.html"><span>Class&#160;Hierarchy</span></a></li>
+      <li><a href="inherits.html"><span>Class&#160;Hierarchy</span></a></li>
       <li><a href="functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('classnicolive_1_1LiveWaku.html','');});
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -79,11 +101,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><b>nicolive</b></li><li class="navelem"><a class="el" href="classnicolive_1_1LiveWaku.html">LiveWaku</a></li>  </ul>
-</div>
-</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#signals">Signals</a> &#124;
@@ -93,37 +110,49 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">nicolive::LiveWaku Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>１つの生放送の情報を保持するクラス。  
+ <a href="classnicolive_1_1LiveWaku.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="livewaku_8h_source.html">nl/livewaku.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for nicolive::LiveWaku:</div>
 <div class="dyncontent">
- <div class="center">
-  <img src="classnicolive_1_1LiveWaku.png" usemap="#nicolive::LiveWaku_map" alt=""/>
-  <map id="nicolive::LiveWaku_map" name="nicolive::LiveWaku_map">
-</map>
- </div></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classnicolive_1_1LiveWaku__inherit__graph.svg" width="142" height="112"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div class="dynheader">
+Collaboration diagram for nicolive::LiveWaku:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classnicolive_1_1LiveWaku__coll__graph.svg" width="142" height="112"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="signals"></a>
 Signals</h2></td></tr>
 <tr class="memitem:a2726735ad485286cd7b1010e7bd04b92"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2726735ad485286cd7b1010e7bd04b92"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>gotInfornationError</b> (QString code)</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnicolive_1_1LiveWaku.html#a2726735ad485286cd7b1010e7bd04b92">gotInfornationError</a> (QString code)</td></tr>
+<tr class="memdesc:a2726735ad485286cd7b1010e7bd04b92"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classnicolive_1_1LiveWaku.html#a35b3ecc67ca23800f0300fe93ec41672" title="PlayerStatus を使って放送枠に関する情報を取得します。 ">fetchInformation()</a> でエラーになった場合にエミットされるシグナルです。 <br/></td></tr>
 <tr class="separator:a2726735ad485286cd7b1010e7bd04b92"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6e80912cb46939f5e779c1d364e8ff01"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6e80912cb46939f5e779c1d364e8ff01"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>gotInfornation</b> ()</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnicolive_1_1LiveWaku.html#a6e80912cb46939f5e779c1d364e8ff01">gotInfornation</a> ()</td></tr>
+<tr class="memdesc:a6e80912cb46939f5e779c1d364e8ff01"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classnicolive_1_1LiveWaku.html#a35b3ecc67ca23800f0300fe93ec41672" title="PlayerStatus を使って放送枠に関する情報を取得します。 ">fetchInformation()</a> で取得成功した場合にエミットされるシグナルです。 <br/></td></tr>
 <tr class="separator:a6e80912cb46939f5e779c1d364e8ff01"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a296bd80d0765f77a74961b4aec4acee5"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a296bd80d0765f77a74961b4aec4acee5"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>gotPostKeyError</b> ()</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnicolive_1_1LiveWaku.html#a296bd80d0765f77a74961b4aec4acee5">gotPostKeyError</a> ()</td></tr>
+<tr class="memdesc:a296bd80d0765f77a74961b4aec4acee5"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classnicolive_1_1LiveWaku.html#a872cdbcd69bd17a43d706ab061a2f3ef" title="コメント送信に必要な PostKey の取得・更新をします。 ">fetchPostKey()</a> でエラーになった場合にエミットされるシグナルです。 <br/></td></tr>
 <tr class="separator:a296bd80d0765f77a74961b4aec4acee5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab461603032fda5bc9eb57a2c34262bee"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab461603032fda5bc9eb57a2c34262bee"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>gotPostKey</b> ()</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnicolive_1_1LiveWaku.html#ab461603032fda5bc9eb57a2c34262bee">gotPostKey</a> ()</td></tr>
+<tr class="memdesc:ab461603032fda5bc9eb57a2c34262bee"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classnicolive_1_1LiveWaku.html#a872cdbcd69bd17a43d706ab061a2f3ef" title="コメント送信に必要な PostKey の取得・更新をします。 ">fetchPostKey()</a> で取得成功した場合にエミットされるシグナルです。 <br/></td></tr>
 <tr class="separator:ab461603032fda5bc9eb57a2c34262bee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:acfb085daa52cf6629db669cb913847b3"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="acfb085daa52cf6629db669cb913847b3"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>LiveWaku</b> (QObject *parent=0)</td></tr>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnicolive_1_1LiveWaku.html#acfb085daa52cf6629db669cb913847b3">LiveWaku</a> (QObject *parent=0)</td></tr>
+<tr class="memdesc:acfb085daa52cf6629db669cb913847b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">コンストラクタ <br/></td></tr>
 <tr class="separator:acfb085daa52cf6629db669cb913847b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aab2f25df54a367c375b0eb9f249bbecc"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aab2f25df54a367c375b0eb9f249bbecc"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>LiveWaku</b> (const QString &amp;broadID, QObject *parent=0)</td></tr>
+<tr class="memitem:aab2f25df54a367c375b0eb9f249bbecc"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnicolive_1_1LiveWaku.html#aab2f25df54a367c375b0eb9f249bbecc">LiveWaku</a> (const QString &amp;broadID, QObject *parent=0)</td></tr>
+<tr class="memdesc:aab2f25df54a367c375b0eb9f249bbecc"><td class="mdescLeft">&#160;</td><td class="mdescRight">コンストラクタ  <a href="#aab2f25df54a367c375b0eb9f249bbecc">More...</a><br/></td></tr>
 <tr class="separator:aab2f25df54a367c375b0eb9f249bbecc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4a0c99913d1d94dddfbd285b97a74ddb"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4a0c99913d1d94dddfbd285b97a74ddb"></a>
 QString&#160;</td><td class="memItemRight" valign="bottom"><b>getTitle</b> () const </td></tr>
@@ -194,23 +223,125 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>setOwnerBroad</b> (bo
 <tr class="memitem:ae1e928bc70b03fd642a3584773fa3481"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae1e928bc70b03fd642a3584773fa3481"></a>
 QString&#160;</td><td class="memItemRight" valign="bottom"><b>getOwnerCommentToken</b> () const </td></tr>
 <tr class="separator:ae1e928bc70b03fd642a3584773fa3481"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a35b3ecc67ca23800f0300fe93ec41672"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a35b3ecc67ca23800f0300fe93ec41672"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>fetchInformation</b> (const QString &amp;userSession)</td></tr>
+<tr class="memitem:a35b3ecc67ca23800f0300fe93ec41672"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnicolive_1_1LiveWaku.html#a35b3ecc67ca23800f0300fe93ec41672">fetchInformation</a> (const QString &amp;userSession)</td></tr>
+<tr class="memdesc:a35b3ecc67ca23800f0300fe93ec41672"><td class="mdescLeft">&#160;</td><td class="mdescRight">PlayerStatus を使って放送枠に関する情報を取得します。  <a href="#a35b3ecc67ca23800f0300fe93ec41672">More...</a><br/></td></tr>
 <tr class="separator:a35b3ecc67ca23800f0300fe93ec41672"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a872cdbcd69bd17a43d706ab061a2f3ef"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a872cdbcd69bd17a43d706ab061a2f3ef"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>fetchPostKey</b> (int lastBlockNum, const QString &amp;userSession)</td></tr>
+<tr class="memitem:a872cdbcd69bd17a43d706ab061a2f3ef"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnicolive_1_1LiveWaku.html#a872cdbcd69bd17a43d706ab061a2f3ef">fetchPostKey</a> (int lastBlockNum, const QString &amp;userSession)</td></tr>
+<tr class="memdesc:a872cdbcd69bd17a43d706ab061a2f3ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">コメント送信に必要な PostKey の取得・更新をします。  <a href="#a872cdbcd69bd17a43d706ab061a2f3ef">More...</a><br/></td></tr>
 <tr class="separator:a872cdbcd69bd17a43d706ab061a2f3ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>１つの生放送の情報を保持するクラス。 </p>
+<p><a class="el" href="classnicolive_1_1CommentConnection.html" title="ニコ生のコメントの接続を管理するクラス。 ">CommentConnection</a> </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="aab2f25df54a367c375b0eb9f249bbecc"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">nicolive::LiveWaku::LiveWaku </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>broadID</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QObject *&#160;</td>
+          <td class="paramname"><em>parent</em> = <code>0</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>コンストラクタ </p>
+<p>broadID をだけ指定すれば残りの情報は <a class="el" href="classnicolive_1_1LiveWaku.html#a35b3ecc67ca23800f0300fe93ec41672" title="PlayerStatus を使って放送枠に関する情報を取得します。 ">fetchInformation()</a> で得られます。 </p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a35b3ecc67ca23800f0300fe93ec41672"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void nicolive::LiveWaku::fetchInformation </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>userSession</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>PlayerStatus を使って放送枠に関する情報を取得します。 </p>
+<p><a class="el" href="classnicolive_1_1CommentConnection.html" title="ニコ生のコメントの接続を管理するクラス。 ">CommentConnection</a> で doConnect する前に実行する必要があります。</p>
+<p>取得完了すると <a class="el" href="classnicolive_1_1LiveWaku.html#a2726735ad485286cd7b1010e7bd04b92" title="fetchInformation() でエラーになった場合にエミットされるシグナルです。 ">gotInfornationError()</a> または <a class="el" href="classnicolive_1_1LiveWaku.html#a6e80912cb46939f5e779c1d364e8ff01" title="fetchInformation() で取得成功した場合にエミットされるシグナルです。 ">gotInfornation()</a> を emit します。 </p>
+
+</div>
+</div>
+<a class="anchor" id="a872cdbcd69bd17a43d706ab061a2f3ef"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void nicolive::LiveWaku::fetchPostKey </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>lastBlockNum</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>userSession</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>コメント送信に必要な PostKey の取得・更新をします。 </p>
+<p>取得完了すると gotInPostKeyError() または <a class="el" href="classnicolive_1_1LiveWaku.html#ab461603032fda5bc9eb57a2c34262bee" title="fetchPostKey() で取得成功した場合にエミットされるシグナルです。 ">gotPostKey()</a> を emit します。 </p>
+
+<p><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classnicolive_1_1LiveWaku_a872cdbcd69bd17a43d706ab061a2f3ef_icgraph.svg" width="390" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>nl/<a class="el" href="livewaku_8h_source.html">livewaku.h</a></li>
 <li>nl/livewaku.cpp</li>
 </ul>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated on Sun Dec 6 2015 18:13:04 for QtNicoLiveLib by &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.6
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><b>nicolive</b></li><li class="navelem"><a class="el" href="classnicolive_1_1LiveWaku.html">LiveWaku</a></li>
+    <li class="footer">Generated on Wed Dec 9 2015 01:04:38 for QtNicoLiveLib by
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
+  </ul>
+</div>
 </body>
 </html>

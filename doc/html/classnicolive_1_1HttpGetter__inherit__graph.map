@@ -1,0 +1,11 @@
+<map id="nicolive::HttpGetter" name="nicolive::HttpGetter">
+<area shape="rect" id="node3" href="$classnicolive_1_1AlertAdmin.html" title="ニコ生アラート取得のために必要な情報と、登録コミュニティを取得します。 " alt="" coords="332,5,471,32"/>
+<area shape="rect" id="node4" href="$classnicolive_1_1AlertLogin.html" title="ニコ生アラートのログインをしてチケットを取得します " alt="" coords="335,56,467,83"/>
+<area shape="rect" id="node5" href="$classnicolive_1_1Extend.html" title="ニコ生放送の延長を実行するクラス。 " alt="" coords="344,107,459,133"/>
+<area shape="rect" id="node6" href="$classnicolive_1_1ExtendInfo.html" title="ニコ生放送の延長情報を取得するクラス。 " alt="" coords="333,157,470,184"/>
+<area shape="rect" id="node7" href="$classnicolive_1_1FetchUserName.html" title="ユーザIDからユーザ名を取得するクラス。 " alt="" coords="316,208,487,235"/>
+<area shape="rect" id="node8" href="$classnicolive_1_1GetCommPostKey.html" title="コメント受信に必要なポストキーを取得するクラス。 " alt="" coords="309,259,493,285"/>
+<area shape="rect" id="node9" href="$classnicolive_1_1GetPlayerStatus.html" title="PlayerStatus API から生放送の情報を取得するクラス。 " alt="" coords="316,309,487,336"/>
+<area shape="rect" id="node10" href="$classnicolive_1_1LiveTag.html" title="生放送のタグを取得するクラス。 " alt="" coords="341,360,461,387"/>
+<area shape="rect" id="node11" href="$classnicolive_1_1UserSessionLogin.html" title="ニコ動にログインしてユーザセッションを取得します " alt="" coords="311,411,491,437"/>
+</map>

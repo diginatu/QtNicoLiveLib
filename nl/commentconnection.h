@@ -3,6 +3,7 @@
 
 #include <QObject>
 #include <QTimer>
+#include "qtnicolivelib.h"
 #include "livewaku.h"
 #include "getcommpostkey.h"
 #include "strabstractor.h"
@@ -19,7 +20,7 @@ namespace nicolive {
  * \include LiveComment/testclass.cpp
  */
 
-class CommentConnection : public QObject
+class QTNICOLIVELIBSHARED_EXPORT CommentConnection : public QObject
 {
   Q_OBJECT
 public:

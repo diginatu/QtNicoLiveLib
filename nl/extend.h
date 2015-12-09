@@ -3,6 +3,7 @@
 
 #include <QObject>
 #include <QUrlQuery>
+#include "qtnicolivelib.h"
 #include "extendinfo.h"
 #include "httpgetter.h"
 #include "strabstractor.h"
@@ -12,7 +13,7 @@ namespace nicolive {
 //! ニコ生放送の延長を実行するクラス。
 /*! 参考: ExtendInfo */
 
-class Extend : public HttpGetter
+class QTNICOLIVELIBSHARED_EXPORT Extend : public HttpGetter
 {
   Q_OBJECT
 public:

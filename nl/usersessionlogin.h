@@ -3,6 +3,7 @@
 
 #include <QObject>
 #include <QUrlQuery>
+#include "qtnicolivelib.h"
 #include "httpgetter.h"
 #include "strabstractor.h"
 
@@ -10,7 +11,7 @@ namespace nicolive {
 
 //! ニコ動にログインしてユーザセッションを取得します
 
-class UserSessionLogin : public HttpGetter
+class QTNICOLIVELIBSHARED_EXPORT UserSessionLogin : public HttpGetter
 {
   Q_OBJECT
 public:

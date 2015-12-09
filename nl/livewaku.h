@@ -4,7 +4,7 @@
 #include <QObject>
 #include <QDateTime>
 #include <QDebug>
-
+#include "qtnicolivelib.h"
 #include "getplayerstatus.h"
 #include "getcommpostkey.h"
 
@@ -15,7 +15,7 @@ namespace nicolive {
  * CommentConnection
  */
 
-class LiveWaku : public QObject
+class QTNICOLIVELIBSHARED_EXPORT LiveWaku : public QObject
 {
   Q_OBJECT
 public:

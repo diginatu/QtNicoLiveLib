@@ -3,6 +3,7 @@
 
 #include <QObject>
 #include <QUrlQuery>
+#include "qtnicolivelib.h"
 #include "httpgetter.h"
 #include "strabstractor.h"
 
@@ -10,7 +11,7 @@ namespace nicolive {
 
 //! ニコ生アラート取得のために必要な情報と、登録コミュニティを取得します。
 
-class AlertAdmin : public HttpGetter
+class QTNICOLIVELIBSHARED_EXPORT AlertAdmin : public HttpGetter
 {
   Q_OBJECT
 public:

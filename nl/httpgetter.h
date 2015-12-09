@@ -5,6 +5,7 @@
 #include <QNetworkAccessManager>
 #include <QNetworkReply>
 #include <QNetworkCookie>
+#include "qtnicolivelib.h"
 
 namespace nicolive {
 
@@ -15,7 +16,7 @@ namespace nicolive {
  * そのため、本クラスの抽象クラスはnewして作成されるべきである。
  */
 
-class HttpGetter : public QObject
+class QTNICOLIVELIBSHARED_EXPORT HttpGetter : public QObject
 {
   Q_OBJECT
 public:

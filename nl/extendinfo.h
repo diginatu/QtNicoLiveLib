@@ -2,17 +2,18 @@
 #define EXTENDINFO_H
 
 #include <QObject>
+#include "qtnicolivelib.h"
 #include "httpgetter.h"
 #include "strabstractor.h"
 
 namespace nicolive {
 
 //! ニコ生APIで取得される延長情報に放送IDを追加した延長項目を保持するクラス。
-struct ExtendItem { QString label, price, num, code, item, broadID; };
+struct QTNICOLIVELIBSHARED_EXPORT ExtendItem { QString label, price, num, code, item, broadID; };
 
 //! ニコ生放送の延長情報を取得するクラス。
 
-class ExtendInfo : public HttpGetter
+class QTNICOLIVELIBSHARED_EXPORT ExtendInfo : public HttpGetter
 {
   Q_OBJECT
 public:

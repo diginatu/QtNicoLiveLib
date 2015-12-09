@@ -2,14 +2,14 @@
 #define GETCOMMPOSTKEY_H
 
 #include <QObject>
-
+#include "qtnicolivelib.h"
 #include "httpgetter.h"
 
 namespace nicolive {
 
 //! コメント受信に必要なポストキーを取得するクラス。
 
-class GetCommPostKey : public HttpGetter
+class QTNICOLIVELIBSHARED_EXPORT GetCommPostKey : public HttpGetter
 {
   Q_OBJECT
 public:

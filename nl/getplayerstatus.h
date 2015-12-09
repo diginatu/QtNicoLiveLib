@@ -2,6 +2,7 @@
 #define GETPLAYERSTATUS_H
 
 #include <QObject>
+#include "qtnicolivelib.h"
 #include "httpgetter.h"
 #include "strabstractor.h"
 
@@ -9,7 +10,7 @@ namespace nicolive {
 
 //! PlayerStatus API から生放送の情報を取得するクラス。
 
-class GetPlayerStatus : public HttpGetter
+class QTNICOLIVELIBSHARED_EXPORT GetPlayerStatus : public HttpGetter
 {
   Q_OBJECT
 public:

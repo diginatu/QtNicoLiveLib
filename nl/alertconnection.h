@@ -7,18 +7,19 @@
 #include <QDateTime>
 #include <QProcess>
 #include <QTimer>
+#include "qtnicolivelib.h"
 #include "strabstractor.h"
 
 namespace nicolive {
 
 //! 生放送通知アラートの接続を管理するクラス。
 
-class AlertConnection : public QObject
+class QTNICOLIVELIBSHARED_EXPORT AlertConnection : public QObject
 {
   Q_OBJECT
 public:
   //! コンストラクタ
-  explicit AlertConnection(const QString& domain, qint16 port,
+  explicit AlertConnection(const QString& addr, qint16 port,
                            const QString& thread, QObject *parent = 0);
 
   //! アラートに接続します。
@@ -57,7 +58,7 @@ signals:
    */
   void error(QString errorPosition, QString code);
   //! 新しい放送を受信した時にエミットされるシグナル。
-  void gotNewWaku(QString broadID, QString CommunityID, QString nushiID);
+  void gotNewWaku(QString broadID, QString communityID, QString nushiID);
   //! 接続が開始した時にエミットされるシグナル。
   void socketConnected();
   //! 接続が切断した時にエミットされるシグナル。
@@ -66,7 +67,7 @@ signals:
 private:
   QTcpSocket* socket;
 
-  QString domain, thread;
+  QString addr, thread;
   int port;
 
   QDateTime opentime;

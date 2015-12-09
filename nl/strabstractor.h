@@ -2,11 +2,12 @@
 #define STRABSTRACTOR_H
 
 #include <QObject>
+#include "qtnicolivelib.h"
 
 namespace nicolive {
 
 //! Class for abstract keywords from a string (Internal Class)
-class StrAbstractor : public QObject
+class QTNICOLIVELIBSHARED_EXPORT StrAbstractor : public QObject
 {
 	Q_OBJECT
 public:

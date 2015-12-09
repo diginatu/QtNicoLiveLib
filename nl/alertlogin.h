@@ -3,14 +3,15 @@
 
 #include <QObject>
 #include <QUrlQuery>
+#include "qtnicolivelib.h"
 #include "httpgetter.h"
 #include "strabstractor.h"
 
 namespace nicolive {
 
-//! ニコ生アラートのログインをしてチケットを取得します
+//! ニコ生アラートのログインをしてAlertAdminに必要なチケットを取得します
 
-class AlertLogin : public HttpGetter
+class QTNICOLIVELIBSHARED_EXPORT AlertLogin : public HttpGetter
 {
   Q_OBJECT
 public:

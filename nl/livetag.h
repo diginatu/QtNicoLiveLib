@@ -2,6 +2,7 @@
 #define LIVETAG_H
 
 #include <QObject>
+#include "qtnicolivelib.h"
 #include "httpgetter.h"
 #include "strabstractor.h"
 
@@ -9,7 +10,7 @@ namespace nicolive {
 
 //! 生放送のタグを取得するクラス。
 
-class LiveTag : public HttpGetter
+class QTNICOLIVELIBSHARED_EXPORT LiveTag : public HttpGetter
 {
   Q_OBJECT
 public:

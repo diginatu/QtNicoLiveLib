@@ -2,11 +2,11 @@
 
 namespace nicolive {
 
-AlertConnection::AlertConnection(const QString& domain, qint16 port,
+AlertConnection::AlertConnection(const QString& addr, qint16 port,
                                  const QString& thread, QObject* parent):
   QObject(parent)
 {
-  this->domain = domain;
+  this->addr   = addr;
   this->port   = port;
   this->thread = thread;
 
@@ -28,7 +28,7 @@ AlertConnection::AlertConnection(const QString& domain, qint16 port,
 
 void AlertConnection::doConnect()
 {
-  socket->connectToHost(domain, port);
+  socket->connectToHost(addr, port);
 }
 
 void AlertConnection::close()

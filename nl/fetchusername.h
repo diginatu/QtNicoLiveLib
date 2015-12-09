@@ -2,6 +2,7 @@
 #define FETCHUSERNAME_H
 
 #include <QObject>
+#include "qtnicolivelib.h"
 #include "httpgetter.h"
 #include "strabstractor.h"
 
@@ -13,7 +14,7 @@ namespace nicolive {
  * \include FetchUserName/testclass.cpp
  */
 
-class FetchUserName : public HttpGetter
+class QTNICOLIVELIBSHARED_EXPORT FetchUserName : public HttpGetter
 {
   Q_OBJECT
 public:

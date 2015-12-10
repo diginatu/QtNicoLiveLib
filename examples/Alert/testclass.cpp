@@ -14,6 +14,8 @@ void TestClass::fetch()
   qDebug() << "input user password : ";
   qtin >> pass;
 
+  qDebug() << mail << pass;
+
   // create LiveWaku, which deals about alert
   auto login = new nicolive::AlertLogin(this);
   auto admin = new nicolive::AlertAdmin(this);

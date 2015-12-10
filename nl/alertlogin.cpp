@@ -10,7 +10,7 @@ void AlertLogin::get(const QString& mailAddress, const QString& password)
 {
   // make request
   QNetworkRequest rq;
-  rq.setUrl(QUrl("https://secure.nicovideo.jp/secure/login?site=nicolive"));
+  rq.setUrl(QUrl("https://secure.nicovideo.jp/secure/login?site=nicolive_antenna"));
   rq.setHeader(QNetworkRequest::ContentTypeHeader, "application/x-www-form-urlencoded");
 
   QUrlQuery params;
@@ -38,6 +38,10 @@ void AlertLogin::gotReply(QNetworkReply* reply)
   }
 
   const QString ticket = commTcpi.midStr("<ticket>","</ticket>");
+  if (ticket.isEmpty()) {
+    emit error("ticket", "incorrect account");
+    return;
+  }
   emit got(ticket);
 }
 

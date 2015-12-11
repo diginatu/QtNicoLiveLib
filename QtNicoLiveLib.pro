@@ -5,9 +5,20 @@
 #-------------------------------------------------
 
 QT       += network
+QT       += sql
 QT       -= gui
 
 CONFIG += c++11
+
+# libs used in nicookie
+win32: LIBS += -lwininet
+win32-msvc*{
+LIBS += -liepmapi
+}
+win32: LIBS += -lcrypt32
+mac: LIBS += -framework Security
+unix: LIBS += -lcrypto
+
 
 TARGET = QtNicoLiveLib
 TEMPLATE = lib
@@ -28,7 +39,8 @@ SOURCES += nl/fetchusername.cpp \
     nl/usersessionlogin.cpp \
     nl/alertlogin.cpp \
     nl/alertadmin.cpp \
-    nl/alertconnection.cpp
+    nl/alertconnection.cpp \
+    nl/nicookie.cpp
 
 HEADERS += nl/fetchusername.h \
     nl/httpgetter.h \
@@ -45,7 +57,8 @@ HEADERS += nl/fetchusername.h \
     nl/usersessionlogin.h \
     nl/alertlogin.h \
     nl/alertadmin.h \
-    nl/alertconnection.h
+    nl/alertconnection.h \
+    nl/nicookie.h
 
 unix {
     target.path = /usr/lib

@@ -105,6 +105,12 @@ private:
 
 };
 
+template <class Char>
+inline std::basic_ostream<Char>& operator <<(std::basic_ostream<Char>& os, const LiveWaku& l)
+{
+  return os << "LiveWaku(" << l.getBroadID() << ":" << l.getTitle() << ")";
+}
+
 }
 
 #endif // LIVEWAKU_H

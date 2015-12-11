@@ -17,7 +17,7 @@
 </g>
 <!-- Node2 -->
 <g id="node2" class="node"><title>Node2</title>
-<g id="a_node2"><a xlink:href="classnicolive_1_1AlertConnection.html#a75ef217149a292f2377bd6e3a0dfe6d2" target="_top" xlink:title="コンストラクタ ">
+<g id="a_node2"><a xlink:href="classnicolive_1_1AlertConnection.html#afa097b87051f45b51bcfc9d50d234f03" target="_top" xlink:title="コンストラクタ ">
 <polygon fill="white" stroke="black" points="162.5,-0 162.5,-30 287.5,-30 287.5,-0 162.5,-0"/>
 <text text-anchor="start" x="170.5" y="-18" font-family="Helvetica,sans-Serif" font-size="10.00">nicolive::AlertConnection</text>
 <text text-anchor="middle" x="225" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">::AlertConnection</text>

@@ -1,7 +1,7 @@
 var hierarchy =
 [
     [ "nicolive::ExtendItem", "structnicolive_1_1ExtendItem.html", null ],
-    [ "QObject", null, [
+    [ "QObject", "classQObject.html", [
       [ "nicolive::AlertConnection", "classnicolive_1_1AlertConnection.html", null ],
       [ "nicolive::CommentConnection", "classnicolive_1_1CommentConnection.html", null ],
       [ "nicolive::HttpGetter", "classnicolive_1_1HttpGetter.html", [
@@ -16,6 +16,7 @@ var hierarchy =
         [ "nicolive::UserSessionLogin", "classnicolive_1_1UserSessionLogin.html", null ]
       ] ],
       [ "nicolive::LiveWaku", "classnicolive_1_1LiveWaku.html", null ],
+      [ "nicolive::Nicookie", "classnicolive_1_1Nicookie.html", null ],
       [ "nicolive::StrAbstractor", "classnicolive_1_1StrAbstractor.html", null ]
     ] ],
     [ "nicolive::QtNicoLiveLib", "classnicolive_1_1QtNicoLiveLib.html", null ]

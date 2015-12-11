@@ -108,45 +108,44 @@ $(document).ready(function(){initNavTree('alertlogin_8h_source.html','');});
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;QObject&gt;</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;QUrlQuery&gt;</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;httpgetter.h&quot;</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;strabstractor.h&quot;</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">namespace </span>nicolive {</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
-<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="classnicolive_1_1AlertLogin.html">   13</a></span>&#160;<span class="keyword">class </span><a class="code" href="classnicolive_1_1AlertLogin.html">AlertLogin</a> : <span class="keyword">public</span> <a class="code" href="classnicolive_1_1HttpGetter.html">HttpGetter</a></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;{</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;  Q_OBJECT</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;  <span class="keyword">explicit</span> <a class="code" href="classnicolive_1_1AlertLogin.html#a2c524e9ea735ccb7bea0b37dbb093ee8">AlertLogin</a>(QObject *parent = 0);</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;  <span class="keywordtype">void</span> <span class="keyword">get</span>(<span class="keyword">const</span> QString&amp; mailAddress, <span class="keyword">const</span> QString&amp; password);</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  <span class="keywordtype">void</span> gotReply(QNetworkReply* reply) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;signals:</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classnicolive_1_1AlertLogin.html#a2cee537f97be5c08cd26281d851f15f3">error</a>(QString code, QString description);</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classnicolive_1_1AlertLogin.html#ac4ff0ad3dda5acb075e04b3a6eb7ad98">got</a>(QString ticket);</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;};</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;}</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#endif // ALERTLOGIN_H</span></div>
-<div class="ttc" id="classnicolive_1_1HttpGetter_html"><div class="ttname"><a href="classnicolive_1_1HttpGetter.html">nicolive::HttpGetter</a></div><div class="ttdoc">APIを取得するのに使用されている抽象クラス。 </div><div class="ttdef"><b>Definition:</b> httpgetter.h:18</div></div>
-<div class="ttc" id="classnicolive_1_1AlertLogin_html_ac4ff0ad3dda5acb075e04b3a6eb7ad98"><div class="ttname"><a href="classnicolive_1_1AlertLogin.html#ac4ff0ad3dda5acb075e04b3a6eb7ad98">nicolive::AlertLogin::got</a></div><div class="ttdeci">void got(QString ticket)</div><div class="ttdoc">取得成功した場合にエミットされるシグナルです。 </div></div>
-<div class="ttc" id="classnicolive_1_1AlertLogin_html_a2cee537f97be5c08cd26281d851f15f3"><div class="ttname"><a href="classnicolive_1_1AlertLogin.html#a2cee537f97be5c08cd26281d851f15f3">nicolive::AlertLogin::error</a></div><div class="ttdeci">void error(QString code, QString description)</div><div class="ttdoc">エラーになった場合にエミットされるシグナルです。 </div></div>
-<div class="ttc" id="classnicolive_1_1AlertLogin_html_a2c524e9ea735ccb7bea0b37dbb093ee8"><div class="ttname"><a href="classnicolive_1_1AlertLogin.html#a2c524e9ea735ccb7bea0b37dbb093ee8">nicolive::AlertLogin::AlertLogin</a></div><div class="ttdeci">AlertLogin(QObject *parent=0)</div><div class="ttdoc">コンストラクタ </div><div class="ttdef"><b>Definition:</b> alertlogin.cpp:5</div></div>
-<div class="ttc" id="classnicolive_1_1AlertLogin_html"><div class="ttname"><a href="classnicolive_1_1AlertLogin.html">nicolive::AlertLogin</a></div><div class="ttdoc">ニコ生アラートのログインをしてチケットを取得します </div><div class="ttdef"><b>Definition:</b> alertlogin.h:13</div></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;qtnicolivelib.h&quot;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;httpgetter.h&quot;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;strabstractor.h&quot;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">namespace </span>nicolive {</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="classnicolive_1_1AlertLogin.html">   14</a></span>&#160;<span class="keyword">class </span>QTNICOLIVELIBSHARED_EXPORT <a class="code" href="classnicolive_1_1AlertLogin.html">AlertLogin</a> : <span class="keyword">public</span> <a class="code" href="classnicolive_1_1HttpGetter.html">HttpGetter</a></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;{</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;  Q_OBJECT</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;  <span class="keyword">explicit</span> <a class="code" href="classnicolive_1_1AlertLogin.html">AlertLogin</a>(<a class="code" href="classQObject.html">QObject</a> *parent = 0);</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  <span class="keywordtype">void</span> <span class="keyword">get</span>(<span class="keyword">const</span> QString&amp; mailAddress, <span class="keyword">const</span> QString&amp; password);</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  <span class="keywordtype">void</span> gotReply(QNetworkReply* reply) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;signals:</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  <span class="keywordtype">void</span> error(QString code, QString description);</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  <span class="keywordtype">void</span> got(QString ticket);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;};</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;}</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#endif // ALERTLOGIN_H</span></div>
+<div class="ttc" id="classnicolive_1_1HttpGetter_html"><div class="ttname"><a href="classnicolive_1_1HttpGetter.html">nicolive::HttpGetter</a></div><div class="ttdoc">APIを取得するのに使用されている抽象クラス。 </div><div class="ttdef"><b>Definition:</b> httpgetter.h:19</div></div>
+<div class="ttc" id="classQObject_html"><div class="ttname"><a href="classQObject.html">QObject</a></div></div>
+<div class="ttc" id="classnicolive_1_1AlertLogin_html"><div class="ttname"><a href="classnicolive_1_1AlertLogin.html">nicolive::AlertLogin</a></div><div class="ttdoc">ニコ生アラートのログインをしてAlertAdminに必要なチケットを取得します </div><div class="ttdef"><b>Definition:</b> alertlogin.h:14</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_96ad490beec81d4b3835d9aeae6fa9cf.html">nl</a></li><li class="navelem"><b>alertlogin.h</b></li>
-    <li class="footer">Generated on Wed Dec 9 2015 01:04:38 for QtNicoLiveLib by
+    <li class="footer">Generated on Sat Dec 12 2015 01:03:10 for QtNicoLiveLib by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

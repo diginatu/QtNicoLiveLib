@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['strabstractor',['StrAbstractor',['../classnicolive_1_1StrAbstractor.html',1,'nicolive']]]
+  ['qobject',['QObject',['../classQObject.html',1,'']]],
+  ['qtnicolivelib',['QtNicoLiveLib',['../classnicolive_1_1QtNicoLiveLib.html',1,'nicolive']]]
 ];

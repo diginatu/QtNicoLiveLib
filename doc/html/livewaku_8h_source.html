@@ -109,20 +109,20 @@ $(document).ready(function(){initNavTree('livewaku_8h_source.html','');});
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;QObject&gt;</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;QDateTime&gt;</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;QDebug&gt;</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;qtnicolivelib.h&quot;</span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;getplayerstatus.h&quot;</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;getcommpostkey.h&quot;</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">namespace </span>nicolive {</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div>
-<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="classnicolive_1_1LiveWaku.html">   18</a></span>&#160;<span class="keyword">class </span><a class="code" href="classnicolive_1_1LiveWaku.html">LiveWaku</a> : <span class="keyword">public</span> QObject</div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="classnicolive_1_1LiveWaku.html">   18</a></span>&#160;<span class="keyword">class </span>QTNICOLIVELIBSHARED_EXPORT <a class="code" href="classnicolive_1_1LiveWaku.html">LiveWaku</a> : <span class="keyword">public</span> <a class="code" href="classQObject.html">QObject</a></div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;{</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;  Q_OBJECT</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  <span class="keyword">explicit</span> <a class="code" href="classnicolive_1_1LiveWaku.html#acfb085daa52cf6629db669cb913847b3">LiveWaku</a>(QObject *parent = 0);</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  <span class="keyword">explicit</span> <a class="code" href="classnicolive_1_1LiveWaku.html">LiveWaku</a>(<a class="code" href="classQObject.html">QObject</a> *parent = 0);</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  <span class="keyword">explicit</span> <a class="code" href="classnicolive_1_1LiveWaku.html#acfb085daa52cf6629db669cb913847b3">LiveWaku</a>(<span class="keyword">const</span> QString&amp; broadID, QObject *parent = 0);</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  <span class="keyword">explicit</span> <a class="code" href="classnicolive_1_1LiveWaku.html">LiveWaku</a>(<span class="keyword">const</span> QString&amp; broadID, <a class="code" href="classQObject.html">QObject</a> *parent = 0);</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  <span class="comment">// setter and getter</span></div>
@@ -156,16 +156,16 @@ $(document).ready(function(){initNavTree('livewaku_8h_source.html','');});
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  QString getOwnerCommentToken() <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classnicolive_1_1LiveWaku.html#a35b3ecc67ca23800f0300fe93ec41672">fetchInformation</a>(<span class="keyword">const</span> QString&amp; userSession);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  <span class="keywordtype">void</span> fetchInformation(<span class="keyword">const</span> QString&amp; userSession);</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classnicolive_1_1LiveWaku.html#a872cdbcd69bd17a43d706ab061a2f3ef">fetchPostKey</a>(<span class="keywordtype">int</span> lastBlockNum, <span class="keyword">const</span> QString&amp; userSession);</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  <span class="keywordtype">void</span> fetchPostKey(<span class="keywordtype">int</span> lastBlockNum, <span class="keyword">const</span> QString&amp; userSession);</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;signals:</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classnicolive_1_1LiveWaku.html#a2726735ad485286cd7b1010e7bd04b92">gotInfornationError</a>(QString code);</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classnicolive_1_1LiveWaku.html#a6e80912cb46939f5e779c1d364e8ff01">gotInfornation</a>();</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  <span class="keywordtype">void</span> gotInfornationError(QString code);</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;  <span class="keywordtype">void</span> gotInfornation();</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classnicolive_1_1LiveWaku.html#a296bd80d0765f77a74961b4aec4acee5">gotPostKeyError</a>();</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classnicolive_1_1LiveWaku.html#ab461603032fda5bc9eb57a2c34262bee">gotPostKey</a>();</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;  <span class="keywordtype">void</span> gotPostKeyError();</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;  <span class="keywordtype">void</span> gotPostKey();</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="keyword">private</span>:</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;  QString title;</div>
@@ -190,24 +190,24 @@ $(document).ready(function(){initNavTree('livewaku_8h_source.html','');});
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;</div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;};</div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;}</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;<span class="preprocessor">#endif // LIVEWAKU_H</span></div>
-<div class="ttc" id="classnicolive_1_1LiveWaku_html_a35b3ecc67ca23800f0300fe93ec41672"><div class="ttname"><a href="classnicolive_1_1LiveWaku.html#a35b3ecc67ca23800f0300fe93ec41672">nicolive::LiveWaku::fetchInformation</a></div><div class="ttdeci">void fetchInformation(const QString &amp;userSession)</div><div class="ttdoc">PlayerStatus を使って放送枠に関する情報を取得します。 </div><div class="ttdef"><b>Definition:</b> livewaku.cpp:44</div></div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> Char&gt;</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;<span class="keyword">inline</span> std::basic_ostream&lt;Char&gt;&amp; operator &lt;&lt;(std::basic_ostream&lt;Char&gt;&amp; os, <span class="keyword">const</span> <a class="code" href="classnicolive_1_1LiveWaku.html">LiveWaku</a>&amp; l)</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;{</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;  <span class="keywordflow">return</span> os &lt;&lt; <span class="stringliteral">&quot;LiveWaku(&quot;</span> &lt;&lt; l.getBroadID() &lt;&lt; <span class="stringliteral">&quot;:&quot;</span> &lt;&lt; l.getTitle() &lt;&lt; <span class="stringliteral">&quot;)&quot;</span>;</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;}</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;}</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;<span class="preprocessor">#endif // LIVEWAKU_H</span></div>
 <div class="ttc" id="classnicolive_1_1LiveWaku_html"><div class="ttname"><a href="classnicolive_1_1LiveWaku.html">nicolive::LiveWaku</a></div><div class="ttdoc">１つの生放送の情報を保持するクラス。 </div><div class="ttdef"><b>Definition:</b> livewaku.h:18</div></div>
-<div class="ttc" id="classnicolive_1_1LiveWaku_html_acfb085daa52cf6629db669cb913847b3"><div class="ttname"><a href="classnicolive_1_1LiveWaku.html#acfb085daa52cf6629db669cb913847b3">nicolive::LiveWaku::LiveWaku</a></div><div class="ttdeci">LiveWaku(QObject *parent=0)</div><div class="ttdoc">コンストラクタ </div><div class="ttdef"><b>Definition:</b> livewaku.cpp:5</div></div>
-<div class="ttc" id="classnicolive_1_1LiveWaku_html_a2726735ad485286cd7b1010e7bd04b92"><div class="ttname"><a href="classnicolive_1_1LiveWaku.html#a2726735ad485286cd7b1010e7bd04b92">nicolive::LiveWaku::gotInfornationError</a></div><div class="ttdeci">void gotInfornationError(QString code)</div><div class="ttdoc">fetchInformation() でエラーになった場合にエミットされるシグナルです。 </div></div>
-<div class="ttc" id="classnicolive_1_1LiveWaku_html_a6e80912cb46939f5e779c1d364e8ff01"><div class="ttname"><a href="classnicolive_1_1LiveWaku.html#a6e80912cb46939f5e779c1d364e8ff01">nicolive::LiveWaku::gotInfornation</a></div><div class="ttdeci">void gotInfornation()</div><div class="ttdoc">fetchInformation() で取得成功した場合にエミットされるシグナルです。 </div></div>
-<div class="ttc" id="classnicolive_1_1LiveWaku_html_ab461603032fda5bc9eb57a2c34262bee"><div class="ttname"><a href="classnicolive_1_1LiveWaku.html#ab461603032fda5bc9eb57a2c34262bee">nicolive::LiveWaku::gotPostKey</a></div><div class="ttdeci">void gotPostKey()</div><div class="ttdoc">fetchPostKey() で取得成功した場合にエミットされるシグナルです。 </div></div>
-<div class="ttc" id="classnicolive_1_1LiveWaku_html_a296bd80d0765f77a74961b4aec4acee5"><div class="ttname"><a href="classnicolive_1_1LiveWaku.html#a296bd80d0765f77a74961b4aec4acee5">nicolive::LiveWaku::gotPostKeyError</a></div><div class="ttdeci">void gotPostKeyError()</div><div class="ttdoc">fetchPostKey() でエラーになった場合にエミットされるシグナルです。 </div></div>
-<div class="ttc" id="classnicolive_1_1LiveWaku_html_a872cdbcd69bd17a43d706ab061a2f3ef"><div class="ttname"><a href="classnicolive_1_1LiveWaku.html#a872cdbcd69bd17a43d706ab061a2f3ef">nicolive::LiveWaku::fetchPostKey</a></div><div class="ttdeci">void fetchPostKey(int lastBlockNum, const QString &amp;userSession)</div><div class="ttdoc">コメント送信に必要な PostKey の取得・更新をします。 </div><div class="ttdef"><b>Definition:</b> livewaku.cpp:79</div></div>
+<div class="ttc" id="classQObject_html"><div class="ttname"><a href="classQObject.html">QObject</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_96ad490beec81d4b3835d9aeae6fa9cf.html">nl</a></li><li class="navelem"><b>livewaku.h</b></li>
-    <li class="footer">Generated on Wed Dec 9 2015 01:04:38 for QtNicoLiveLib by
+    <li class="footer">Generated on Sat Dec 12 2015 01:03:10 for QtNicoLiveLib by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

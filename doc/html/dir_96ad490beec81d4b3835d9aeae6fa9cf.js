@@ -12,6 +12,7 @@ var dir_96ad490beec81d4b3835d9aeae6fa9cf =
     [ "httpgetter.h", "httpgetter_8h_source.html", null ],
     [ "livetag.h", "livetag_8h_source.html", null ],
     [ "livewaku.h", "livewaku_8h_source.html", null ],
+    [ "nicookie.h", "nicookie_8h_source.html", null ],
     [ "qtnicolivelib.h", "qtnicolivelib_8h_source.html", null ],
     [ "qtnicolivelib_global.h", "qtnicolivelib__global_8h_source.html", null ],
     [ "strabstractor.h", "strabstractor_8h_source.html", null ],

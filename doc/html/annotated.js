@@ -14,8 +14,10 @@ var annotated =
       [ "HttpGetter", "classnicolive_1_1HttpGetter.html", "classnicolive_1_1HttpGetter" ],
       [ "LiveTag", "classnicolive_1_1LiveTag.html", "classnicolive_1_1LiveTag" ],
       [ "LiveWaku", "classnicolive_1_1LiveWaku.html", "classnicolive_1_1LiveWaku" ],
+      [ "Nicookie", "classnicolive_1_1Nicookie.html", "classnicolive_1_1Nicookie" ],
       [ "QtNicoLiveLib", "classnicolive_1_1QtNicoLiveLib.html", "classnicolive_1_1QtNicoLiveLib" ],
       [ "StrAbstractor", "classnicolive_1_1StrAbstractor.html", "classnicolive_1_1StrAbstractor" ],
       [ "UserSessionLogin", "classnicolive_1_1UserSessionLogin.html", "classnicolive_1_1UserSessionLogin" ]
-    ] ]
+    ] ],
+    [ "QObject", "classQObject.html", null ]
 ];

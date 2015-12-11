@@ -1,0 +1,17 @@
+<map id="QObject" name="QObject">
+<area shape="rect" id="node2" href="$classnicolive_1_1AlertConnection.html" title="生放送通知アラートの接続を管理するクラス。 " alt="" coords="141,107,307,133"/>
+<area shape="rect" id="node3" href="$classnicolive_1_1CommentConnection.html" title="ニコ生のコメントの接続を管理するクラス。 " alt="" coords="125,157,323,184"/>
+<area shape="rect" id="node4" href="$classnicolive_1_1HttpGetter.html" title="APIを取得するのに使用されている抽象クラス。 " alt="" coords="157,208,291,235"/>
+<area shape="rect" id="node14" href="$classnicolive_1_1LiveWaku.html" title="１つの生放送の情報を保持するクラス。 " alt="" coords="158,259,290,285"/>
+<area shape="rect" id="node15" href="$classnicolive_1_1Nicookie.html" title="ブラウザからクッキー情報を取得し、ニコニコのusersessionを取り出すクラス。 " alt="" coords="161,309,287,336"/>
+<area shape="rect" id="node16" href="$classnicolive_1_1StrAbstractor.html" title="Class for abstract keywords from a string (Internal Class) " alt="" coords="149,360,299,387"/>
+<area shape="rect" id="node5" href="$classnicolive_1_1AlertAdmin.html" title="ニコ生アラート取得のために必要な情報と、登録コミュニティを取得します。 " alt="" coords="393,5,532,32"/>
+<area shape="rect" id="node6" href="$classnicolive_1_1AlertLogin.html" title="ニコ生アラートのログインをしてAlertAdminに必要なチケットを取得します " alt="" coords="397,56,529,83"/>
+<area shape="rect" id="node7" href="$classnicolive_1_1Extend.html" title="ニコ生放送の延長を実行するクラス。 " alt="" coords="405,107,520,133"/>
+<area shape="rect" id="node8" href="$classnicolive_1_1ExtendInfo.html" title="ニコ生放送の延長情報を取得するクラス。 " alt="" coords="394,157,531,184"/>
+<area shape="rect" id="node9" href="$classnicolive_1_1FetchUserName.html" title="ユーザIDからユーザ名を取得するクラス。 " alt="" coords="377,208,548,235"/>
+<area shape="rect" id="node10" href="$classnicolive_1_1GetCommPostKey.html" title="コメント受信に必要なポストキーを取得するクラス。 " alt="" coords="371,259,555,285"/>
+<area shape="rect" id="node11" href="$classnicolive_1_1GetPlayerStatus.html" title="PlayerStatus API から生放送の情報を取得するクラス。 " alt="" coords="377,309,548,336"/>
+<area shape="rect" id="node12" href="$classnicolive_1_1LiveTag.html" title="生放送のタグを取得するクラス。 " alt="" coords="403,360,523,387"/>
+<area shape="rect" id="node13" href="$classnicolive_1_1UserSessionLogin.html" title="ニコ動にログインしてユーザセッションを取得します " alt="" coords="373,411,553,437"/>
+</map>

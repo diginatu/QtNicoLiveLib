@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['qtnicolivelib',['QtNicoLiveLib',['../classnicolive_1_1QtNicoLiveLib.html',1,'nicolive']]]
+  ['nicookie',['Nicookie',['../classnicolive_1_1Nicookie.html',1,'nicolive']]]
 ];

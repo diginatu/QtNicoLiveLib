@@ -12,7 +12,7 @@ void Extend::get(const ExtendItem& extendItem, const QString& broadcastToken,
   QNetworkRequest rq;
   rq.setUrl(QUrl("http://watch.live.nicovideo.jp/api/usepoint/" + extendItem.broadID));
   rq.setHeader(QNetworkRequest::ContentTypeHeader, "application/x-www-form-urlencoded");
-  QVariant postData = makePostData(userSession);
+  QVariant&& postData = makePostData(userSession);
   rq.setHeader(QNetworkRequest::CookieHeader, postData);
   rq.setRawHeader("accept-language", "ja");
 

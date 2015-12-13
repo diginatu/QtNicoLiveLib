@@ -24,7 +24,7 @@ public:
   ~HttpGetter();
 
   static QString htmlDecode(QString st);
-  QVariant makePostData(QString session_id);
+  QVariant makePostData(const QString& sessionId);
 private slots:
   void preGot(QNetworkReply* reply);
 protected:

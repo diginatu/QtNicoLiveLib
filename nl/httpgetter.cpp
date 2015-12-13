@@ -42,23 +42,14 @@ void HttpGetter::preGot(QNetworkReply* reply)
   this->deleteLater();
 }
 
-QVariant HttpGetter::makePostData(QString session_id)
+QVariant HttpGetter::makePostData(const QString& sessionId)
 {
-  QVariant postData;
-
   // make cookies
-  QList <QNetworkCookie> cookies;
-  QNetworkCookie ck;
+  QNetworkCookie ck(QByteArray("user_session"), sessionId.toUtf8());
   ck.toRawForm(QNetworkCookie::NameAndValueOnly);
-  ck.setName("user_session");
 
-  QByteArray user_id_ba;
-  user_id_ba.append(session_id);
-
-  ck.setValue(user_id_ba);
-  cookies.append(ck);
-
-  postData.setValue(cookies);
+  QVariant postData;
+  postData.setValue(QList<QNetworkCookie>() << ck);
   return postData;
 }
 

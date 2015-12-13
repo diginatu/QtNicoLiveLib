@@ -4,30 +4,30 @@ namespace nicolive {
 
 AlertConnection::AlertConnection(const QString& addr, qint16 port,
                                  const QString& thread, QObject* parent):
-  QObject(parent)
+  QObject(parent),
+  socket(new QTcpSocket(this)),
+  addr(addr),
+  port(port),
+  thread(thread),
+  checkConnectionTimer(new QTimer(this))
 {
-  this->addr   = addr;
-  this->port   = port;
-  this->thread = thread;
-
-  socket = new QTcpSocket(this);
-  checkConnectionTimer = new QTimer(this);
-
-  reconnectTimes = 3;
-  reconnectN = 0;
-  reconnectWaitMsec = 1000;
-
   connect(socket, SIGNAL(connected()), this, SLOT(connected()));
   connect(socket, SIGNAL(disconnected()), this, SLOT(disconnected()));
   connect(socket, SIGNAL(readyRead()), this, SLOT(readyRead()));
   connect(socket, SIGNAL(error(QAbstractSocket::SocketError)),
           this, SLOT(connectionErrorOccured()));
 
-  connect(checkConnectionTimer, SIGNAL(timeout()), this, SLOT(checkConnection()));
+  connect(checkConnectionTimer, SIGNAL(timeout()), this, SLOT(checkConnectionTimeout()));
+}
+
+AlertConnection::~AlertConnection()
+{
+  close();
 }
 
 void AlertConnection::doConnect()
 {
+  close();
   socket->connectToHost(addr, port);
 }
 
@@ -131,7 +131,7 @@ void AlertConnection::setReconnectTimes(int time)
   reconnectTimes = time;
 }
 
-void AlertConnection::checkConnection()
+void AlertConnection::checkConnectionTimeout()
 {
   close();
   doConnect();

@@ -21,6 +21,7 @@ public:
   //! コンストラクタ
   explicit AlertConnection(const QString& addr, qint16 port,
                            const QString& thread, QObject *parent = 0);
+  ~AlertConnection();
 
   //! アラートに接続します。
   void doConnect();
@@ -67,17 +68,17 @@ signals:
 private:
   QTcpSocket* socket;
 
-  QString addr, thread;
-  int port;
+  QString addr; int port; QString thread;
 
   QDateTime opentime;
   QByteArray lastRawWaku;
   QTimer* checkConnectionTimer;
 
-  int reconnectTimes, reconnectN;
-  int reconnectWaitMsec;
+  int reconnectTimes = 3;
+  int reconnectN = 0;
+  int reconnectWaitMsec = 1000;
 private slots:
-  void checkConnection();
+  void checkConnectionTimeout();
 };
 
 }

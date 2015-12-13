@@ -10,7 +10,7 @@ void LiveTag::get(const QString& broadID, const QString& userSession)
 {
   // make request
   QNetworkRequest rq;
-  QVariant postData = makePostData(userSession);
+  QVariant&& postData = makePostData(userSession);
   rq.setHeader(QNetworkRequest::CookieHeader, postData);
   rq.setUrl(QUrl("http://live.nicovideo.jp/livetags.php?v=lv" + broadID));
 

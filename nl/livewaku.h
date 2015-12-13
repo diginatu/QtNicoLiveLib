@@ -20,12 +20,12 @@ class QTNICOLIVELIBSHARED_EXPORT LiveWaku : public QObject
   Q_OBJECT
 public:
   //! コンストラクタ
-  explicit LiveWaku(QObject *parent = 0);
+  LiveWaku(QObject *parent = 0);
   //! コンストラクタ
   /*!
    * broadID をだけ指定すれば残りの情報は fetchInformation() で得られます。
    */
-  explicit LiveWaku(const QString& broadID, QObject *parent = 0);
+  LiveWaku(const QString& broadID, QObject *parent = 0);
 
 
   // setter and getter

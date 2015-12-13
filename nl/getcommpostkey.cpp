@@ -14,7 +14,7 @@ void GetCommPostKey::get()
 {
   // make request
   QNetworkRequest rq;
-  QVariant postData = makePostData(userSession);
+  QVariant&& postData = makePostData(userSession);
   rq.setHeader(QNetworkRequest::CookieHeader, postData);
   rq.setUrl(QUrl(QString("http://live.nicovideo.jp/api/getpostkey?") +
              "thread=" + thread +

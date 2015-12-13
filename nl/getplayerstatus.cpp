@@ -13,7 +13,7 @@ void GetPlayerStatus::get()
 {
   // make reques
   QNetworkRequest rq;
-  QVariant postData = makePostData(userSession);
+  QVariant&& postData = makePostData(userSession);
   rq.setHeader(QNetworkRequest::CookieHeader, postData);
   rq.setUrl(QUrl("http://live.nicovideo.jp/api/getplayerstatus?v=" + broadID));
 

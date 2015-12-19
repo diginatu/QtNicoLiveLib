@@ -34,8 +34,6 @@ void ExtendInfo::gotReply(QNetworkReply* reply)
     return;
   }
 
-  QVector<ExtendItem> extendList;
-
   StrAbstractor* item;
   while ((item = data.mid("<item>", "</item>")) != nullptr) {
     QString label     = item->midStr("<label>", "</label>");
@@ -44,10 +42,9 @@ void ExtendInfo::gotReply(QNetworkReply* reply)
     QString code      = item->midStr("<code>",  "</code>");
     QString itemType  = item->midStr("<item>",  "");
 
-    extendList.append(ExtendItem{label, price, num, code, itemType, broadID});
+    emit got(ExtendItem{label, price, num, code, itemType, broadID});
   }
 
-  emit got(extendList);
 }
 
 }

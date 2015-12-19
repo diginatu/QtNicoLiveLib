@@ -13,6 +13,9 @@
 namespace nicolive {
 
 //! 生放送通知アラートの接続を管理するクラス。
+/*!
+ * 接続後に開始された放送を通知します。
+ */
 
 class QTNICOLIVELIBSHARED_EXPORT AlertConnection : public QObject
 {

@@ -40,7 +40,8 @@ SOURCES += nl/fetchusername.cpp \
     nl/alertlogin.cpp \
     nl/alertadmin.cpp \
     nl/alertconnection.cpp \
-    nl/nicookie.cpp
+    nl/nicookie.cpp \
+    nl/fetchfavoritednowwaku.cpp
 
 HEADERS += nl/fetchusername.h \
     nl/httpgetter.h \
@@ -58,7 +59,8 @@ HEADERS += nl/fetchusername.h \
     nl/alertlogin.h \
     nl/alertadmin.h \
     nl/alertconnection.h \
-    nl/nicookie.h
+    nl/nicookie.h \
+    nl/fetchfavoritednowwaku.h
 
 unix {
     target.path = /usr/lib

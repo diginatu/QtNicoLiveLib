@@ -2,7 +2,8 @@
 
 namespace nicolive {
 
-LiveWaku::LiveWaku(QObject *parent) : QObject(parent) { }
+LiveWaku::LiveWaku(QObject* parent) : QObject(parent) { }
+
 LiveWaku::LiveWaku(const QString& broadID, QObject* parent) : LiveWaku(parent)
 {
   this->broadID = broadID;

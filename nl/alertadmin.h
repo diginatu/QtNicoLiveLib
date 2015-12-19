@@ -32,7 +32,7 @@ signals:
 
   //! 取得成功した場合にエミットされるシグナルです。
   /*!
-   * \arg myCommunities はコミュニティID("co1234", "ch1234"など)のQStringListです。
+   * \param myCommunities はコミュニティID("co1234", "ch1234"など)のQStringListです。
    *
    * 参考: get()
    */

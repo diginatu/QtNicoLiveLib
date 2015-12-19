@@ -2,3 +2,6 @@
 *.swp
 *.autosave
 examples/build-*
+bin/*/*.cpp
+bin/*/*.o
+bin/*/Makefile

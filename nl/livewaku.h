@@ -5,7 +5,7 @@
 #include <QDateTime>
 #include <QDebug>
 #include "qtnicolivelib.h"
-#include "getplayerstatus.h"
+#include "playerstatus.h"
 #include "getcommpostkey.h"
 
 namespace nicolive {

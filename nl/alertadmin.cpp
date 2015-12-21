@@ -25,7 +25,7 @@ void AlertAdmin::gotReply(QNetworkReply* reply)
 
   QString status = wakuTcpi.midStr("status=\"","\"");
   if (status == "fail") {
-    const QString code = wakuTcpi.midStr("<code>","</code>");
+    const QString& code = wakuTcpi.midStr("<code>","</code>");
     emit error(code);
     return;
   }
@@ -38,9 +38,9 @@ void AlertAdmin::gotReply(QNetworkReply* reply)
     myCommunities << mycommunity;
   }
 
-  const QString addr = wakuTcpi.midStr("<addr>", "</addr>");
-  const qint16 port = wakuTcpi.midStr("<port>", "</port>").toInt();
-  const QString thread = wakuTcpi.midStr("<thread>", "</thread>");
+  const QString& addr = wakuTcpi.midStr("<addr>", "</addr>");
+  const qint16& port = wakuTcpi.midStr("<port>", "</port>").toInt();
+  const QString& thread = wakuTcpi.midStr("<thread>", "</thread>");
 
   emit got(myCommunities, addr, port, thread);
 }

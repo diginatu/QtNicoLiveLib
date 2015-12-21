@@ -9,7 +9,7 @@
 
 namespace nicolive {
 
-//! ニコ生アラートのログインをしてAlertAdminに必要なチケットを取得します
+//! ニコ生アラートのログインをして AlertAdmin に必要なチケットを取得します
 
 class QTNICOLIVELIBSHARED_EXPORT AlertLogin : public HttpGetter
 {

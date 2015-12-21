@@ -10,6 +10,9 @@
 namespace nicolive {
 
 //! ニコ生アラート取得のために必要な情報と、登録コミュニティを取得します。
+/*!
+ * \see AlertLogin
+ */
 
 class QTNICOLIVELIBSHARED_EXPORT AlertAdmin : public HttpGetter
 {

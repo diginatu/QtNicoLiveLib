@@ -25,7 +25,7 @@ void GetCommPostKey::get()
 
 void GetCommPostKey::gotReply(QNetworkReply* reply)
 {
-  auto postKey = QString(reply->readAll().mid(8));
+  const auto postKey = QString(reply->readAll().mid(8));
   if(postKey.isEmpty()) {
     emit error();
     return;

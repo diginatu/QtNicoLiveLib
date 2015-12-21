@@ -25,7 +25,7 @@ void LiveTag::gotReply(QNetworkReply* reply)
   QStringList tags;
 
   while (auto tagabs = tagsabs->mid("<nobr>", "</nobr>")) {
-    const QString tag = tagabs->midStr(">", "</a>");
+    const QString& tag = tagabs->midStr(">", "</a>");
     tags << tag;
   }
 

@@ -31,13 +31,13 @@ void AlertLogin::gotReply(QNetworkReply* reply)
 
   QString status = commTcpi.midStr("status=\"","\"");
   if (status == "fail") {
-    const QString code = commTcpi.midStr("<code>","</code>");
-    const QString description = commTcpi.midStr("<description>","</description>");
+    const QString& code = commTcpi.midStr("<code>","</code>");
+    const QString& description = commTcpi.midStr("<description>","</description>");
     emit error(code, description);
     return;
   }
 
-  const QString ticket = commTcpi.midStr("<ticket>","</ticket>");
+  const QString& ticket = commTcpi.midStr("<ticket>","</ticket>");
   if (ticket.isEmpty()) {
     emit error("ticket", "incorrect account");
     return;

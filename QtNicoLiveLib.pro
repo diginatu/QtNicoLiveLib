@@ -31,7 +31,7 @@ SOURCES += nl/fetchusername.cpp \
     nl/strabstractor.cpp \
     nl/getcommpostkey.cpp \
     nl/livewaku.cpp \
-    nl/getplayerstatus.cpp \
+    nl/playerstatus.cpp \
     nl/commentconnection.cpp \
     nl/extendinfo.cpp \
     nl/extend.cpp \
@@ -41,7 +41,8 @@ SOURCES += nl/fetchusername.cpp \
     nl/alertadmin.cpp \
     nl/alertconnection.cpp \
     nl/nicookie.cpp \
-    nl/fetchfavoritednowwaku.cpp
+    nl/fetchfavoritednowwaku.cpp \
+    nl/publishstatus.cpp
 
 HEADERS += nl/fetchusername.h \
     nl/httpgetter.h \
@@ -50,7 +51,7 @@ HEADERS += nl/fetchusername.h \
     nl/strabstractor.h \
     nl/getcommpostkey.h \
     nl/livewaku.h \
-    nl/getplayerstatus.h \
+    nl/playerstatus.h \
     nl/commentconnection.h \
     nl/extendinfo.h \
     nl/extend.h \
@@ -60,7 +61,8 @@ HEADERS += nl/fetchusername.h \
     nl/alertadmin.h \
     nl/alertconnection.h \
     nl/nicookie.h \
-    nl/fetchfavoritednowwaku.h
+    nl/fetchfavoritednowwaku.h \
+    nl/publishstatus.h
 
 unix {
     target.path = /usr/lib

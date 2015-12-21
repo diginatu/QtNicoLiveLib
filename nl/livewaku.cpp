@@ -49,11 +49,11 @@ void LiveWaku::fetchInformation(const QString& userSession)
     return;
   }
 
-  auto gt = new GetPlayerStatus(broadID, userSession, this);
-  connect(gt, &GetPlayerStatus::error, this, [&](QString code){
+  auto gt = new PlayerStatus(this);
+  connect(gt, &PlayerStatus::error, this, [&](QString code){
     emit gotInfornationError(code);
   });
-  connect(gt, &GetPlayerStatus::got, this, [&](QString broadID, QString title,
+  connect(gt, &PlayerStatus::got, this, [&](QString broadID, QString title,
           QString communityID, QString ownerID, QString ownerName, uint stTime,
           uint edTime, QString broadcastToken, QString userID, bool isPremium,
           QString  addr, qint16 port, QString thread)
@@ -74,7 +74,7 @@ void LiveWaku::fetchInformation(const QString& userSession)
 
     emit gotInfornation();
   });
-  gt->get();
+  gt->get(broadID, userSession);
 }
 
 void LiveWaku::fetchPostKey(int lastBlockNum, const QString& userSession)

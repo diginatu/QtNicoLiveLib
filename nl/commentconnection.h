@@ -5,7 +5,7 @@
 #include <QTimer>
 #include "qtnicolivelib.h"
 #include "livewaku.h"
-#include "getcommpostkey.h"
+#include "commpostkey.h"
 #include "strabstractor.h"
 #include "httpgetter.h"
 
@@ -25,6 +25,9 @@ class QTNICOLIVELIBSHARED_EXPORT CommentConnection : public QObject
   Q_OBJECT
 public:
   //! コンストラクタ
+  /*!
+   * \param livewaku はfetchInformation()しておく必要があります。
+   */
   explicit CommentConnection(LiveWaku* livewaku,
                              const QString& userSession, QObject *parent = 0);
   ~CommentConnection();

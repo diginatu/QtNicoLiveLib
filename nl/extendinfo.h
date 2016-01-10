@@ -40,7 +40,7 @@ signals:
    * deleteされる前にこのシグナルは複数回emitされる可能性があります。
    * 参考: get()
    */
-  void got(ExtendItem extendList);
+  void got(ExtendItem extendItem);
 };
 
 }

@@ -29,7 +29,6 @@ SOURCES += nl/fetchusername.cpp \
     nl/httpgetter.cpp \
     nl/qtnicolivelib.cpp \
     nl/strabstractor.cpp \
-    nl/getcommpostkey.cpp \
     nl/livewaku.cpp \
     nl/playerstatus.cpp \
     nl/commentconnection.cpp \
@@ -42,14 +41,16 @@ SOURCES += nl/fetchusername.cpp \
     nl/alertconnection.cpp \
     nl/nicookie.cpp \
     nl/fetchfavoritednowwaku.cpp \
-    nl/publishstatus.cpp
+    nl/publishstatus.cpp \
+    nl/ownercomment.cpp \
+    nl/configurestream.cpp \
+    nl/commpostkey.cpp
 
 HEADERS += nl/fetchusername.h \
     nl/httpgetter.h \
     nl/qtnicolivelib.h \
     nl/qtnicolivelib_global.h \
     nl/strabstractor.h \
-    nl/getcommpostkey.h \
     nl/livewaku.h \
     nl/playerstatus.h \
     nl/commentconnection.h \
@@ -62,7 +63,10 @@ HEADERS += nl/fetchusername.h \
     nl/alertconnection.h \
     nl/nicookie.h \
     nl/fetchfavoritednowwaku.h \
-    nl/publishstatus.h
+    nl/publishstatus.h \
+    nl/ownercomment.h \
+    nl/configurestream.h \
+    nl/commpostkey.h
 
 unix {
     target.path = /usr/lib

@@ -6,7 +6,8 @@
 #include <QDebug>
 #include "qtnicolivelib.h"
 #include "playerstatus.h"
-#include "getcommpostkey.h"
+#include "commpostkey.h"
+#include "publishstatus.h"
 
 namespace nicolive {
 
@@ -57,6 +58,7 @@ public:
   bool getOwnerBroad() const;
   void setOwnerBroad(bool value);
   QString getOwnerCommentToken() const;
+  void setOwnerCommentToken(const QString& value);
 
   //! PlayerStatus を使って放送枠に関する情報を取得します。
   /*!
@@ -65,11 +67,18 @@ public:
    * 取得完了すると gotInfornationError() または gotInfornation() を emit します。
    */
   void fetchInformation(const QString& userSession);
-  //! コメント送信に必要な PostKey の取得・更新をします。
+  //! CommPostKey を使ってコメント送信に必要な PostKey の取得・更新をします。
   /*!
-   * 取得完了すると gotInPostKeyError() または gotPostKey() を emit します。
+   * 取得完了すると gotPostKeyError() または gotPostKey() を emit します。
    */
   void fetchPostKey(int lastBlockNum, const QString& userSession);
+  //! PublishStatus を使って生主コメント送信に必要な OwnerCommentToken の取得・更新をします。
+  /*!
+   * OwnerComment をする前に取得する必要があります。
+   *
+   * 取得完了すると gotOwnerCommentTokenError() または gotOwnerCommentToken() を emit します。
+   */
+  void fetchOwnerCommentToken(const QString& userSession);
 
 signals:
   //! fetchInformation() でエラーになった場合にエミットされるシグナルです。
@@ -82,6 +91,10 @@ signals:
   //! fetchPostKey() で取得成功した場合にエミットされるシグナルです。
   void gotPostKey();
 
+  //! fetchOwnerCommentToken() でエラーになった場合にエミットされるシグナルです。
+  void gotOwnerCommentTokenError();
+  //! fetchOwnerCommentToken() で取得成功した場合にエミットされるシグナルです。
+  void gotOwnerCommentToken();
 private:
   QString title;
   QString broadID;

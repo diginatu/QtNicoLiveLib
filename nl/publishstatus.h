@@ -8,7 +8,9 @@
 namespace nicolive {
 
 //! 主コメントに必要なチケットを取得します。
-
+/*!
+ * \see OwnerComment
+ */
 class QTNICOLIVELIBSHARED_EXPORT PublishStatus : public HttpGetter
 {
   Q_OBJECT

@@ -10,7 +10,7 @@ LiveWaku::LiveWaku(const QString& broadID, QObject* parent) : LiveWaku(parent)
 }
 
 
-// setter and getter
+// setters and getters
 QString LiveWaku::getTitle() const { return title; }
 void LiveWaku::setTitle(const QString& value) { title = value; }
 QString LiveWaku::getBroadID() const { return broadID; }
@@ -39,9 +39,10 @@ qint16 LiveWaku::getPort() const { return port; }
 bool LiveWaku::getOwnerBroad() const { return ownerBroad; }
 void LiveWaku::setOwnerBroad(bool value) { ownerBroad = value; }
 QString LiveWaku::getOwnerCommentToken() const { return ownerCommentToken; }
+void LiveWaku::setOwnerCommentToken(const QString& value) { ownerCommentToken = value; }
 
 
-
+// fetchers
 void LiveWaku::fetchInformation(const QString& userSession)
 {
   if (broadID.isEmpty()) {
@@ -79,15 +80,27 @@ void LiveWaku::fetchInformation(const QString& userSession)
 
 void LiveWaku::fetchPostKey(int lastBlockNum, const QString& userSession)
 {
-    auto gt = new nicolive::GetCommPostKey(thread, lastBlockNum, userSession, this);
-    connect(gt, &nicolive::GetCommPostKey::error, this, [=](){
-      emit gotPostKeyError();
-    });
-    connect(gt, &nicolive::GetCommPostKey::got, this, [=](QString postKey){
-      this->postKey = postKey;
-      emit gotPostKey();
-    });
-    gt->get();
+  auto gt = new CommPostKey(thread, lastBlockNum, userSession, this);
+  connect(gt, &CommPostKey::error, this, [=](){
+    emit gotPostKeyError();
+  });
+  connect(gt, &CommPostKey::got, this, [=](QString postKey){
+    this->postKey = postKey;
+    emit gotPostKey();
+  });
+  gt->get();
+}
+
+void LiveWaku::fetchOwnerCommentToken(const QString& userSession)
+{
+  auto gt = new PublishStatus(this);
+  connect(gt, &PublishStatus::error,
+          this, &LiveWaku::gotOwnerCommentTokenError);
+  connect(gt, &PublishStatus::got, this, [=](QString token){
+    this->ownerCommentToken = token;
+    emit gotOwnerCommentToken();
+  });
+  gt->get(broadID, userSession);
 }
 
 }

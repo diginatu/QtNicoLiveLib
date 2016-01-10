@@ -14,7 +14,7 @@ void TestClass::fetch()
   qDebug() << "input broadcast ID : ";
   qtin >> broadID;
 
-  // create fetcher and give user number that you want to know the name
+  // create fetcher
   auto getter = new nicolive::PlayerStatus(this);
 
   // API classes emit "got" signal.

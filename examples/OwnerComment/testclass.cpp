@@ -7,7 +7,6 @@ TestClass::TestClass(QObject *parent) : QObject(parent)
 void TestClass::fetch()
 {
   QTextStream qtin(stdin);
-  String userSession, broadID, text;
 
   qDebug() << "input user session : ";
   qtin >> userSession;
@@ -16,35 +15,37 @@ void TestClass::fetch()
   qDebug() << "input owner comment : ";
   qtin >> text;
 
-  // create fetcher
-  auto ft = new nicolive::PublishStatus(this);
 
-  // API classes emit "got" signal.
+  // create a broadcast manager
+  // This instance will be deleted with this class.
+  waku = new nicolive::LiveWaku(broadID, this);
+
+  // API classes emit signals.
   // In this case, this lambda expression will receive.
-  connect(ft, &nicolive::PublishStatus::got, this,
-          [=](QString token) {
-    qDebug() << broadID;
+  connect(waku, &nicolive::LiveWaku::gotOwnerCommentToken, this, [&](){
     auto cmft = new nicolive::OwnerComment(this);
-    // OwnerComment class also emit "got" signal.
+    // OwnerComment class emits "got" signal if it correctly do.
     connect(cmft, &nicolive::OwnerComment::got, this, [](){
       qDebug() << "submitted";
+      QCoreApplication::quit();
     });
     // if error occurred
     connect(cmft, &nicolive::OwnerComment::error, this, [](QString code){
       qDebug() << code;
       QCoreApplication::quit();
     });
-    cmft->get(broadID, text, "", token, userSession);
+    cmft->get(text, "", *waku, userSession);
   });
 
   // if error occurred
-  connect(ft, &nicolive::PublishStatus::error, this, [=](QString error){
-    qDebug() << "error : " << error;
+  connect(waku, &nicolive::LiveWaku::gotOwnerCommentTokenError,
+          this, [](){
+    qDebug() << "fetchOwnerCommentToken error";
     QCoreApplication::quit();
   });
 
   // Finally, need to call get method.
-  ft->get(broadID, userSession);
+  waku->fetchOwnerCommentToken(userSession);
   
   // An instance of most API classes will be deleted automatically.
 }

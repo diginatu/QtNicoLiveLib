@@ -20,12 +20,12 @@ void PlayerStatus::get(const QString& broadID, const QString& userSession)
 
 void PlayerStatus::gotReply(QNetworkReply* reply)
 {
-  nicolive::StrAbstractor commTcpi(QString(reply->readAll()));
+  StrAbstractor commTcpi(QString(reply->readAll()));
 
   QString status = commTcpi.midStr("status=\"","\"");
   if (status != "ok") {
     QString code = commTcpi.midStr("<code>","</code>");
-    error(code);
+    emit error(code);
     return;
   }
 

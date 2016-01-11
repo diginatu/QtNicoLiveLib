@@ -46,7 +46,8 @@ SOURCES += \
     nl/configurestream.cpp \
     nl/commpostkey.cpp \
     nl/communityinfo.cpp \
-    nl/userinfo.cpp
+    nl/userinfo.cpp \
+    nl/streaminfo.cpp
 
 HEADERS += \
     nl/httpgetter.h \
@@ -70,7 +71,8 @@ HEADERS += \
     nl/configurestream.h \
     nl/commpostkey.h \
     nl/communityinfo.h \
-    nl/userinfo.h
+    nl/userinfo.h \
+    nl/streaminfo.h
 
 unix {
     target.path = /usr/lib

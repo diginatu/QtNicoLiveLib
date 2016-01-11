@@ -4,7 +4,7 @@
 #include <QObject>
 #include <QCoreApplication>
 #include <iostream>
-#include <nl/fetchusername.h>
+#include <nl/userinfo.h>
 
 class TestClass : public QObject
 {

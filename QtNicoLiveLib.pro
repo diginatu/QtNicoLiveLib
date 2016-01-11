@@ -25,7 +25,7 @@ TEMPLATE = lib
 
 DEFINES += QTNICOLIVELIB_LIBRARY
 
-SOURCES += nl/fetchusername.cpp \
+SOURCES += \
     nl/httpgetter.cpp \
     nl/qtnicolivelib.cpp \
     nl/strabstractor.cpp \
@@ -45,9 +45,10 @@ SOURCES += nl/fetchusername.cpp \
     nl/ownercomment.cpp \
     nl/configurestream.cpp \
     nl/commpostkey.cpp \
-    nl/communityinfo.cpp
+    nl/communityinfo.cpp \
+    nl/userinfo.cpp
 
-HEADERS += nl/fetchusername.h \
+HEADERS += \
     nl/httpgetter.h \
     nl/qtnicolivelib.h \
     nl/qtnicolivelib_global.h \
@@ -68,7 +69,8 @@ HEADERS += nl/fetchusername.h \
     nl/ownercomment.h \
     nl/configurestream.h \
     nl/commpostkey.h \
-    nl/communityinfo.h
+    nl/communityinfo.h \
+    nl/userinfo.h
 
 unix {
     target.path = /usr/lib

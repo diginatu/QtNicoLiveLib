@@ -13,18 +13,18 @@ void TestClass::fetch()
   qtin >> userNum;
 
   // create fetcher and give user number that you want to know the name
-  nicolive::FetchUserName* nameFetcher = new nicolive::FetchUserName(userNum, this);
+  nicolive::UserInfo* nameFetcher = new nicolive::UserInfo(userNum, this);
 
   // API classes emit "got" signal.
   // In this case, this lambda expression will receive.
-  connect(nameFetcher, &nicolive::FetchUserName::got, this, [](QString name){
+  connect(nameFetcher, &nicolive::UserInfo::got, this, [](QString name){
     QTextStream out(stdout);
     out << name << endl;
     QCoreApplication::quit();
   });
 
   // if error occurred
-  connect(nameFetcher, &nicolive::FetchUserName::error, this,
+  connect(nameFetcher, &nicolive::UserInfo::error, this,
           [](QString code, QString description){
     qDebug() << "error " << code << " " << description;
     QCoreApplication::quit();

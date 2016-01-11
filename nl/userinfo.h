@@ -14,12 +14,12 @@ namespace nicolive {
  * \include FetchUserName/testclass.cpp
  */
 
-class QTNICOLIVELIBSHARED_EXPORT FetchUserName : public HttpGetter
+class QTNICOLIVELIBSHARED_EXPORT UserInfo : public HttpGetter
 {
   Q_OBJECT
 public:
   //! コンストラクタ
-  explicit FetchUserName(QString userID, QObject* parent = 0);
+  explicit UserInfo(QString userID, QObject* parent = 0);
 
   //! リクエストを発行します。
   /*!

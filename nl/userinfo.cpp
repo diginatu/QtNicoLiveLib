@@ -1,13 +1,13 @@
-﻿#include "fetchusername.h"
+﻿#include "userinfo.h"
 
 namespace nicolive {
 
-FetchUserName::FetchUserName(QString userID, QObject* parent) : HttpGetter(parent)
+UserInfo::UserInfo(QString userID, QObject* parent) : HttpGetter(parent)
 {
   this->userID = userID;
 }
 
-void FetchUserName::get()
+void UserInfo::get()
 {
   // make request
   QNetworkRequest rq;
@@ -16,7 +16,7 @@ void FetchUserName::get()
   requestGet(rq);
 }
 
-void FetchUserName::gotReply(QNetworkReply* reply)
+void UserInfo::gotReply(QNetworkReply* reply)
 {
   StrAbstractor userinfo(QString(reply->readAll()));
 

@@ -25,7 +25,6 @@ void ConfigureStream::get(const QString& key, const QString& value,
 void ConfigureStream::gotReply(QNetworkReply* reply)
 {
   nicolive::StrAbstractor rep(QString(reply->readAll()));
-  reply->deleteLater();
 
   const QString& status = rep.midStr("status=\"", "\"", false);
   if (status != "ok") {
@@ -36,7 +35,7 @@ void ConfigureStream::gotReply(QNetworkReply* reply)
 
   const QString& key = rep.midStr("key=\"", "\"", false);
 
-  got(key);
+  emit got(key);
 }
 
 }

@@ -44,7 +44,8 @@ SOURCES += nl/fetchusername.cpp \
     nl/publishstatus.cpp \
     nl/ownercomment.cpp \
     nl/configurestream.cpp \
-    nl/commpostkey.cpp
+    nl/commpostkey.cpp \
+    nl/communityinfo.cpp
 
 HEADERS += nl/fetchusername.h \
     nl/httpgetter.h \
@@ -66,7 +67,8 @@ HEADERS += nl/fetchusername.h \
     nl/publishstatus.h \
     nl/ownercomment.h \
     nl/configurestream.h \
-    nl/commpostkey.h
+    nl/commpostkey.h \
+    nl/communityinfo.h
 
 unix {
     target.path = /usr/lib

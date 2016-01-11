@@ -25,7 +25,6 @@ void OwnerComment::gotReply(QNetworkReply* reply)
 {
   nicolive::StrAbstractor rep(QString(reply->readAll()));
 
-
   const QString& status = rep.midStr("status=", "&");
   if ( status == "error" ) {
     emit error(rep.midStr("error=", ""));

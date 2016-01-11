@@ -23,6 +23,10 @@ void CommunityInfo::gotReply(QNetworkReply* reply)
   nicolive::StrAbstractor communityData(QString(reply->readAll()));
 
   const QString title = communityData.midStr("<h1 id=\"community_name\">", "</h1>");
+  if (title.isEmpty()) {
+    emit error();
+    return;
+  }
 
   emit got(title);
 }

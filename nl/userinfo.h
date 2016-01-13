@@ -8,7 +8,7 @@
 
 namespace nicolive {
 
-//! ユーザIDからユーザ名を取得するクラス。
+//! ユーザIDからユーザ情報を取得するクラス。
 /*!
  * 標準入力からユーザIDを受け取りユーザ名を表示する例。
  * \include FetchUserName/testclass.cpp

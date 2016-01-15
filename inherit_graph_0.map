@@ -1,0 +1,24 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node2" href="$classnicolive_1_1AlertConnection.html" title="生放送通知アラートの接続を管理するクラス。 " alt="" coords="141,296,307,323"/>
+<area shape="rect" id="node3" href="$classnicolive_1_1CommentConnection.html" title="ニコ生のコメントの接続を管理するクラス。 " alt="" coords="125,347,323,373"/>
+<area shape="rect" id="node4" href="$classnicolive_1_1HttpGetter.html" title="APIを取得するのに使用されている抽象クラス。 " alt="" coords="157,397,291,424"/>
+<area shape="rect" id="node21" href="$classnicolive_1_1LiveWaku.html" title="１つの生放送の情報を保持するクラス。 " alt="" coords="158,448,290,475"/>
+<area shape="rect" id="node22" href="$classnicolive_1_1Nicookie.html" title="ブラウザからクッキー情報を取得し、ニコニコのusersessionを取り出すクラス。 " alt="" coords="161,499,287,525"/>
+<area shape="rect" id="node23" href="$classnicolive_1_1StrAbstractor.html" title="Class for abstract keywords from a string (Internal Class) " alt="" coords="149,549,299,576"/>
+<area shape="rect" id="node5" href="$classnicolive_1_1AlertAdmin.html" title="ニコ生アラート取得のために必要な情報と、登録コミュニティを取得します。 " alt="" coords="392,5,531,32"/>
+<area shape="rect" id="node6" href="$classnicolive_1_1AlertLogin.html" title="ニコ生アラートのログインをして AlertAdmin に必要なチケットを取得します " alt="" coords="395,56,527,83"/>
+<area shape="rect" id="node7" href="$classnicolive_1_1CommPostKey.html" title="コメント受信に必要なポストキーを取得するクラス。 " alt="" coords="380,107,543,133"/>
+<area shape="rect" id="node8" href="$classnicolive_1_1CommunityInfo.html" title="コミュニティIDからコミュニティの情報を取得するクラスです。 " alt="" coords="380,157,543,184"/>
+<area shape="rect" id="node9" href="$classnicolive_1_1ConfigureStream.html" title="ConfigureStream に値を送信するクラスです。 枠を取った後、放送を開始したり終了したりすることができます。 " alt="" coords="375,208,547,235"/>
+<area shape="rect" id="node10" href="$classnicolive_1_1Extend.html" title="ニコ生放送の延長を実行するクラス。 " alt="" coords="404,259,519,285"/>
+<area shape="rect" id="node11" href="$classnicolive_1_1ExtendInfo.html" title="ニコ生放送の延長情報を取得するクラス。 " alt="" coords="393,309,530,336"/>
+<area shape="rect" id="node12" href="$classnicolive_1_1FetchFavoritedNowWaku.html" title="お気に入り登録しているコミュニティ等で、現在放送されている放送を取得します。 " alt="" coords="381,361,542,402"/>
+<area shape="rect" id="node13" href="$classnicolive_1_1HeartBeat.html" title="来場者数やコメント数を取得するクラスです。 " alt="" coords="395,427,528,453"/>
+<area shape="rect" id="node14" href="$classnicolive_1_1LiveTag.html" title="生放送のタグを取得するクラス。 " alt="" coords="401,477,521,504"/>
+<area shape="rect" id="node15" href="$classnicolive_1_1OwnerComment.html" title="主コメントをするクラスです。 " alt="" coords="377,528,546,555"/>
+<area shape="rect" id="node16" href="$classnicolive_1_1PlayerStatus.html" title="PlayerStatus API から生放送の情報を取得するクラス。 " alt="" coords="387,579,536,605"/>
+<area shape="rect" id="node17" href="$classnicolive_1_1PublishStatus.html" title="主コメントに必要なチケットを取得します。 " alt="" coords="384,629,539,656"/>
+<area shape="rect" id="node18" href="$classnicolive_1_1StreamInfo.html" title="枠の情報（タイトル、説明、コミュニティ）を取得するクラスです。 " alt="" coords="392,680,531,707"/>
+<area shape="rect" id="node19" href="$classnicolive_1_1UserInfo.html" title="ユーザIDからユーザ情報を取得するクラス。 " alt="" coords="399,731,523,757"/>
+<area shape="rect" id="node20" href="$classnicolive_1_1UserSessionLogin.html" title="ニコ動にログインしてユーザセッションを取得します " alt="" coords="371,781,551,808"/>
+</map>

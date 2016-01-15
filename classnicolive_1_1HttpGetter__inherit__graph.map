@@ -1,0 +1,18 @@
+<map id="nicolive::HttpGetter" name="nicolive::HttpGetter">
+<area shape="rect" id="node3" href="$classnicolive_1_1AlertAdmin.html" title="ニコ生アラート取得のために必要な情報と、登録コミュニティを取得します。 " alt="" coords="331,5,469,32"/>
+<area shape="rect" id="node4" href="$classnicolive_1_1AlertLogin.html" title="ニコ生アラートのログインをして AlertAdmin に必要なチケットを取得します " alt="" coords="334,56,466,83"/>
+<area shape="rect" id="node5" href="$classnicolive_1_1CommPostKey.html" title="コメント受信に必要なポストキーを取得するクラス。 " alt="" coords="319,107,481,133"/>
+<area shape="rect" id="node6" href="$classnicolive_1_1CommunityInfo.html" title="コミュニティIDからコミュニティの情報を取得するクラスです。 " alt="" coords="319,157,481,184"/>
+<area shape="rect" id="node7" href="$classnicolive_1_1ConfigureStream.html" title="ConfigureStream に値を送信するクラスです。 枠を取った後、放送を開始したり終了したりすることができます。 " alt="" coords="314,208,486,235"/>
+<area shape="rect" id="node8" href="$classnicolive_1_1Extend.html" title="ニコ生放送の延長を実行するクラス。 " alt="" coords="343,259,457,285"/>
+<area shape="rect" id="node9" href="$classnicolive_1_1ExtendInfo.html" title="ニコ生放送の延長情報を取得するクラス。 " alt="" coords="331,309,469,336"/>
+<area shape="rect" id="node10" href="$classnicolive_1_1FetchFavoritedNowWaku.html" title="お気に入り登録しているコミュニティ等で、現在放送されている放送を取得します。 " alt="" coords="319,361,481,402"/>
+<area shape="rect" id="node11" href="$classnicolive_1_1HeartBeat.html" title="来場者数やコメント数を取得するクラスです。 " alt="" coords="333,427,467,453"/>
+<area shape="rect" id="node12" href="$classnicolive_1_1LiveTag.html" title="生放送のタグを取得するクラス。 " alt="" coords="340,477,460,504"/>
+<area shape="rect" id="node13" href="$classnicolive_1_1OwnerComment.html" title="主コメントをするクラスです。 " alt="" coords="315,528,485,555"/>
+<area shape="rect" id="node14" href="$classnicolive_1_1PlayerStatus.html" title="PlayerStatus API から生放送の情報を取得するクラス。 " alt="" coords="325,579,475,605"/>
+<area shape="rect" id="node15" href="$classnicolive_1_1PublishStatus.html" title="主コメントに必要なチケットを取得します。 " alt="" coords="323,629,477,656"/>
+<area shape="rect" id="node16" href="$classnicolive_1_1StreamInfo.html" title="枠の情報（タイトル、説明、コミュニティ）を取得するクラスです。 " alt="" coords="331,680,469,707"/>
+<area shape="rect" id="node17" href="$classnicolive_1_1UserInfo.html" title="ユーザIDからユーザ情報を取得するクラス。 " alt="" coords="338,731,462,757"/>
+<area shape="rect" id="node18" href="$classnicolive_1_1UserSessionLogin.html" title="ニコ動にログインしてユーザセッションを取得します " alt="" coords="310,781,490,808"/>
+</map>

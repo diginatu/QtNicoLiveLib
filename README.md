@@ -1,8 +1,9 @@
-# QtNicoLiveLib
+QtNicoLiveLib
+=============
 
 QtNicoLiveLib is a cross-platform "Nico Nama" library.
 
-QtNicoLiveLib はクロスプラットフォームなニコニコ生放送用ライブラリです。
+QtNicoLiveLib はクロスプラットフォームなニコニコ生放送用Qtライブラリです。
 [Viqo](https://github.com/diginatu/Viqo) のコアライブラリです。
 （現在移行中）
 
@@ -12,10 +13,7 @@ QtNicoLiveLib はクロスプラットフォームなニコニコ生放送用ラ
 
 QtはLGPLのライセンス下です。詳しくは [Qt Home](http://www.qt.io/)へ。
 
-<!--ダウンロード-->
-<!---------------->
-
-<!--[**Releases Page**](https://github.com/diginatu/Viqo/releases) から-->
+## [ドキュメント](http://diginatu.github.io/QtNicoLiveLib)
 
 ライセンス
 ----------
@@ -27,7 +25,7 @@ MIT ライセンス
 
 Ubuntu では libssl-dev が必要です。
 
-Qt 5.4 の環境でコンパイルできます。
+Qt 5.4.2 以上でコンパイルできます。
 
 コントリビュート
 ----------------

@@ -4,6 +4,8 @@
 #include <QObject>
 #include <QCoreApplication>
 #include <iostream>
+#include <QTextStream>
+#include <QDebug>
 #include <nl/playerstatus.h>
 
 class TestClass : public QObject
@@ -12,10 +14,6 @@ class TestClass : public QObject
 public:
   explicit TestClass(QObject *parent = 0);
   void fetch();
-
-signals:
-
-public slots:
 };
 
 #endif // TESTCLASS_H

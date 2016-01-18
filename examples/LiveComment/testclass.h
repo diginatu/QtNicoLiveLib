@@ -4,7 +4,7 @@
 #include <QObject>
 #include <QCoreApplication>
 #include <iostream>
-#include <nl/getplayerstatus.h>
+#include <nl/playerstatus.h>
 #include <nl/commentconnection.h>
 
 class TestClass : public QObject

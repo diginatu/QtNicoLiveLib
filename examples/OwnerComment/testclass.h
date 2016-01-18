@@ -17,9 +17,6 @@ public:
 private:
   QString userSession, broadID, text;
   nicolive::LiveWaku* waku;
-signals:
-
-public slots:
 };
 
 #endif // TESTCLASS_H

@@ -22,11 +22,11 @@ void TestClass::fetch()
   connect(getter, &nicolive::PlayerStatus::got, this,
           [](QString broadID, QString title, QString communityID, QString ownerID,
           QString ownerName, uint stTime, uint edTime, QString broadcastToken,
-          QString  userID, bool isPremium, QString  addr, QString port, QString thread)
+          QString userID, bool isPremium, QString addr, qint16 port, QString thread)
   {
-    // unused variables
-    (void)broadID, (void)communityID, (void)ownerID, (void)ownerName;
-    (void)stTime, (void)edTime, (void)broadcastToken;
+      // unused variables
+      (void)broadID, (void)communityID, (void)ownerID, (void)ownerName;
+      (void)stTime, (void)edTime, (void)broadcastToken;
     (void)userID, (void)isPremium, (void)addr, (void)port, (void)thread;
 
     QTextStream out(stdout);
@@ -43,6 +43,6 @@ void TestClass::fetch()
 
   // Finally, need to call get method.
   getter->get(broadID, userSession);
-  
+
   // An instance of most API classes will be deleted automatically.
 }

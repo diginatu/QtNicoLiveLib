@@ -22,6 +22,7 @@ unix: LIBS += -lcrypto
 
 TARGET = QtNicoLiveLib
 TEMPLATE = lib
+DESTDIR  = $$PWD/bin
 
 DEFINES += QTNICOLIVELIB_LIBRARY
 
@@ -75,8 +76,3 @@ HEADERS += \
     nl/userinfo.h \
     nl/streaminfo.h \
     nl/heartbeat.h
-
-unix {
-    target.path = /usr/lib
-    INSTALLS += target
-}

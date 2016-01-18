@@ -7,7 +7,7 @@ int main(int argc, char *argv[])
 {
   QCoreApplication a(argc, argv);
 
-  // this Library is used in a QObject class.
+  // this Library can be used in a QObject class.
   TestClass* test = new TestClass;
   test->fetch();
 

@@ -2,7 +2,7 @@
 
 namespace nicolive {
 
-HeartBeat::HeartBeat(QObject *parent) : QObject(parent)
+HeartBeat::HeartBeat(QObject *parent) : HttpGetter(parent)
 {
 
 }
